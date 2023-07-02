@@ -1270,7 +1270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^2.0.11":
+"astro@npm:^2.7.2":
   version: 2.7.2
   resolution: "astro@npm:2.7.2"
   dependencies:
@@ -1350,11 +1350,12 @@ __metadata:
     "@astrojs/tailwind": ^3.0.1
     "@fontsource/inter": ^4.5.15
     "@tailwindcss/typography": ^0.5.9
-    astro: ^2.0.11
+    astro: ^2.7.2
     astro-feather-icons: ^1.0.2
     astro-icon: ^0.8.0
     astro-navbar: ^1.1.5
     astro-seo: ^0.7.0
+    dayjs: ^1.11.9
     sharp: ^0.31.3
     tailwindcss: ^3.2.4
   languageName: unknown
@@ -1908,6 +1909,13 @@ __metadata:
   version: 4.0.1
   resolution: "data-uri-to-buffer@npm:4.0.1"
   checksum: 0d0790b67ffec5302f204c2ccca4494f70b4e2d940fea3d36b09f0bb2b8539c2e86690429eb1f1dc4bcc9e4df0644193073e63d9ee48ac9fce79ec1506e4aa4c
+  languageName: node
+  linkType: hard
+
+"dayjs@npm:^1.11.9":
+  version: 1.11.9
+  resolution: "dayjs@npm:1.11.9"
+  checksum: a4844d83dc87f921348bb9b1b93af851c51e6f71fa259604809cfe1b49d1230e6b0212dab44d1cb01994c096ad3a77ea1cf18fa55154da6efcc9d3610526ac38
   languageName: node
   linkType: hard
 

@@ -3,9 +3,10 @@ import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
+import dayjs from 'dayjs';
 
 const events = await getCollection('events', ({ data }) => {
-	return !data.draft && data.publishDate < new Date();
+	return !data.draft && new Date(data.date) > new Date();
 });
 ---
 
@@ -13,7 +14,22 @@ const events = await getCollection('events', ({ data }) => {
 	<Container>
 		<Sectionhead>
 			<Fragment slot='title'>Events</Fragment>
-			<Fragment slot='subtitle'>Upcoming events and initiatives</Fragment>
+			<Fragment slot='desc'>Upcoming events and initiatives</Fragment>
 		</Sectionhead>
+		<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
+			{events.map((event) => (
+				<div class='bg-white rounded-lg shadow-lg overflow-hidden'>
+					<img class='w-full h-48 object-cover' src={event.data.image.src} alt={event.data.image.alt} />
+					<div class='p-4'>
+						<div class='text-lg font-semibold'>{event.data.title}</div>
+						<div class='mt-2 text-sm text-gray-500'>{dayjs(event.data.date).format('D MMM YYYY hh:mm a')}</div>
+						<div class='mt-2 text-sm text-gray-500'>{event.data.description}</div>
+						<div class='mt-2 text-sm text-gray-500'>
+							<a href={event.data.link} target='_blank' rel='noopener noreferrer'>{event.data.link}</a>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
 	</Container>	
 </Layout>
