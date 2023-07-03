@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
+import { Icon } from 'astro-icon';
 import dayjs from 'dayjs';
 
 const events = await getCollection('events', ({ data }) => {
@@ -22,7 +23,14 @@ const events = await getCollection('events', ({ data }) => {
 					<img class='w-full h-48 object-cover' src={event.data.image.src} alt={event.data.image.alt} />
 					<div class='p-4'>
 						<div class='text-lg font-semibold'>{event.data.title}</div>
-						<div class='mt-2 text-sm text-gray-500'>{dayjs(event.data.date).format('D MMM YYYY hh:mm a')}</div>
+						<div class='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
+							<Icon pack='ion' name='calendar' class="w-4 h-4 inline-block" />
+							<span>{dayjs(event.data.date).format('D MMM YYYY hh:mm a')}</span>
+						</div>
+						{event.data.location && <div class='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
+							<Icon name='mdi:location' class="w-4 h-4 inline-block" />
+							<span>{event.data.location}</span>
+						</div>}
 						<div class='mt-2 text-sm text-gray-500 line-clamp-2'>{event.data.description}</div>
 						<div class='mt-2 text-sm text-gray-500'>
 							<a href={event.data.link} target='_blank' rel='noopener noreferrer'>{event.data.link}</a>

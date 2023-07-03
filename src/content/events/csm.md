@@ -7,4 +7,5 @@ image: {
 	src: "/csmbanner.jpg",
 	alt: "CSM Something"
 }
+location: "HCI (HS)"
 ---
