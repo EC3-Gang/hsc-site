@@ -1,5 +1,5 @@
 {
-  "name": "astroship",
+  "name": "hsc-site",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -8,24 +8,37 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx ."
   },
   "dependencies": {
     "@astrojs/image": "^0.14.1",
     "@astrojs/mdx": "^0.16.0",
+    "@astrojs/react": "^2.2.1",
     "@astrojs/sitemap": "^1.0.1",
     "@astrojs/tailwind": "^3.0.1",
     "@fontsource/inter": "^4.5.15",
+    "@headlessui/react": "^1.7.15",
+    "@heroicons/react": "^2.0.18",
+    "@iconify/react": "^4.1.1",
     "astro": "^2.7.2",
     "astro-feather-icons": "^1.0.2",
     "astro-icon": "^0.8.0",
     "astro-navbar": "^1.1.5",
     "astro-seo": "^0.7.0",
     "dayjs": "^1.11.9",
+    "fuse.js": "^6.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@types/react": "^18.2.14",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.44.0",
+    "eslint-config-berry": "^0.15.5",
+    "eslint-plugin-astro": "^0.27.2",
     "sharp": "^0.31.3"
   }
 }

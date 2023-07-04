@@ -1,31 +1,31 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import heroImage from "assets/hero.png";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon";
+import { Picture } from '@astrojs/image/components';
+import heroImage from 'assets/hero.png';
+import Link from '@components/ui/link.astro';
+import { Icon } from 'astro-icon';
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center gap-3 pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={"https://upload.wikimedia.org/wikipedia/commons/2/29/Hwa_Chong_Institution_Clock_Tower_and_Tan_Kah_Kee_Statue.jpg"}
-      alt="HSC"
-			class={"rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out"}
-      widths={[200, 400, 600]}
-      aspectRatio="16:9"
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div>
-    <h1
-      class="text-4xl lg:text-5xl lg:tracking-tight xl:tracking-tighter italic yrsa">
+	class="grid lg:grid-cols-2 place-items-center gap-3 pt-16 pb-8 md:pt-12 md:pb-24">
+	<div class="py-6 md:order-1 hidden md:block">
+		<Picture
+			src={'https://upload.wikimedia.org/wikipedia/commons/2/29/Hwa_Chong_Institution_Clock_Tower_and_Tan_Kah_Kee_Statue.jpg'}
+			alt="HSC"
+			class={'rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out'}
+			widths={[200, 400, 600]}
+			aspectRatio="16:9"
+			sizes="(max-width: 800px) 100vw, 620px"
+			loading="eager"
+			format="avif"
+		/>
+	</div>
+	<div>
+		<h1
+			class="text-4xl lg:text-5xl lg:tracking-tight xl:tracking-tighter italic yrsa">
       One<span class="font-bold text-slate-700">HwaChong</span>
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl leading-relaxed">
+		</h1>
+		<p class="text-lg mt-4 text-slate-600 max-w-xl leading-relaxed">
       A publication brought to you by the High School Council
-    </p>
-  </div>
+		</p>
+	</div>
 </main>

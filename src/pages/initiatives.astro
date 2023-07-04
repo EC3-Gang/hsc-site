@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
-import EventsComponent from '@components/events';
+import InitiativesComponent from '@components/initiatives';
 
 
-const events = await getCollection('events', ({ data }) => {
+const inits = await getCollection('initiatives', ({ data }) => {
 	return !data.draft;
 });
 ---
@@ -14,9 +14,9 @@ const events = await getCollection('events', ({ data }) => {
 <Layout title='Events'>
 	<Container>
 		<Sectionhead>
-			<Fragment slot='title'>Events</Fragment>
-			<Fragment slot='desc'>View upcoming and past events here</Fragment>
+			<Fragment slot='title'>Initiatives</Fragment>
+			<Fragment slot='desc'>View initiatives by the HSC here</Fragment>
 		</Sectionhead>
-		<EventsComponent events={events} client:load />
+		<InitiativesComponent events={inits} client:load />
 	</Container>
 </Layout>

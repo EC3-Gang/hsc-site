@@ -5,6 +5,7 @@
 		".astro/types.d.ts",
 	],
   "compilerOptions": {
+		"jsx": "react-jsx",
     "strictNullChecks": true,
     "baseUrl": "src",
     "paths": {
