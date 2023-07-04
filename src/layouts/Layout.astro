@@ -3,10 +3,28 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
+import { exec } from "child_process";
+import util from 'util';
+import dayjs from 'dayjs';
+
+const execAsync = util.promisify(exec);
+
+const gitInfo = async () => {
+	const { stdout } = await execAsync("git log -1 --format=%H%n%ci");
+	const [hash, date] = stdout.split("\n");
+	return { hash, date };
+};
+
+const { hash, date } = await gitInfo();
+
+const dateFormatted = dayjs(date).format("MMMM D, YYYY");
 
 export interface Props {
   title: string;
 }
+
+// get latest commit hash and date of commit
+
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
@@ -59,7 +77,10 @@ const makeTitle = title
   <body class="lato">
     <Navbar />
     <slot />
-    <Footer />
+    <Footer gitInfo={{
+			hash,
+			date: dateFormatted
+		}} />
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */

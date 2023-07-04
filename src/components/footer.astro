@@ -1,3 +1,13 @@
+---
+// get props
+const {
+	gitInfo: {
+		hash,
+		date,
+	},
+} = Astro.props;
+---
+
 <footer class="my-20">
 	<p class="text-center text-sm text-slate-500">
     Copyright © {new Date().getFullYear()} Du Yuancheng, HCI EC³, HCI HSC and related affiliates.
@@ -9,5 +19,12 @@
   -->
   <p class="text-center text-xs text-slate-500 mt-1">
     This website is distributed under the GNU General Public License, version 3.0 (GPL-3.0). Original template by <a href="https://web3templates.com" class="text-slate-500 hover:text-slate-600">Web3Templates</a>.
+  </p>
+  <p class="text-center text-xs text-slate-500 mt-1">
+  	<a href={`https://github.com/EC3-Gang/hsc-site/commit/${hash}`} target="_blank" class="text-slate-500 hover:text-slate-600">
+  		{hash.slice(0, 7)}
+  	</a>
+  	{' • '}
+		Last built on {date}
   </p>
 </footer>
