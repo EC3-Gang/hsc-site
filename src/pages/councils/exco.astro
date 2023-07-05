@@ -9,6 +9,7 @@ import Sectionhead from '@components/sectionhead.astro';
 const publishedTeamMembers = await getCollection('council', ({ data }) => {
 	return !data.draft && data.committee == 'exco';
 });
+
 ---
 
 <Layout title="About">
@@ -45,6 +46,7 @@ const publishedTeamMembers = await getCollection('council', ({ data }) => {
 								class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
 							/>
 						</div>
+
 
 						<div class="mt-4 text-center">
 							<h2 class="text-lg text-gray-800">
