@@ -3,10 +3,77 @@ import Container from '@components/container.astro';
 import Footer from '@components/footer.astro';
 import Hero from '@components/hero.astro';
 import Layout from '@layouts/Layout.astro';
+import dayjs from 'dayjs';
+import { getCollection } from 'astro:content';
+
+// get a random initiative, event and blog post
+const initiatives = await getCollection('initiatives', ({ data }) => {
+	return !data.draft;
+});
+const events = await getCollection('events', ({ data }) => {
+	return !data.draft && dayjs(data.date).isAfter(dayjs());
+});
+const publishedBlogEntries = await getCollection('blog', ({ data }) => {
+	return !data.draft && data.publishDate < new Date();
+});
+
+const initiative = initiatives[Math.floor(Math.random() * initiatives.length)];
+// get the event closest to the start date
+const event = events.reduce((prev, current) => {
+	const prevDate = dayjs(prev.data.date);
+	const currentDate = dayjs(current.data.date);
+	const now = dayjs();
+	if (prevDate.isBefore(now) && currentDate.isAfter(now)) {
+		return current;
+	}
+	if (prevDate.isBefore(currentDate)) {
+		return prev;
+	}
+	return current;
+});
+const blogEntry =
+	publishedBlogEntries[Math.floor(Math.random() * publishedBlogEntries.length)];
 ---
 
 <Layout title="Home">
 	<Container>
 		<Hero />
+		<!-- display the random posts and events in 3 columns with the image as the background -->
+		<h2 class="text-3xl font-bold mt-10 text-center">Latest Events, Initiatives and Posts</h2>
+
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
+			<a href='/initiatives'>
+				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${initiative.data.image.src})`}>
+					<div class="bg-black bg-opacity-50 h-full flex flex-col justify-end p-4">
+						<h2 class="text-white text-2xl font-bold">
+							{initiative.data.title}
+						</h2>
+						<p class="text-white text-sm mt-2">{initiative.data.description}</p>
+					</div>
+				</div>
+			</a>
+
+			<a href='/events'>
+				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.data.image.src})`}>
+					<div class="bg-black bg-opacity-60 h-full flex flex-col justify-end p-4">
+						<h2 class="text-white text-2xl font-bold">
+							{event.data.title}
+						</h2>
+						<p class="text-white text-sm mt-2">{event.data.description}</p>
+					</div>
+				</div>
+			</a>
+
+			<a href={`/blog/${blogEntry.slug}`}>
+				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${blogEntry.data.image.src})`}>
+					<div class="bg-black bg-opacity-60 h-full flex flex-col justify-end p-4">
+						<h2 class="text-white text-2xl font-bold">
+							{blogEntry.data.title}
+						</h2>
+						<p class="text-white text-sm mt-2">{blogEntry.data.snippet}</p>
+					</div>
+				</div>
+			</a>
+		</div>
 	</Container>
 </Layout>

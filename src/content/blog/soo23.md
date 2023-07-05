@@ -1,7 +1,7 @@
 ---
 draft: false
 title: "Secondary One Orientation 2023"
-snippet: "Ornare cum cursus laoreet sagittis nunc fusce posuere per euismod dis vehicula a, semper fames lacus maecenas dictumst pulvinar neque enim non potenti. Torquent hac sociosqu eleifend potenti."
+snippet: "Hwa Chong's Secondary One Orientation 2023 sparks the fire within freshmen, fostering friendships, instilling school spirit, and emphasizing the limitless potential for their future success."
 image: {
     src: "/soo23-banner.png",
     alt: "SOO '23 Banner"
