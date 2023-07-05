@@ -41,7 +41,7 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 
 	return (
 		<>
-			<div className='flex items-center space-x-2 w-4/6 m-auto'>
+			<div className='flex items-center space-x-2 w-4/6 m-auto mt-5'>
 				<Listbox value={filter} onChange={setFilter}>
 					<div className="relative mt-1 z-10 w-1/5">
 						<Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left border-gray-300 border-2 focus:ring-amber-600 focus:ring-2  sm:text-sm">

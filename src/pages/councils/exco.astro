@@ -5,27 +5,20 @@ import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
 
-
-const councils = [
-	{
-		name: 'Executive Committee',
-		slug: 'exco',
-	},
-];
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection('council', ({ data }) => {
+	return !data.draft && data.publishDate < new Date();
+});
 ---
 
 <Layout title="About">
 	<Container>
 		<Sectionhead>
-			<Fragment slot="title">About</Fragment>
-			<Fragment slot="desc">Meet the <span class="line-through">medic</span> council</Fragment>
+			<Fragment slot="title">Executive Committee</Fragment>
+			<Fragment slot="desc"></Fragment>
 		</Sectionhead>
 
 		<div class="flex flex-col gap-3 mx-auto max-w-4xl mt-5">
-			<img src="/full-council-pic.jpeg" alt="Formal Council group photo" class="mx-auto w-5/6 aspect-[16/9] object-cover" />
-			<h2 class="font-bold text-3xl text-gray-800 mt-5 text-center">
-				Who are we?
-			</h2>
 			<p class="text-lg leading-relaxed text-slate-500">
 				The High School Council is the highest echelon of leadership in Hwa Chong Institution. It oversees many of the key events occurring within the school. Events that fall under the council’s purview, range from intra-school events such as the Secondary One Orientation, to inter-school events like the Hwa Chong-Nanyang Combined Sports Meet, and even international events such as the annual Student Leaders’ Convention.
 			</p>
@@ -34,19 +27,34 @@ const councils = [
 			</p>
 		</div>
 
-		<h2 class="font-bold text-3xl text-gray-800 mt-12 text-center">
-			Committees
-		</h2>
-		<div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-7">
-			<!-- cards as links that leads to the specific council pages -->
-			{councils.map((council) => (
-				<a href={`/councils/${council.slug}`} class="flex flex-col items-center justify-center gap-3 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+		<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+			{
+				publishedTeamMembers.map((teamMemberEntry) => (
+					<div class="group">
+						<div class="w-full aspect-square">
+							<Picture
+								src={teamMemberEntry.data.avatar.src}
+								alt={teamMemberEntry.data.avatar.alt}
+								sizes="(max-width: 800px) 100vw, 400px"
+								widths={[200, 400]}
+								aspectRatio="1:1"
+								background="#ffffff"
+								fit="cover"
+								position="center"
+								class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+							/>
+						</div>
 
-					<h2 class="font-bold text-2xl text-gray-800">
-						{council.name}
-					</h2>
-				</a>
-			))
+						<div class="mt-4 text-center">
+							<h2 class="text-lg text-gray-800">
+								{teamMemberEntry.data.name}
+							</h2>
+							<h3 class="text-sm text-slate-500">
+								{teamMemberEntry.data.title}
+							</h3>
+						</div>
+					</div>
+				))
 			}
 		</div>
 	</Container>
