@@ -26,7 +26,6 @@ const teamCollection = defineCollection({
 		committee: z.string(),
 		avatar: z.object({
 			src: z.string(),
-			alt: z.string(),
 		}),
 		publishDate: z.string().transform(str => new Date(str)),
 	}),
