@@ -10,6 +10,19 @@ const publishedTeamMembers = await getCollection('council', ({ data }) => {
 	return !data.draft && data.committee == 'exco';
 });
 
+// sort publishedTeamMembers so that title: 'President' is first and 'Vice President' is second, followed by 'xxx Head' and 'Secretary'
+publishedTeamMembers.sort((a, b) => {
+	if (a.data.title == 'President') return -1;
+	if (b.data.title == 'President') return 1;
+	if (a.data.title == 'Vice President') return -1;
+	if (b.data.title == 'Vice President') return 1;
+	if (a.data.title.includes('Head')) return -1;
+	if (b.data.title.includes('Head')) return 1;
+	if (a.data.title == 'Secretary') return -1;
+	if (b.data.title == 'Secretary') return 1;
+	return 0;
+});
+
 ---
 
 <Layout title="About">
