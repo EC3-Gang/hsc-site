@@ -9,10 +9,12 @@ import Sectionhead from '@components/sectionhead.astro';
 const councils = [
 	{
 		name: 'Executive Committee',
+		bg: 'https://img.freepik.com/premium-vector/square-background-with-orange-geometric-design_197792-1168.jpg?w=2000',
 		slug: 'exco',
 	},
 	{
 		name: 'Publications Committee',
+		bg: '/typewriter.jpg',
 		slug: 'pubcom',
 	},
 ];
@@ -41,14 +43,22 @@ const councils = [
 		<h2 class="font-bold text-3xl text-gray-800 mt-12 text-center">
 			Committees
 		</h2>
-		<div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-7">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-7">
 			<!-- cards as links that leads to the specific council pages -->
 			{councils.map((council) => (
-				<a href={`/councils/${council.slug}`} class="flex flex-col items-center justify-center gap-3 p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-
-					<h2 class="font-bold text-2xl text-gray-800">
-						{council.name}
-					</h2>
+				<a href={`/councils/${council.slug}`} class="relative w-full h-72 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+					<img
+						src={`${council.bg}`}
+						alt={`${council.name} council`}
+						class="w-full h-full object-cover"
+					/>
+					<div class="h-full absolute top-0 w-full bg-black bg-opacity-50">
+						<div class="absolute bottom-0 left-0 p-5 text-white">
+							<h2 class="font-bold text-xl">
+								{council.name}
+							</h2>
+						</div>
+					</div>
 				</a>
 			))
 			}
