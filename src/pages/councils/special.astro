@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import { Picture } from '@astrojs/image/components';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/container.astro';
+import Sectionhead from '@components/sectionhead.astro';
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection('council', ({ data }) => {
+	return !data.draft && data.committee == 'special';
+});
+
+---
+
+<Layout title="About">
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">Special Committee</Fragment>
+			<Fragment slot="desc">Your expert planners for every occasion</Fragment>
+		</Sectionhead>
+
+		<div class="flex flex-col gap-3 mx-auto max-w-4xl mt-5">
+			<p class="text-lg leading-relaxed text-slate-500">
+				The special committee is the student engagement and cultural branch of the HSC, and works closely with external councils to boost school spirit. On top of that, the special committee spearheads the planning and execution of events such as the national schools track and field finals and HCNY combined sports meet - events which the student body can look forward to as we emerge out of the pandemic.
+			</p>
+		</div>
+
+		<h2 class="mt-12 text-3xl font-bold text-gray-800 text-center">
+			Members
+		</h2>
+
+
+		<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+			{
+				publishedTeamMembers.map((teamMemberEntry) => (
+					<div class="group">
+						<div class="w-full aspect-square">
+							<Picture
+								src={teamMemberEntry.data.avatar.src}
+								alt={teamMemberEntry.data.name}
+								sizes="(max-width: 800px) 100vw, 400px"
+								widths={[200, 400]}
+								aspectRatio="4:5"
+								background="#ffffff"
+								fit="cover"
+								position="center"
+								class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+							/>
+						</div>
+
+
+						<div class="mt-4 text-center">
+							<h2 class="text-lg text-gray-800">
+								{teamMemberEntry.data.name.toLowerCase().replace(/(^\w|\s\w)/g, (m: string) => m.toUpperCase())}
+							</h2>
+							<h3 class="text-sm text-slate-500">
+								{teamMemberEntry.data.title}
+							</h3>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</Container>
+</Layout>
