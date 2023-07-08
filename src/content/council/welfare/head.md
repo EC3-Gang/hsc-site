@@ -1,8 +1,8 @@
 ---
 draft: false
-name: "ISAIAH YIP JIN EU"
+name: "LEOW JUNN KAI, JONATHAN"
 title: "Head"
-committee: "special"
+committee: "welfare"
 avatar: {
   src: "/council-pics/Special/Isaiah%20Yip/IMG_0029%20(2)%20(1).jpg",
 }
