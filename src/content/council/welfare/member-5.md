@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "MARCUS TAN YEE YONG"
+name: "MAO TIANZE"
 title: "Member"
-committee: "special"
+committee: "welfare"
 avatar: {
-    src: "/council-pics/Special/Marcus%20Tan/IMG_0030.jpg",
+    src: "/council-pics/Welfare/Mao%20Tianze/IMG_0043.jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---

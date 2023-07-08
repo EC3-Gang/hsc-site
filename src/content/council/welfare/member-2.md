@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "CHNG MING CONG JERRELL"
+name: "ANG SHAO XUAN"
 title: "Member"
-committee: "special"
+committee: "welfare"
 avatar: {
-    src: "/council-pics/Special/Chng%20Ming%20Cong%20Jerrell/IMG_0034%20(2).jpg",
+    src: "/council-pics/Welfare/Ang%20Shao%20Xuan/IMG_0046.JPG",
 }
 publishDate: "2023-07-04 15:39"
 ---

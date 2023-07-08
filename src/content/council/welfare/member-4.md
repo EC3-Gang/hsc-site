@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "ETHAN WONG"
+name: "TOH CHEUNG SEE"
 title: "Member"
-committee: "special"
+committee: "welfare"
 avatar: {
-    src: "/council-pics/Special/Ethan%20Wong/IMG_0033.jpg",
+    src: "/council-pics/Welfare/Toh%20Cheung%20See/IMG_0044.jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---

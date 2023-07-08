@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "ANG YI ZHE"
+name: "DAVID SIEW WEI EN"
 title: "Member"
-committee: "special"
+committee: "welfare"
 avatar: {
-    src: "/council-pics/Special/Ang%20Yi%20Zhe/IMG_0030%20(2).jpg",
+    src: "/council-pics/Welfare/David%20Siew/IMG_0045.jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---
