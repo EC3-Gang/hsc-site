@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "TOH CHEUNG SEE"
-title: "Member"
-committee: "welfare"
+name: "ELIJAH CHRISTIAN KOH ZHI EN"
+title: "Chairman, ProEd Council"
+committee: "snr"
 avatar: {
-    src: "/council-pics/Welfare/Toh%20Cheung%20See/IMG_0044.jpg",
+    src: "/council-pics/S_n_R/Elijah%20Christian%20Koh/IMG_0113.jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---

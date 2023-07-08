@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "MAO TIANZE"
-title: "Member"
-committee: "welfare"
+name: "TAI YEE ZHE DARRYL"
+title: "Vice Chairman, Aphelion Council"
+committee: "snr"
 avatar: {
-    src: "/council-pics/Welfare/Mao%20Tianze/IMG_0043.jpg",
+    src: "/council-pics/S_n_R/Tai%20Yee%20Zhe%20Darryl/IMG_0120.jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---

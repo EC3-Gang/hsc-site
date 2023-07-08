@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "ANG SHAO XUAN"
-title: "Member"
-committee: "welfare"
+name: "JOVAN LIM CHEN YU"
+title: "Chairman, Ortus Council"
+committee: "snr"
 avatar: {
-    src: "/council-pics/Welfare/Ang%20Shao%20Xuan/IMG_0046.JPG",
+    src: "/council-pics/S_n_R/Jovan%20Lim/IMG_0070%20(2).jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---

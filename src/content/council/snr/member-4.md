@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "TOH CHEUNG SEE"
-title: "Member"
-committee: "welfare"
+name: "BRENDON CHAN YI MING"
+title: "Chairman, Aphelion Council"
+committee: "snr"
 avatar: {
-    src: "/council-pics/Welfare/Toh%20Cheung%20See/IMG_0044.jpg",
+    src: "/council-pics/S_n_R/Brendon%20Chan/IMG_0123%20(2).jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---

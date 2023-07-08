@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "TRAVIS DAEL NG SHAO JIE"
-title: "Member"
-committee: "welfare"
+name: "CHIA ERN KANG"
+title: "Vice Chairman, iCouncil"
+committee: "snr"
 avatar: {
-  src: "/council-pics/Welfare/Travis%20Dael%20Ng/IMG_0042.jpg",
+  src: "/council-pics/S_n_R/Chia%20Ern%20Kang/IMG_0018.jpg",
 }
 publishDate: "2023-07-04 15:39"
 ---
