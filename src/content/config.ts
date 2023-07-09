@@ -27,7 +27,6 @@ const teamCollection = defineCollection({
 		avatar: z.object({
 			src: z.string(),
 		}),
-		publishDate: z.date(),
 	}),
 });
 
