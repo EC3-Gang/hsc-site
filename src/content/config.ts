@@ -27,7 +27,7 @@ const teamCollection = defineCollection({
 		avatar: z.object({
 			src: z.string(),
 		}),
-		publishDate: z.string().transform(str => new Date(str)),
+		publishDate: z.date(),
 	}),
 });
 
@@ -36,7 +36,7 @@ const eventCollection = defineCollection({
 		draft: z.boolean(),
 		title: z.string(),
 		description: z.string(),
-		date: z.string().transform(str => new Date(str)),
+		date: z.date(),
 		location: z.string().optional(),
 		image: z.object({
 			src: z.string(),
@@ -51,7 +51,7 @@ const initiativeCollection = defineCollection({
 		draft: z.boolean(),
 		title: z.string(),
 		description: z.string(),
-		date: z.string().transform(str => new Date(str)).optional(),
+		date: z.date().optional(),
 		image: z.object({
 			src: z.string(),
 			alt: z.string(),

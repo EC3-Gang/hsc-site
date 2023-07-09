@@ -26,23 +26,6 @@ export default defineConfig({
 				path: 'src/content/blog',
 				format: 'md',
 				fields: [
-					/*
-					const blogCollection = defineCollection({
-						schema: z.object({
-							draft: z.boolean(),
-							title: z.string(),
-							snippet: z.string(),
-							image: z.object({
-								src: z.string(),
-								alt: z.string(),
-							}),
-							publishDate: z.string().transform(str => new Date(str)),
-							author: z.string().default('HSC'),
-							category: z.string(),
-							tags: z.array(z.string()),
-						}),
-					});
-					*/
 					{
 						name: 'draft',
 						label: 'Draft',
@@ -114,6 +97,126 @@ export default defineConfig({
 						isBody: true,
 						required: true,
 						type: 'rich-text',
+					},
+				],
+			},
+			{
+				name: 'events',
+				label: 'Events',
+				path: 'src/content/events',
+				format: 'md',
+				fields: [
+					{
+						name: 'draft',
+						label: 'Draft',
+						type: 'boolean',
+					},
+					{
+						name: 'title',
+						label: 'Title',
+						type: 'string',
+						required: true,
+						isTitle: true,
+					},
+					{
+						name: 'description',
+						label: 'Description',
+						type: 'string',
+						required: true,
+					},
+					{
+						name: 'date',
+						label: 'Date',
+						type: 'datetime',
+						required: true,
+					},
+					{
+						name: 'location',
+						label: 'Location',
+						type: 'string',
+						required: false,
+					},
+					{
+						name: 'image',
+						label: 'Image',
+						type: 'object',
+						fields: [
+							{
+								name: 'src',
+								label: 'Image Source',
+								type: 'string',
+								required: true,
+							},
+							{
+								name: 'alt',
+								label: 'Image Alt Text',
+								type: 'string',
+								required: true,
+							},
+						],
+					},
+					{
+						name: 'link',
+						label: 'Link',
+						type: 'string',
+						required: false,
+					},
+				],
+			},
+			{
+				name: 'initiatives',
+				label: 'Initiatives',
+				path: 'src/content/initiatives',
+				format: 'md',
+				fields: [
+					{
+						name: 'draft',
+						label: 'Draft',
+						type: 'boolean',
+					},
+					{
+						name: 'title',
+						label: 'Title',
+						type: 'string',
+						required: true,
+						isTitle: true,
+					},
+					{
+						name: 'description',
+						label: 'Description',
+						type: 'string',
+						required: true,
+					},
+					{
+						name: 'date',
+						label: 'Date',
+						type: 'datetime',
+						required: false,
+					},
+					{
+						name: 'image',
+						label: 'Image',
+						type: 'object',
+						fields: [
+							{
+								name: 'src',
+								label: 'Image Source',
+								type: 'string',
+								required: true,
+							},
+							{
+								name: 'alt',
+								label: 'Image Alt Text',
+								type: 'string',
+								required: true,
+							},
+						],
+					},
+					{
+						name: 'link',
+						label: 'Link',
+						type: 'string',
+						required: false,
 					},
 				],
 			},
