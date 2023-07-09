@@ -52,7 +52,7 @@ export default defineConfig({
 							{
 								name: 'src',
 								label: 'Image Source',
-								type: 'string',
+								type: 'image',
 								required: true,
 							},
 							{
@@ -144,7 +144,7 @@ export default defineConfig({
 							{
 								name: 'src',
 								label: 'Image Source',
-								type: 'string',
+								type: 'image',
 								required: true,
 							},
 							{
@@ -201,7 +201,7 @@ export default defineConfig({
 							{
 								name: 'src',
 								label: 'Image Source',
-								type: 'string',
+								type: 'image',
 								required: true,
 							},
 							{
