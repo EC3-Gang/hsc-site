@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
+import dayjs from 'dayjs';
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -35,7 +36,7 @@ const { Content } = await entry.render();
 				<time
 					class="text-gray-400"
 					datetime={entry.data.publishDate.toISOString()}>
-					{entry.data.publishDate.toDateString()}
+					{dayjs(entry.data.publishDate).format('MMMM D, YYYY')}
 				</time>
 				<span class="text-gray-400 hidden md:block">•</span>
 				<div class="w-full md:w-auto flex flex-wrap gap-3">
