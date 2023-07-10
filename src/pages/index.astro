@@ -4,6 +4,7 @@ import Footer from '@components/footer.astro';
 import Hero from '@components/hero.astro';
 import Layout from '@layouts/Layout.astro';
 import dayjs from 'dayjs';
+import { Icon } from 'astro-icon';
 import { getCollection } from 'astro:content';
 
 // get a random initiative, event and blog post
@@ -74,6 +75,31 @@ const blogEntry =
 					</div>
 				</div>
 			</a>
+		</div>
+
+		<!--
+			social media links with icons
+
+			facebook: https://www.facebook.com/hwachonghsc/
+			instagram: https://www.instagram.com/hwachonghsc/
+			youtube: https://www.youtube.com/@41HighSchoolCouncil
+		-->
+		<!--
+			Div with rainbow coloured border and "Follow us on social media!" header
+		-->
+		<div class="border-2 border-rainbow p-4 mt-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+			<h2 class="text-3xl font-bold text-center text-white">Follow us on social media!</h2>
+			<div class="flex justify-center mt-4">
+				<a href="https://www.facebook.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="mx-2 transform hover:scale-110 transition duration-300">
+					<Icon name="mdi:facebook" class="w-8 h-8 text-white" />
+				</a>
+				<a href="https://www.instagram.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="mx-2 transform hover:scale-110 transition duration-300">
+					<Icon name="mdi:instagram" class="w-8 h-8 text-white" />
+				</a>
+				<a href="https://www.youtube.com/@41HighSchoolCouncil" target="_blank" rel="noopener noreferrer" class="mx-2 transform hover:scale-110 transition duration-300">
+					<Icon name="mdi:youtube" class="w-8 h-8 text-white" />
+				</a>
+			</div>
 		</div>
 	</Container>
 </Layout>

@@ -2,7 +2,7 @@
 title: HSC Website
 description: The very site you are currently looking at.
 image:
-  src: /Screenshot from 2023-07-09 17-50-09.png
+  src: /websitescreenshot.png
   alt: Website Screenshot
 link: 'https://hcihsc.pages.dev/'
 draft: false
