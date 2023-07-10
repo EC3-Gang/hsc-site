@@ -30,6 +30,7 @@ export default defineConfig({
 						name: 'draft',
 						label: 'Draft',
 						type: 'boolean',
+						required: true,
 					},
 					{
 						name: 'title',
@@ -67,6 +68,9 @@ export default defineConfig({
 						name: 'publishDate',
 						label: 'Publish Date',
 						type: 'datetime',
+						ui: {
+							timeFormat: 'hh:mm a',
+						},
 						required: true,
 					},
 					{
@@ -110,6 +114,7 @@ export default defineConfig({
 						name: 'draft',
 						label: 'Draft',
 						type: 'boolean',
+						required: true,
 					},
 					{
 						name: 'title',
@@ -128,6 +133,9 @@ export default defineConfig({
 						name: 'date',
 						label: 'Date',
 						type: 'datetime',
+						ui: {
+							timeFormat: 'hh:mm a',
+						},
 						required: true,
 					},
 					{
@@ -173,6 +181,7 @@ export default defineConfig({
 						name: 'draft',
 						label: 'Draft',
 						type: 'boolean',
+						required: true,
 					},
 					{
 						name: 'title',
@@ -191,6 +200,9 @@ export default defineConfig({
 						name: 'date',
 						label: 'Date',
 						type: 'datetime',
+						ui: {
+							timeFormat: 'hh:mm a',
+						},
 						required: false,
 					},
 					{

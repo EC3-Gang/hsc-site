@@ -8,7 +8,7 @@ snippet: >-
 image:
   src: /soo23-banner.png
   alt: SOO '23 Banner
-publishDate: 2023-07-04T16:00:00.000Z
+publishDate: 2023-07-04T23:00:00.000Z
 category: past events
 author: Liew Wei Cheng
 tags:
