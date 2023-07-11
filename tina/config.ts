@@ -232,6 +232,32 @@ export default defineConfig({
 					},
 				],
 			},
+			{
+				name: 'batch',
+				label: 'Batch',
+				path: 'src/content/batch',
+				format: 'md',
+				ui: {
+					allowedActions: {
+						create: false,
+						delete: false,
+					},
+				},
+				fields: [
+					{
+						name: 'name',
+						label: 'Name',
+						type: 'string',
+						required: true,
+					},
+					{
+						name: 'batch',
+						label: 'Batch',
+						type: 'number',
+						required: true,
+					},
+				],
+			},
 		],
 	},
 	search: {

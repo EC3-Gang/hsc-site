@@ -59,6 +59,13 @@ const initiativeCollection = defineCollection({
 	}),
 });
 
+const batch = defineCollection({
+	schema: z.object({
+		name: z.string(),
+		batch: z.number(),
+	}),
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
@@ -66,4 +73,5 @@ export const collections = {
 	'council': teamCollection,
 	'events': eventCollection,
 	'initiatives': initiativeCollection,
+	'batch': batch,
 };
