@@ -41,8 +41,8 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 
 	return (
 		<>
-			<div className='flex items-center space-x-2 w-4/6 m-auto mt-5'>
-				<Listbox value={filter} onChange={setFilter}>
+			<div className='grid sm:grid-cols-4 grid-cols-2 gap-4 w-11/12 lg:w-3/4 m-auto mt-5'>
+				<Listbox value={filter} onChange={setFilter} className='w-full -mt-0'>
 					<div className="relative mt-1 z-10 w-1/5">
 						<Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left border-gray-300 border-2 focus:ring-amber-600 focus:ring-2  sm:text-sm">
 							<span className="block truncate">{filter.name}</span>
@@ -92,7 +92,7 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 						</Transition>
 					</div>
 				</Listbox>
-				<input type='text' placeholder='Search' className='w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent' value={search} onChange={handleQuery} />
+				<input type='text' placeholder='Search' className='sm:col-span-3 w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent' value={search} onChange={handleQuery} />
 			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
 				{results
