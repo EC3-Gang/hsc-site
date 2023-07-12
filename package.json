@@ -1,7 +1,7 @@
 {
   "name": "hsc-site",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.8.7-0",
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c 'astro dev'",
@@ -42,5 +42,6 @@
     "eslint-config-berry": "^0.15.5",
     "eslint-plugin-astro": "^0.27.2",
     "sharp": "^0.31.3"
-  }
+  },
+  "stableVersion": "0.8.6"
 }

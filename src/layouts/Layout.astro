@@ -6,6 +6,7 @@ import "@fontsource/inter/variable.css";
 import { exec } from "child_process";
 import util from 'util';
 import dayjs from 'dayjs';
+import { version } from '../../package.json'
 
 const execAsync = util.promisify(exec);
 
@@ -97,7 +98,7 @@ const makeTitle = title
     <Footer gitInfo={{
 			hash,
 			date: dateFormatted
-		}} />
+		}} {version} />
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
