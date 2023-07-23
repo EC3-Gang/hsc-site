@@ -1,0 +1,48 @@
+---
+import fs from 'fs/promises';
+import path from 'path';
+import process from 'process';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/container.astro';
+import Sectionhead from '@components/sectionhead.astro';
+import packageJSON from '../../package.json';
+
+// read LICENSE file
+const license = await fs.readFile(path.join(process.cwd(), 'LICENSE'), 'utf-8');
+const dependencies = [Object.keys(packageJSON.dependencies), Object.keys(packageJSON.devDependencies)].flat();
+---
+
+<Layout title='Credits and License'>
+	<Container>
+		<Sectionhead>
+			<Fragment slot='title'>Credits and License</Fragment>
+			<Fragment slot='desc'>The full license this site is licensed under, as well as libraries used to build this site</Fragment>
+		</Sectionhead>
+		<div class="prose mx-auto max-w-4xl mt-5">
+			<div class='flex flex-col'>
+				<h1 class="font-bold text-3xl text-gray-800 mt-5 text-center mb-0">Credits</h1>
+				<p class="text-lg leading-relaxed text-slate-500 w-4/5 mx-auto">
+					The source code for this site is available at <a href="https://github.com/EC3-Gang/hsc-site">https://github.com/EC3-Gang/hsc-site</a> and is licensed under GPL-3.0. Original template made by <a href="https://web3templates.com/">Web3Templates</a>.
+
+					<br /><br />
+
+					All potraits of council members and blog posts are properties of their respective owners, all rights reserved.
+				</p>
+
+				<h1 class="font-bold text-3xl text-gray-800 mt-5 text-center mb-0">Libraries</h1>
+				<p class="text-lg leading-relaxed text-slate-500 w-4/5 mx-auto">
+					These are the open source libraries used to build this site:
+					<!-- wrap packages in code tags and display in 4 colums -->
+					<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-5 mx-auto">
+						{dependencies.map((dep) => (
+							<code>{dep}</code>
+						))}
+					</div>
+				</p>
+
+				<h1 class="font-bold text-3xl text-gray-800 mt-5 text-center mb-0">License</h1>
+				<pre class="mx-auto w-min pl-12">{license}</pre>
+			</div>
+		</div>
+	</Container>
+</Layout>

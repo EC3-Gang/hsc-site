@@ -5,13 +5,16 @@ const {
 		hash,
 		date,
 	},
-	version,
 } = Astro.props;
 ---
 
 <footer class="my-20 max-w-screen-xl mx-auto px-5">
-	<p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Du Yuancheng, <a href='https://www.ec3.dev'>HCI EC³</a>, HCI HSC and related affiliates.
+	<p class='text-center text-sm text-slate-500 mt-1'>
+		Released under the General Public License v3.0 (GPL-3.0) <br />
+		Copyright © 2023-Present Du Yuancheng, HCI EC<sup>3</sup>, HSC and all related affiliates <br />
+  	<a href="/credits" class="text-slate-500 hover:text-slate-600 text-xs">
+			Full Credits & Terms
+  	</a>
 	</p>
   <!--
     Can we ask you a favor 🙏
@@ -19,11 +22,9 @@ const {
     or Purchase a commercial license from https://web3templates.com
   -->
   <p class="text-center text-xs text-slate-500 mt-1">
-    This website is distributed under the GNU General Public License, version 3.0 (GPL-3.0). Original template by <a href="https://web3templates.com" class="text-slate-500 hover:text-slate-600">Web3Templates</a>.
-  </p>
-  <p class="text-center text-xs text-slate-500 mt-1">
-		v{version}
-		(<a href={`https://github.com/EC3-Gang/hsc-site/commit/${hash}`} target="_blank" class="text-slate-500 hover:text-slate-600">{hash.slice(0, 7)}</a>)
+  	<a href={`https://github.com/EC3-Gang/hsc-site/commit/${hash}`} target="_blank" class="text-slate-500 hover:text-slate-600">
+  		{hash.slice(0, 7)}
+  	</a>
 		&nbsp;•&nbsp;
 		Last built on {date}
   </p>
