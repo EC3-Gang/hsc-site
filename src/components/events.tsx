@@ -38,7 +38,7 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 	const fuse = new Fuse(events, {
 		keys: ['data.title', 'data.description'],
 	});
-
+	r
 	return (
 		<>
 			<div className='grid sm:grid-cols-4 grid-cols-2 gap-4 w-11/12 lg:w-3/4 m-auto mt-5'>
