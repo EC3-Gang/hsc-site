@@ -24,6 +24,7 @@ else if (platform === 'CLOUDFLARE') {
 	adapterConfig = {
 		...cloudflare({
 			mode: 'directory',
+			split: true,
 		}),
 	};
 }
@@ -43,7 +44,7 @@ export default defineConfig({
 	integrations: [react(), tailwind(), mdx(), sitemap(), icon({
 		include: {
 			mdi: ['*'],
-			uil: ['*'],
+			uil: ['envelope', 'instagram'],
 		},
 	})],
 	output: 'server',
