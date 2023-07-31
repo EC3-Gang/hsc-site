@@ -4,9 +4,9 @@
   "version": "0.8.10-beta.1",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev -c 'astro dev'",
+    "dev": "node scripts/prebuild.js && tinacms dev -c 'astro dev'",
     "start": "astro dev",
-    "build": "tinacms build && astro build",
+    "build": "node scripts/prebuild.js && tinacms build && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx ."

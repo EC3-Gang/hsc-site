@@ -13,13 +13,13 @@ let adapterConfig = {};
 
 // https://astro.build/reference/configuration
 if (platform === 'DENO') {
-	console.log('Building for Deno');
+	console.log('Deno');
 	adapterConfig = {
 		...deno(),
 	};
 }
 else if (platform === 'CLOUDFLARE') {
-	console.log('Building for Cloudflare Functions');
+	console.log('Cloudflare Functions');
 	adapterConfig = {
 		...cloudflare({
 			mode: 'directory',
@@ -27,7 +27,7 @@ else if (platform === 'CLOUDFLARE') {
 	};
 }
 else {
-	console.log('Building for Node.js (default)');
+	console.log('Node.js (default)');
 	adapterConfig = {
 		...node({
 			mode: 'standalone',

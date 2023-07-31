@@ -3,20 +3,9 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
-import { exec } from "child_process";
-import util from 'util';
+import { hash, date } from '../git-info.json';
 import dayjs from 'dayjs';
-import { version } from '../../package.json'
 
-const execAsync = util.promisify(exec);
-
-const gitInfo = async () => {
-	const { stdout } = await execAsync("git log -1 --format=%H%n%ci");
-	const [hash, date] = stdout.split("\n");
-	return { hash, date };
-};
-
-const { hash, date } = await gitInfo();
 
 const dateFormatted = dayjs(date).format("MMMM D, YYYY");
 
@@ -98,7 +87,7 @@ const makeTitle = title
     <Footer gitInfo={{
 			hash,
 			date: dateFormatted
-		}} {version} />
+		}} />
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
