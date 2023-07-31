@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-if (!process.env.PLATFORM !== 'CLOUDFLARE') {
+if (process.env.PLATFORM !== 'CLOUDFLARE') {
 	console.log('Not Cloudflare, skipping...');
 	process.exit(0);
 }
