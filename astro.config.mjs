@@ -6,6 +6,7 @@ import react from '@astrojs/react';
 import deno from '@astrojs/deno';
 import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
+import icon from 'astro-icon';
 
 const platform = process.env.PLATFORM || 'NODE';
 
@@ -39,7 +40,11 @@ else {
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://hcihsc.pages.dev',
-	integrations: [react(), tailwind(), mdx(), sitemap()],
+	integrations: [react(), tailwind(), mdx(), sitemap(), icon({
+		include: {
+			mdi: ['*'],
+		},
+	})],
 	output: 'server',
 	adapter: adapterConfig,
 });
