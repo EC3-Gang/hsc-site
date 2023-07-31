@@ -43,6 +43,7 @@ export default defineConfig({
 	integrations: [react(), tailwind(), mdx(), sitemap(), icon({
 		include: {
 			mdi: ['*'],
+			uil: ['*'],
 		},
 	})],
 	output: 'server',

@@ -4,11 +4,11 @@
   "version": "0.8.10-beta.1",
   "private": true,
   "scripts": {
-		"prebuild": "node scripts/prebuild.js",
+    "prebuild": "node scripts/prebuild.js",
     "dev": "yarn prebuild && tinacms dev -c 'astro dev'",
     "start": "astro dev",
     "build": "yarn prebuild && tinacms build && astro build && yarn postbuild",
-		"postbuild": "node scripts/editRoutes.js",
+    "postbuild": "node scripts/editRoutes.js",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx ."
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.53",
+    "@iconify-json/uil": "^1.1.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.14",
