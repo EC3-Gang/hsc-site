@@ -23,7 +23,7 @@ else if (platform === 'CLOUDFLARE') {
 	console.log('Cloudflare Functions');
 	adapterConfig = {
 		...cloudflare({
-			mode: 'directory',
+			mode: 'advanced',
 		}),
 	};
 }
