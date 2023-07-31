@@ -39,6 +39,7 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 		keys: ['data.title', 'data.description'],
 	});
 
+
 	return (
 		<>
 			<div className='grid sm:grid-cols-4 grid-cols-2 gap-4 w-11/12 lg:w-3/4 m-auto mt-5'>
@@ -95,7 +96,7 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 				<input type='text' placeholder='Search' className='sm:col-span-3 w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent' value={search} onChange={handleQuery} />
 			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
-				{results
+				{results.filter(filter.filter).length > 0 ? results
 					.filter(filter.filter)
 					.map((event) => (
 						<div className='bg-white rounded-lg shadow-lg overflow-hidden' key={event.id}>
@@ -116,7 +117,12 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 								</div>
 							</div>
 						</div>
-					))}
+					)) : (
+					<div className='flex flex-col items-center justify-center text-gray-500 col-span-full'>
+						<Icon icon='mdi:calendar-blank' className='w-12 h-12' />
+						<p className='mt-2'>No events found</p>
+					</div>
+				)}
 			</div>
 		</>
 	);

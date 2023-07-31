@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { Picture } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
@@ -47,17 +46,10 @@ publishedTeamMembers.sort((a, b) => {
 				publishedTeamMembers.map((teamMemberEntry) => (
 					<div class="group">
 						<div class="w-full aspect-square">
-							<Picture
-								src={teamMemberEntry.data.avatar.src}
-								alt={teamMemberEntry.data.name}
-								sizes="(max-width: 800px) 100vw, 400px"
-								widths={[200, 400]}
-								aspectRatio="4:5"
-								background="#ffffff"
-								fit="cover"
-								position="center"
-								class="w-full rounded-md transition group-hover:-translate-y-1 group-hover:shadow-xl"
-							/>
+							<picture>
+								<source media="(max-width: 800px)" srcset={teamMemberEntry.data.avatar.src} />
+								<img src={teamMemberEntry.data.avatar.src} alt={teamMemberEntry.data.name} class="w-full rounded-md transition group-hover:-translate-y-1 group-hover:shadow-xl aspect-[4/5] object-cover" />
+							</picture>
 						</div>
 
 						<div class="mt-4 text-center">

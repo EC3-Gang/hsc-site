@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { Picture } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
@@ -32,19 +31,12 @@ publishedBlogEntries.sort(function(a, b) {
 						<li>
 							<a href={`/blog/${blogPostEntry.slug}`}>
 								<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-									<Picture
-										src={blogPostEntry.data.image.src}
-										alt={blogPostEntry.data.image.alt}
-										sizes="(max-width: 800px) 100vw, 800px"
-										widths={[200, 400, 800]}
-										aspectRatio="16:9"
-										background="#ffffff"
-										fit="cover"
-										position="center"
-										loading={index <= 2 ? 'eager' : 'lazy'}
-										decoding={index <= 2 ? 'sync' : 'async'}
-										class="w-full rounded-md"
-									/>
+									<picture class="w-full rounded-md">
+										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=200`} width="200" />
+										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=400`} width="400" />
+										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=800`} width="800" />
+										<img class="w-full" src={`${blogPostEntry.data.image.src}`} alt={blogPostEntry.data.image.alt} loading={index <= 2 ? 'eager' : 'lazy'} decoding={index <= 2 ? 'sync' : 'async'} width="800" />
+									</picture>
 									<div>
 										<span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
 											{blogPostEntry.data.category}

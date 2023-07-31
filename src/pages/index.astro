@@ -6,6 +6,7 @@ import Layout from '@layouts/Layout.astro';
 import dayjs from 'dayjs';
 import { Icon } from 'astro-icon';
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
 // get a random initiative, event and blog post
 const initiatives = await getCollection('initiatives', ({ data }) => {
@@ -19,6 +20,36 @@ const publishedBlogEntries = await getCollection('blog', ({ data }) => {
 });
 
 const initiative = initiatives[Math.floor(Math.random() * initiatives.length)];
+
+
+/*
+event frontmatter:
+---
+draft: false
+title: "Combined Sports Meet"
+description: "Have fun with your friends and support your classes (from across the street as well)!"
+date: 2023-07-27T24:00:00.000Z
+image: {
+	src: "/csmbanner.jpg",
+	alt: "CSM Something"
+}
+location: "HCI (HS)"
+---
+*/
+// if no events, display "No upcoming events"
+if (events.length === 0) {
+	events.push({
+		data: {
+			title: 'No upcoming events',
+			description: 'Check back soon!',
+			image: {
+				src: '/noevents.png',
+				alt: 'No upcoming events',
+			},
+		},
+	} as CollectionEntry<'events'>);
+}
+
 // get the event closest to the start date
 const event = events.reduce((prev, current) => {
 	const prevDate = dayjs(prev.data.date);
@@ -92,15 +123,15 @@ const blogEntry =
 			<div class="grid grid-cols-1 xs:grid-cols-3 gap-4 mt-4 w-full lg:w-3/5 mx-auto">
 				<a href="https://www.facebook.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
 					<Icon name="mdi:facebook" class="w-12 h-12 text-white" />
-					<p class="text-white mt-2 fredoka">Facebook</p>
+					<p class="text-white mt-2 fredoka">@hwachonghsc</p>
 				</a>
 				<a href="https://www.instagram.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
 					<Icon name="mdi:instagram" class="w-12 h-12 text-white" />
-					<p class="text-white mt-2 fredoka">Instagram</p>
+					<p class="text-white mt-2 fredoka">@hwachonghsc</p>
 				</a>
 				<a href="https://www.youtube.com/@41HighSchoolCouncil" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
 					<Icon name="mdi:youtube" class="w-12 h-12 text-white" />
-					<p class="text-white mt-2 fredoka">YouTube</p>
+					<p class="text-white mt-2 fredoka">@41HighSchoolCouncil</p>
 				</a>
 			</div>
 		</div>
