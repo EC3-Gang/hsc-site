@@ -43,7 +43,14 @@ export default defineConfig({
 	site: 'https://hcihsc.pages.dev',
 	integrations: [react(), tailwind(), mdx(), sitemap(), icon({
 		include: {
-			mdi: ['*'],
+			mdi: [
+				'calendar',
+				'location',
+				'facebook',
+				'instagram',
+				'youtube',
+				'arrow-right'
+			],
 			uil: ['envelope', 'instagram'],
 		},
 	})],

@@ -119,7 +119,7 @@ export default function Events({ events }: { events: CollectionEntry<'events'>[]
 						</div>
 					)) : (
 					<div className='flex flex-col items-center justify-center text-gray-500 col-span-full'>
-						<Icon icon='mdi:calendar-blank' className='w-12 h-12' />
+						<Icon icon='mdi:calendar' className='w-12 h-12' />
 						<p className='mt-2'>No events found</p>
 					</div>
 				)}
