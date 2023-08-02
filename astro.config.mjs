@@ -49,7 +49,7 @@ export default defineConfig({
 				'facebook',
 				'instagram',
 				'youtube',
-				'arrow-right'
+				'arrow-right',
 			],
 			uil: ['envelope', 'instagram'],
 		},
