@@ -55,7 +55,4 @@ export default defineConfig({
 	})],
 	output: 'server',
 	adapter: adapterConfig,
-	build: {
-		split: true,
-	},
 });
