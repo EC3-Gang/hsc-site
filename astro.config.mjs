@@ -24,7 +24,6 @@ else if (platform === 'CLOUDFLARE') {
 	adapterConfig = {
 		...cloudflare({
 			mode: 'directory',
-			split: true,
 		}),
 	};
 }
@@ -56,4 +55,7 @@ export default defineConfig({
 	})],
 	output: 'server',
 	adapter: adapterConfig,
+	build: {
+		split: true,
+	},
 });

@@ -7,7 +7,7 @@ import { useState, Fragment } from 'react';
 import type React from 'react';
 import Fuse from 'fuse.js';
 
-export default function Events({ events }: { events: CollectionEntry<'events'>[] }) {
+export default function aEvents({ events }: { events: CollectionEntry<'events'>[] }) {
 	const options = [
 		{
 			name: 'Upcoming',

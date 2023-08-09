@@ -11,7 +11,8 @@
     "postbuild": "node scripts/editRoutes.js",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx ."
+    "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx .",
+    "cf-preview": "wrangler pages dev dist"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.6.2",
@@ -51,7 +52,8 @@
     "eslint": "^8.44.0",
     "eslint-config-berry": "^0.15.5",
     "eslint-plugin-astro": "^0.28.0",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "wrangler": "^3.5.0"
   },
   "stableVersion": "0.8.6"
 }
