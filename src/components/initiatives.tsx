@@ -1,11 +1,11 @@
-import { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { Icon } from '@iconify/react';
 import dayjs from 'dayjs';
 import { Listbox } from '@headlessui/react';
 import { useState } from 'react';
 import Fuse from 'fuse.js';
 
-export default function Events({ events }: { events: CollectionEntry<'initiatives'>[] }) {
+export default function Initiatives({ events }: { events: CollectionEntry<'initiatives'>[] }) {
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
 			{events.map((event) => (

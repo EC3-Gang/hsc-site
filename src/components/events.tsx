@@ -1,4 +1,4 @@
-import { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import { Icon } from '@iconify/react';
 import dayjs from 'dayjs';
 import { Listbox, Transition } from '@headlessui/react';
