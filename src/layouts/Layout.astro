@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
+import { ViewTransitions } from 'astro:transitions';
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
 import { hash, date } from '../git-info.json';
@@ -45,6 +46,7 @@ const makeTitle = title
       description="The official page for HCI's HSC"
       canonical={canonicalURL}
     />
+		<ViewTransitions />
   </head>
 	<style is:global>
 		.lato {
@@ -83,7 +85,9 @@ const makeTitle = title
 	
   <body class="lato">
     <Navbar />
-    <slot />
+		<div  transition:animate="slide">
+			<slot />
+		</div>
     <Footer gitInfo={{
 			hash,
 			date: dateFormatted
