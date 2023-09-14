@@ -5910,6 +5910,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"canvas-confetti@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "canvas-confetti@npm:1.6.0"
+  checksum: be19e3be736ab28aa8af7b53cba9f4146f5714edadbf4d5a7d7b1899914dc59a8ac5574260fe6b7d9995c51df5787b0b707adfbb72dbacbc61fc03f9f2b25291
+  languageName: node
+  linkType: hard
+
 "capital-case@npm:^1.0.4":
   version: 1.0.4
   resolution: "capital-case@npm:1.0.4"
@@ -8653,6 +8660,7 @@ __metadata:
     astro-icon: next
     astro-navbar: ^2.0.1
     astro-seo: ^0.7.5
+    canvas-confetti: ^1.6.0
     dayjs: ^1.11.9
     eslint: ^8.44.0
     eslint-config-berry: ^0.15.5

@@ -32,6 +32,7 @@
     "astro-icon": "next",
     "astro-navbar": "^2.0.1",
     "astro-seo": "^0.7.5",
+    "canvas-confetti": "^1.6.0",
     "dayjs": "^1.11.9",
     "fuse.js": "^6.6.2",
     "konami-code-js": "^0.8.1",
