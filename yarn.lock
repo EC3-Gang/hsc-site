@@ -8658,6 +8658,7 @@ __metadata:
     eslint-config-berry: ^0.15.5
     eslint-plugin-astro: ^0.28.0
     fuse.js: ^6.6.2
+    konami-code-js: ^0.8.1
     mime: ^3.0.0
     path-to-regexp: ^6.2.1
     react: ^18.2.0
@@ -9534,6 +9535,13 @@ __metadata:
   version: 1.8.0
   resolution: "kolorist@npm:1.8.0"
   checksum: b056de671acc8a17f1e78d6d46c47dae3e06481eabc9fed213dd9079a7454fd3a7ea1226ec718df81c9208877f7475d038ac27a400958fec278d975839e33643
+  languageName: node
+  linkType: hard
+
+"konami-code-js@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "konami-code-js@npm:0.8.1"
+  checksum: 0e8eb7aca120c5784658bf95087f7cf8918a282626d819c550d22dc79a5f2074d8740ec9d4ddaba2004c8a8ad96b19bec592b941afb4f0ed7ad2b8021552b9bb
   languageName: node
   linkType: hard
 
