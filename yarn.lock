@@ -103,17 +103,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/deno@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@astrojs/deno@npm:5.0.0"
-  dependencies:
-    esbuild: ^0.19.2
-  peerDependencies:
-    astro: ^3.0.0
-  checksum: 24ef178e9558bb68ac915b34afd60e2a1417be12af3278226554224104c39ac57a15d140a99d7a2a928674876705de109160501bb0610eae657fd11885a6da5a
-  languageName: node
-  linkType: hard
-
 "@astrojs/internal-helpers@npm:0.2.0":
   version: 0.2.0
   resolution: "@astrojs/internal-helpers@npm:0.2.0"
@@ -8642,7 +8631,6 @@ __metadata:
   resolution: "hsc-site@workspace:."
   dependencies:
     "@astrojs/cloudflare": ^7.0.1
-    "@astrojs/deno": ^5.0.0
     "@astrojs/mdx": ^1.0.0
     "@astrojs/node": ^6.0.0
     "@astrojs/react": ^3.0.0

@@ -11,30 +11,30 @@ const dependencies = [Object.keys(packageJSON.dependencies), Object.keys(package
 	<Container>
 		<Sectionhead>
 			<Fragment slot='title'>Credits and License</Fragment>
-			<Fragment slot='desc'>Certain legal matters you probably don't wanna know about</Fragment>
+			<Fragment slot='desc'>Legal matters</Fragment>
 		</Sectionhead>
 		<div class="prose mx-auto max-w-4xl mt-5">
 			<div class='flex flex-col'>
 				<h1 class="font-bold text-3xl text-gray-800 mt-5 text-center mb-0">Credits</h1>
 				<p class="text-lg leading-relaxed text-slate-500 w-4/5 mx-auto">
-					This site was commissioned by Hwa Chong Institution's High School Council (HCI HSC), and made by the <a href="https://www.ec3.dev">Electronics Communications and Computing Club (EC<sup>3</sup>)</a>.
+					This website was created under the commission of Hwa Chong Institution's High School Council (HCI HSC) and developed by the <a href="https://www.ec3.dev">Electronics Communications and Computing Club (EC<sup>3</sup>)</a>.
 					<br />
-					Pictures and blog posts contributed by various members of the HSC.
+					Pictures and blog posts were contributed by various members of the HSC.
 				</p>
 				<h1 class="font-bold text-3xl text-gray-800 mt-5 text-center mb-0">License</h1>
 				<p class="text-lg leading-relaxed text-slate-500 w-4/5 mx-auto">
-					The site is distributed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">GNU General Public License v3.0 (GPL-3.0)</a>.
-					Original template made by <a href="https://web3templates.com/">Web3Templates</a>.
+					This website is distributed under the terms of the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">GNU General Public License version 3.0 (GPL-3.0)</a>.
+					The original template was provided by <a href="https://web3templates.com/">Web3Templates</a>.
 
 					<br /><br />
 
-					Portaits and blog posts are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+					Portraits and blog posts are licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 				</p>
 
 				<h1 class="font-bold text-3xl text-gray-800 mt-5 text-center mb-0">Libraries</h1>
 				<p class="text-lg leading-relaxed text-slate-500 w-4/5 mx-auto">
-					Open source libraries that made this site possible:
-					<!-- wrap packages in code tags and display in 4 colums -->
+					Open source libraries that contributed to the development of this website:
+					<!-- Wrap package names in code tags and display in 4 columns -->
 					<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-5 mx-auto">
 						{dependencies.map((dep) => (
 							<code>{dep}</code>
