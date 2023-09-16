@@ -23,5 +23,7 @@ new KonamiCode(async () => {
 		icon: 'success',
 		title: 'lol',
 		text: 'get absolutely trolled',
+		focusConfirm: false,
+		confirmButtonText: 'take the L',
 	});
 });

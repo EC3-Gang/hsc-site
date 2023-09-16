@@ -6,6 +6,7 @@ import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
 import { hash, date } from '../git-info.json';
 import dayjs from 'dayjs';
+import '@sweetalert2/themes/material-ui/material-ui.css';
 
 
 const dateFormatted = dayjs(date).format("MMMM D, YYYY");
@@ -49,6 +50,10 @@ const makeTitle = title
 		<ViewTransitions />
   </head>
 	<style is:global>
+		button.swal2-styled {
+			border-radius: 0.2rem !important;
+		}
+
 		.lato {
 			font-family: 'Lato', sans-serif;
 		}

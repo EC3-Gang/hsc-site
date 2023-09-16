@@ -3441,6 +3441,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sweetalert2/themes@npm:^5.0.15":
+  version: 5.0.15
+  resolution: "@sweetalert2/themes@npm:5.0.15"
+  peerDependencies:
+    sweetalert2: ^11.0.0
+  checksum: 57d979ee71e6102f2e1429e5514b7f226c03911ddba33f0ad7d143d557e021383fef9ac38d3411552bb045e7772ef330a8d6cf7c9db003ef6ba847e9c314c868
+  languageName: node
+  linkType: hard
+
 "@tailwindcss/aspect-ratio@npm:^0.4.0":
   version: 0.4.2
   resolution: "@tailwindcss/aspect-ratio@npm:0.4.2"
@@ -5159,6 +5168,13 @@ __metadata:
   version: 4.6.4
   resolution: "altair-static@npm:4.6.4"
   checksum: 22983c353c55f0c2026905f4e0658da1d84d60e5777fc0be83f70a9fe560e6fe4bdd4ff0d60ff0f8b20b10cdc0f3f478a0876d4140eabe7fef6060e0dc412ebb
+  languageName: node
+  linkType: hard
+
+"animate.css@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "animate.css@npm:4.1.1"
+  checksum: c7eb91540423532c549725a6dedea993735a05eadaa49ed4d1965ce166a6db36459adcc9667c1dfe13657fab92a2875bbee34ad0d942444a731badab69f762c8
   languageName: node
   linkType: hard
 
@@ -8702,12 +8718,14 @@ __metadata:
     "@iconify-json/mdi": ^1.1.53
     "@iconify-json/uil": ^1.1.4
     "@iconify/react": ^4.1.1
+    "@sweetalert2/themes": ^5.0.15
     "@tailwindcss/typography": ^0.5.9
     "@tinacms/cli": ^1.5.22
     "@types/node": ^20.4.5
     "@types/path-to-regexp": ^1.7.0
     "@types/react": ^18.2.14
     "@typescript-eslint/parser": ^5.60.1
+    animate.css: ^4.1.1
     astro: ^3.1.0
     astro-feather-icons: ^1.0.2
     astro-icon: next
