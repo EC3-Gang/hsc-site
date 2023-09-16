@@ -1,4 +1,5 @@
 import KonamiCode from 'konami-code-js';
+import Swal from 'sweetalert2';
 
 new KonamiCode(async () => {
 	document.body.innerHTML = `
@@ -18,10 +19,9 @@ new KonamiCode(async () => {
 		></iframe>
 	`;
 
-	// wait for the iframe to load
-	await new Promise((resolve) => {
-		const iframe = document.querySelector('iframe');
-		iframe?.addEventListener('load', () => resolve(null));
+	Swal.fire({
+		icon: 'success',
+		title: 'lol',
+		text: 'get absolutely trolled',
 	});
-	alert('L O L');
 });

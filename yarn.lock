@@ -8672,6 +8672,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     sharp: ^0.31.3
+    sweetalert2: ^11.7.28
     tailwindcss: ^3.2.4
     tinacms: ^1.5.13
     wrangler: ^3.5.0
@@ -13991,6 +13992,13 @@ __metadata:
   dependencies:
     tslib: ^2.0.3
   checksum: 6e21c9e1b3cd5735eb2af679a99ec3efc78a14e3d4d5e3fd594e254b91cfd37185b3d1c6e41b22f53a2cdf5d1b963ce30c0fe8b78337e3fd43d0137084670a5f
+  languageName: node
+  linkType: hard
+
+"sweetalert2@npm:^11.7.28":
+  version: 11.7.28
+  resolution: "sweetalert2@npm:11.7.28"
+  checksum: 307bc9b0d3eeabe5c4dc62d6d118d67bffe1d09831f3be1d3f53e17841960beaea453b7d0419103a1d22a19340386792854daf235856626701f991f283c42d67
   languageName: node
   linkType: hard
 
