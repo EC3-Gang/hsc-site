@@ -81,6 +81,10 @@ const makeTitle = title
 		h6 {
 			font-family: 'Lora', serif;
 		}
+
+		.hidden {
+			display: none;
+		}
 	</style>
 	
   <body class="lato">
@@ -103,6 +107,11 @@ const makeTitle = title
 		<!-- some easter eggs -->
 		<script>
 			import '@components/scripts/konami';
+
+
+			document.addEventListener('astro:after-swap', () => {
+				console.log('page loaded');
+			})
 		</script>
 
 		<!-- Cloudflare Web Analytics -->
