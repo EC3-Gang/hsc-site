@@ -6,40 +6,54 @@ import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
 import Button from '@components/ui/button.astro';
 import Contactform from '@components/contactform.astro';
+import RSS from 'rss-parser';
+import { JSDOM } from 'jsdom';
+
+const subreddits = [
+	'NonCredibleDefense',
+	// 'ProgrammerHumor',
+	// 'Damnthatsinteresting',
+	// 'eyebleach',
+	// 'anime_titties',
+];
+
+const randomSubreddit = subreddits[Math.floor(Math.random() * subreddits.length)];
+
+const parser = new RSS();
+
+const feed = (await parser.parseURL(`https://www.reddit.com/r/${randomSubreddit}/.rss`)).items;
+
+// filter out items whose content does not have an image element
+const filtered = feed.filter((item) => {
+	return item!.content!.match(/<img.*?>/g);
+});
+
+const random = Math.floor(Math.random() * filtered.length);
+const item = filtered[random];
+
+const title = item.title;
+const { document } = (new JSDOM(item.content)).window;
+const image = document.querySelector('img').src;
 ---
 
 <Layout title="404 Not Found">
 	<Container>
 		<div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
-			<div class="mt-16 text-center">
-				<h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight animate__animated animate__bounceInDown">404</h1>
-				<p class="text-lg mt-4 text-slate-600">Seems like you're lost.</p>
-				<p class="text-md text-slate-600">While you're trying to find your way back, remember:</p>
-				<p class="text-md text-slate-600 mt-5">
-					I am living in your walls.<br>
-					<span class="italic font-bold">FAQ:</span><br>
-					Why are you living in my walls?<br>
-					I'm not going to tell you.<br>
-					Are you only in my walls?<br>
-					You could say I am living in everybody's walls, but in the case I am telling you that I am living in your walls, I am living in your walls.<br>
-					How are you surviving in my walls?<br>
-					In my non-physical form, I am crawling around listening for you. That is all I need to survive in that form. In my physical form, I survive by eating rat corpses that I cook using the wall behind your oven, and I drink the vapor in the extraction fan duct above your shower.<br>
-					What are you planning to do in my walls?<br>
-					Live in them, listening to you.<br>
-					What do I do about you living in my walls?<br>
-					Listen for the scraping. Don't touch the walls. Protect yourself. Avoid lighting candles.<br>
-					When are you going to stop living in my walls?<br>
-					You cannot escape me.<br>
-					Do I call the police?<br>
-					The authorities will not help you.<br>
-					What are the consequences of you living in my walls?<br>
-					Be aware.<br>
-					What if I am okay with you living in my walls?<br>
-					I will make sure you’re not.<br>
-					Are you imaginary?<br>
-					I AM LIVING IN YOUR WALLS I AM LIVING IN YOUR WALLS I AM LIVING IN YOUR WALLS I AM LIVING IN YOUR WALLS I AM LIVING IN YOUR WALLS I AM LIVING IN YOUR WALLS I AM LIVING IN YOUR WALLS I AM LIVING IN YOUR WALLS<br>
-					If there are any more questions then please consult your walls by directly speaking to them.<br>
-				</p>
+		<div class="mt-16 text-center">
+			<h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight animate__animated animate__bounceInDown">404</h1>
+			<p class="text-lg mt-4 text-slate-600">Seems like you're lost.</p>
+			<p class="text-md text-slate-600">While you're trying to find your way back, here's a little something to keep you mildly entertained:</p>
+
+			<div class="mt-8">
+				<div class="flex items-center justify-center">
+					<div class="w-1/2">
+						<img src={image} alt={title} class="rounded-lg shadow-lg">
+					</div>
+				</div>
+				<div class="mt-4">
+					<h2 class="text-xl font-bold text-slate-800">{title}</h2>
+					<p class="text-sm text-slate-600">via <a href={item.link} class="text-slate-600 hover:text-slate-800">r/{randomSubreddit}</a></p>
+				</div>
 			</div>
 		</div>
 	</Container>
