@@ -24,6 +24,12 @@ const { Content } = await entry.render();
 <Layout title={entry.data.title}>
 	<Container>
 		<div class="mx-auto max-w-3xl mt-14">
+			<picture class="w-full rounded-md" transition:name={entry.data.image.src}>
+				<source media="(max-width: 800px)" srcset={`${entry.data.image.src}?w=200`} width="200" />
+				<source media="(max-width: 800px)" srcset={`${entry.data.image.src}?w=400`} width="400" />
+				<source media="(max-width: 800px)" srcset={`${entry.data.image.src}?w=800`} width="800" />
+				<img class="w-full" src={`${entry.data.image.src}`} alt={entry.data.image.alt} loading={'eager'} decoding={'sync'} width="800" />
+			</picture>
 			<span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
 				{entry.data.category}
 			</span>

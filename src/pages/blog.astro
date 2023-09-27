@@ -31,7 +31,7 @@ publishedBlogEntries.sort(function(a, b) {
 						<li>
 							<a href={`/blog/${blogPostEntry.slug}`}>
 								<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-									<picture class="w-full rounded-md">
+									<picture class="w-full rounded-md" transition:name={blogPostEntry.data.image.src}>
 										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=200`} width="200" />
 										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=400`} width="400" />
 										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=800`} width="800" />
