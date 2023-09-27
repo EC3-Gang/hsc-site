@@ -1,5 +1,4 @@
 ---
-export const prerender = true;
 import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
@@ -33,7 +32,7 @@ const item = filtered[random];
 
 const title = item.title;
 const { document } = (new JSDOM(item.content)).window;
-const image = document.querySelector('img').src;
+const image = document.querySelector('img')!.src;
 ---
 
 <Layout title="404 Not Found">
