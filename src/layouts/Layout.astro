@@ -117,14 +117,14 @@ const makeTitle = title
 				console.log("unsupported browser")
 				Toastify({
 					text: "It seems that you are not using Chrome, Firefox, Safari or Edge. Certain features may not work as intended.",
-					duration: 3000,
+					duration: 2500,
 					escapeMarkup: false,
 					gravity: "bottom",
 					position: "right",
-					backgroundColor: "#ffa500",
 					close: true,
 					style: {
-						"max-width": "20rem"
+						"max-width": "20rem",
+						background: "#ffa500"
 					},
 					stopOnFocus: true,
 					onClick: function() {
