@@ -134,8 +134,14 @@ const makeTitle = title
 			}
 		</script>
 
-		<!-- Cloudflare Web Analytics -->
-		<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d1f594f00fa7437b9d86022eed34b943"}'></script>
-		<!-- End Cloudflare Web Analytics -->
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5QM9L98PR"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-G5QM9L98PR');
+		</script>
   </body>
 </html>
