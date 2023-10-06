@@ -60,7 +60,7 @@ const councilStr = ordinal(batch) + ' High School Council';
 		</Sectionhead>
 
 		<div class="flex flex-col gap-3 mx-auto max-w-4xl mt-5">
-			<img src="/full-council-pic.jpeg" alt="Formal Council group photo" class="mx-auto md:w-5/6 aspect-[16/9] object-cover w-full" />
+			<img src="/full-council-pic.jpeg" alt="Formal Council group photo" class="mx-auto md:w-5/6 aspect-[16/9] object-cover w-full" transition:name="hero" />
 			<h2 class="font-bold text-3xl text-gray-800 mt-5 text-center">
 				Who are we?
 			</h2>
@@ -78,7 +78,7 @@ const councilStr = ordinal(batch) + ' High School Council';
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-7">
 			<!-- cards as links that leads to the specific council pages -->
 			{councils.map((council) => (
-				<a href={`/councils/${council.slug}`} class="relative w-full h-72 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+				<a transition:name={council.slug} href={`/councils/${council.slug}`} class="relative w-full h-72 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
 					<img
 						src={`${council.bg}`}
 						alt={`${council.name} council`}
