@@ -8843,6 +8843,7 @@ __metadata:
     jsdom: ^22.1.0
     konami-code-js: ^0.8.1
     mime: ^3.0.0
+    overlayscrollbars: ^2.3.2
     path-to-regexp: ^6.2.1
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -11793,6 +11794,13 @@ __metadata:
     string-width: ^6.1.0
     strip-ansi: ^7.1.0
   checksum: 0842b8b9a96a8586085cafdc25077c76fed8ade072c52c53e748cf40a214731d2215a4d6081d8fbd6203d2b897e834332bda53eb64afd1a5968da17daf020bff
+  languageName: node
+  linkType: hard
+
+"overlayscrollbars@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "overlayscrollbars@npm:2.3.2"
+  checksum: 3b880acb974a2820bddad89eeacec49e72e918381c1b6e545e27d3cb17a3bf41f828fe1d6588164819611e64f2986df92b2675134dbcd8ef04663f861260c01b
   languageName: node
   linkType: hard
 

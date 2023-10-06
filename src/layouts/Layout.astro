@@ -9,7 +9,6 @@ import dayjs from 'dayjs';
 import '@sweetalert2/themes/material-ui/material-ui.css';
 import 'animate.css';
 
-
 const dateFormatted = dayjs(date).format("MMMM D, YYYY");
 
 export interface Props {
@@ -34,7 +33,7 @@ const makeTitle = title
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-overlayscrollbars-initialize>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -89,7 +88,7 @@ const makeTitle = title
 		}
 	</style>
 	
-  <body class="lato">
+  <body class="lato" data-overlayscrollbars-initialize>
     <Navbar />
 		<div transition:animate="fade">
 			<slot />
@@ -109,11 +108,6 @@ const makeTitle = title
 		<!-- some easter eggs -->
 		<script>
 			import '@components/scripts/konami';
-
-
-			document.addEventListener('astro:after-swap', () => {
-				console.log('page loaded');
-			})
 		</script>
 
 		<!-- Cloudflare Web Analytics -->
