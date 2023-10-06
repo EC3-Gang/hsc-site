@@ -116,13 +116,16 @@ const makeTitle = title
 				// collapsible navbar doesn't work on brave because astro:page-load doesn't trigger for some reason
 				console.log("unsupported browser")
 				Toastify({
-					text: "It seems that you are not using Chrome, Firefox, Safari or Edge. <br/> Certain features may not work as intended.",
+					text: "It seems that you are not using Chrome, Firefox, Safari or Edge. Certain features may not work as intended.",
 					duration: 2500,
 					escapeMarkup: false,
 					gravity: "bottom",
 					position: "right",
 					backgroundColor: "#ffa500",
 					close: true,
+					style: {
+						"max-width": "20rem"
+					},
 					stopOnFocus: true,
 					onClick: function() {
 						window.open("https://browsehappy.com/", "_blank");
