@@ -2564,6 +2564,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@porscheofficial/cookie-consent-banner@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "@porscheofficial/cookie-consent-banner@npm:3.1.5"
+  dependencies:
+    "@stencil/core": 2.22.1
+  checksum: b7b00f333161ec49d291c0ba498b5fe14fcb33199af0b0a8033c08bdfcbdd1ce3701eb50e845bc4f68dfacdbe4f72fb27da55e05009ff9c92c5c454047488f35
+  languageName: node
+  linkType: hard
+
 "@radix-ui/primitive@npm:1.0.1":
   version: 1.0.1
   resolution: "@radix-ui/primitive@npm:1.0.1"
@@ -3304,6 +3313,15 @@ __metadata:
   version: 1.0.0
   resolution: "@sambego/storybook-styles@npm:1.0.0"
   checksum: 8e840a412731e184f870a53cac30e468b6205ea72983f4f1072bb6159fc3f724c41f7805bcc9e41ba45535f519f6e34fae26beeb82312ec3f4524d28827aa9a8
+  languageName: node
+  linkType: hard
+
+"@stencil/core@npm:2.22.1":
+  version: 2.22.1
+  resolution: "@stencil/core@npm:2.22.1"
+  bin:
+    stencil: bin/stencil
+  checksum: 039ae1d48d4dae1ae4775f1c9a754da7ec613b3ad569f4b2eb0a0898fed8f8498dffdc021fd5ec89cce990bb11743b4d07db43feae0aed53ff39e9378fe9058b
   languageName: node
   linkType: hard
 
@@ -6616,6 +6634,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3.33.0":
+  version: 3.33.0
+  resolution: "core-js@npm:3.33.0"
+  checksum: dd62217935ac281faf6f833bb306fb891162919fcf9c1f0c975b1b91e82ac09a940f5deb5950bbb582739ceef716e8bd7e4f9eab8328932fb029d3bc2ecb2881
+  languageName: node
+  linkType: hard
+
 "core-util-is@npm:~1.0.0":
   version: 1.0.3
   resolution: "core-util-is@npm:1.0.3"
@@ -8892,6 +8917,7 @@ __metadata:
     "@iconify-json/mdi": ^1.1.53
     "@iconify-json/uil": ^1.1.4
     "@iconify/react": ^4.1.1
+    "@porscheofficial/cookie-consent-banner": ^3.1.5
     "@sweetalert2/themes": ^5.0.15
     "@tailwindcss/typography": ^0.5.9
     "@tinacms/cli": ^1.5.22
@@ -8910,6 +8936,7 @@ __metadata:
     browserlist: ^1.0.1
     browserslist-useragent-regexp: ^4.1.0
     canvas-confetti: ^1.6.0
+    core-js: ^3.33.0
     dayjs: ^1.11.9
     eslint: ^8.44.0
     eslint-config-berry: ^0.15.5

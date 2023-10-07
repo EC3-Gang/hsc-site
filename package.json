@@ -13,7 +13,7 @@
     "astro": "astro",
     "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx .",
     "cf-preview": "wrangler pages dev dist",
-		"browsers": "echo \"export default $(browserslist-useragent-regexp --allowHigherVersions);\" > src/components/scripts/detectua.ts"
+    "browsers": "echo \"export default $(browserslist-useragent-regexp --allowHigherVersions);\" > src/components/scripts/detectua.ts"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^7.0.1",
@@ -26,6 +26,7 @@
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@iconify/react": "^4.1.1",
+    "@porscheofficial/cookie-consent-banner": "^3.1.5",
     "@sweetalert2/themes": "^5.0.15",
     "@tinacms/cli": "^1.5.22",
     "@types/path-to-regexp": "^1.7.0",
@@ -37,6 +38,7 @@
     "astro-navbar": "^2.1.0",
     "astro-seo": "^0.7.5",
     "canvas-confetti": "^1.6.0",
+    "core-js": "^3.33.0",
     "dayjs": "^1.11.9",
     "fuse.js": "^6.6.2",
     "jsdom": "^22.1.0",
