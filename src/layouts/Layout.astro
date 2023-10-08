@@ -1,15 +1,15 @@
 ---
-import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
+import { SEO } from 'astro-seo';
+import Footer from '@components/footer.astro';
 import { ViewTransitions } from 'astro:transitions';
-import Navbar from "@components/navbar/navbar.astro";
-import "@fontsource/inter/variable.css";
+import Navbar from '@components/navbar/navbar.astro';
+import '@fontsource/inter/variable.css';
 import { hash, date } from '../git-info.json';
 import dayjs from 'dayjs';
 import '@sweetalert2/themes/material-ui/material-ui.css';
 import 'animate.css';
 
-const dateFormatted = dayjs(date).format("MMMM D, YYYY");
+const dateFormatted = dayjs(date).format('MMMM D, YYYY');
 
 export interface Props {
   title: string;
@@ -21,34 +21,109 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
+	'/opengraph.jpg',
+	Astro.site,
 ).toString();
 
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "OneHwaChong"
-  : "OneHwaChong";
+	? title + ' | ' + 'OneHwaChong'
+	: 'OneHwaChong';
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-overlayscrollbars-initialize>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="generator" content={Astro.generator} />
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Fredoka:wght@400;700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral&family=Yrsa:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
-      title={makeTitle}
-      description="The official page for HCI's HSC"
-      canonical={canonicalURL}
-    />
+		<SEO
+			title={makeTitle}
+			description="The official page for HCI's HSC"
+			canonical={canonicalURL}
+		/>
 		<ViewTransitions />
-  </head>
+		<script>
+			window.nightwind = {
+				beforeTransition: () => {
+					const doc = document.documentElement;
+					const onTransitionDone = () => {
+						doc.classList.remove('nightwind');
+						doc.removeEventListener('transitionend', onTransitionDone);
+					};
+					doc.addEventListener('transitionend', onTransitionDone);
+					if (!doc.classList.contains('nightwind')) {
+						doc.classList.add('nightwind');
+					}
+				},
+
+				toggle: () => {
+					nightwind.beforeTransition();
+					if (!document.documentElement.classList.contains('dark')) {
+						document.documentElement.classList.add('dark');
+						window.localStorage.setItem('nightwind-mode', 'dark');
+					}
+					else {
+						document.documentElement.classList.remove('dark');
+						window.localStorage.setItem('nightwind-mode', 'light');
+					}
+				},
+
+				enable: (dark) => {
+					const mode = dark ? 'dark' : 'light';
+					const opposite = dark ? 'light' : 'dark';
+
+					nightwind.beforeTransition();
+
+					if (document.documentElement.classList.contains(opposite)) {
+						document.documentElement.classList.remove(opposite);
+					}
+					document.documentElement.classList.add(mode);
+					window.localStorage.setItem('nightwind-mode', mode);
+				},
+			};
+		</script>
+		<script>
+			(() => {
+				function getInitialColorMode() {
+					const persistedColorPreference = window.localStorage.getItem('nightwind-mode');
+					const hasPersistedPreference = typeof persistedColorPreference === 'string';
+					if (hasPersistedPreference) {
+						return persistedColorPreference;
+					}
+					const mql = window.matchMedia('(prefers-color-scheme: dark)');
+					const hasMediaQueryPreference = typeof mql.matches === 'boolean';
+					if (hasMediaQueryPreference) {
+						return mql.matches ? 'dark' : 'light';
+					}
+					return 'light';
+				}
+				getInitialColorMode() == 'light' ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark');
+			})();
+
+			document.addEventListener('astro:after-swap', () => {
+				function getInitialColorMode() {
+					const persistedColorPreference = window.localStorage.getItem('nightwind-mode');
+					const hasPersistedPreference = typeof persistedColorPreference === 'string';
+					if (hasPersistedPreference) {
+						return persistedColorPreference;
+					}
+					const mql = window.matchMedia('(prefers-color-scheme: dark)');
+					const hasMediaQueryPreference = typeof mql.matches === 'boolean';
+					if (hasMediaQueryPreference) {
+						return mql.matches ? 'dark' : 'light';
+					}
+					return 'light';
+				}
+				getInitialColorMode() == 'light' ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark');
+			});
+		</script>
+	</head>
 	<style is:global>
 		button.swal2-styled {
 			border-radius: 0.2rem !important;
@@ -87,24 +162,24 @@ const makeTitle = title
 			font-family: 'Lora', serif;
 		}
 	</style>
-	
-  <body class="lato" data-overlayscrollbars-initialize>
-    <Navbar />
+
+	<body class="lato bg-gray-100">
+		<Navbar />
 		<div transition:animate="fade">
 			<slot />
 		</div>
-    <Footer gitInfo={{
+		<Footer gitInfo={{
 			hash,
-			date: dateFormatted
+			date: dateFormatted,
 		}} />
-    <style is:global>
+		<style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
       }
-    </style>
-		
+		</style>
+
 		<!-- some easter eggs n' stuff -->
 		<script>
 			import '@components/scripts/konami';
@@ -114,10 +189,10 @@ const makeTitle = title
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5QM9L98PR"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
+			function gtag() {dataLayer.push(arguments);}
 			gtag('js', new Date());
 
 			gtag('config', 'G-G5QM9L98PR');
 		</script>
-  </body>
+	</body>
 </html>

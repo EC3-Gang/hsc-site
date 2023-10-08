@@ -23,16 +23,16 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
 	<Container>
-		<div class="mx-auto max-w-3xl mt-14">
-			<picture class="w-full rounded-md" transition:name={entry.data.image.src}>
+		<div class="mx-auto max-w-3xl text-gray-700">
+			<picture class="w-full rounded-md mb-5" transition:name={entry.data.image.src}>
 				<source media="(max-width: 800px)" srcset={`${entry.data.image.src}?w=200`} width="200" />
 				<source media="(max-width: 800px)" srcset={`${entry.data.image.src}?w=400`} width="400" />
 				<source media="(max-width: 800px)" srcset={`${entry.data.image.src}?w=800`} width="800" />
 				<img class="w-full" src={`${entry.data.image.src}`} alt={entry.data.image.alt} loading={'eager'} decoding={'sync'} width="800" />
 			</picture>
-			<span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+			<p class="text-blue-400 uppercase tracking-wider text-sm font-medium mt-3">
 				{entry.data.category}
-			</span>
+			</p>
 			<h1
 				class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
 				{entry.data.title}
@@ -51,20 +51,20 @@ const { Content } = await entry.render();
 				<div class="w-full md:w-auto flex flex-wrap gap-3">
 					{
 						entry.data.tags.map((tag) => (
-							<span class="text-sm text-gray-500">#{tag}</span>
+							<span class="text-sm text-gray-400">#{tag}</span>
 						))
 					}
 				</div>
 			</div>
 		</div>
 
-		<div class="mx-auto prose prose-lg mt-6 max-w-3xl">
+		<div class="mx-auto prose prose-lg mt-6 max-w-3xl text-gray-500">
 			<Content />
 		</div>
 		<div class="text-center mt-8">
 			<a
 				href="/blog"
-				class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
+				class="bg-gray-300 px-5 py-3 rounded-md hover:bg-gray-400 transition"
 			>← Back to Blog</a
 			>
 		</div>

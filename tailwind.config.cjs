@@ -2,7 +2,14 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	dark: 'class',
 	theme: {
+		nightwind: {
+			typography: true,
+			colorClasses: [
+				'placeholder',
+			],
+		},
 		extend: {
 			fontFamily: {
 				sans: ['InterVariable', 'Inter', ...defaultTheme.fontFamily.sans],
@@ -13,5 +20,8 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('nightwind'),
+	],
 };

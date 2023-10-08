@@ -22,20 +22,6 @@ const publishedBlogEntries = await getCollection('blog', ({ data }) => {
 const initiative = initiatives[Math.floor(Math.random() * initiatives.length)];
 
 
-/*
-event frontmatter:
----
-draft: false
-title: "Combined Sports Meet"
-description: "Have fun with your friends and support your classes (from across the street as well)!"
-date: 2023-07-27T24:00:00.000Z
-image: {
-	src: "/csmbanner.jpg",
-	alt: "CSM Something"
-}
-location: "HCI (HS)"
----
-*/
 // if no events, display "No upcoming events"
 if (events.length === 0) {
 	events.push({
@@ -73,38 +59,38 @@ const blogEntry =
 			<Hero />
 		</div>
 		<!-- display the random posts and events in 3 columns with the image as the background -->
-		<h2 class="text-3xl font-bold mt-10 text-center text-red-800">Latest Events, Initiatives and Posts</h2>
+		<h2 class="text-3xl font-bold mt-10 text-center text-slate-600">Latest Events, Initiatives and Posts</h2>
 
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
 			<a href='/initiatives'>
 				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${initiative.data.image.src})`}>
-					<div class="bg-black bg-opacity-50 h-full flex flex-col justify-end p-4">
-						<h2 class="text-white text-2xl font-bold">
+					<div class="bg-[#000]/50 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
+						<h2 class="text-[#f3f4f6] text-2xl font-bold">
 							{initiative.data.title}
 						</h2>
-						<p class="text-white text-sm mt-2">{initiative.data.description}</p>
+						<p class="text-[#f3f4f6] text-sm mt-2">{initiative.data.description}</p>
 					</div>
 				</div>
 			</a>
 
 			<a href='/events'>
 				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.data.image.src})`}>
-					<div class="bg-black bg-opacity-60 h-full flex flex-col justify-end p-4">
-						<h2 class="text-white text-2xl font-bold">
+					<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
+						<h2 class="text-[#f3f4f6] text-2xl font-bold">
 							{event.data.title}
 						</h2>
-						<p class="text-white text-sm mt-2">{event.data.description}</p>
+						<p class="text-[#f3f4f6] text-sm mt-2">{event.data.description}</p>
 					</div>
 				</div>
 			</a>
 
 			<a href={`/blog/${blogEntry.slug}`}>
 				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" transition:name={blogEntry.data.image.src} style={`background-image: url(${blogEntry.data.image.src})`}>
-					<div class="bg-black bg-opacity-60 h-full flex flex-col justify-end p-4">
-						<h2 class="text-white text-2xl font-bold">
+					<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
+						<h2 class="text-[#f3f4f6] text-2xl font-bold">
 							{blogEntry.data.title}
 						</h2>
-						<p class="text-white text-sm mt-2">{blogEntry.data.snippet}</p>
+						<p class="text-[#f3f4f6] text-sm mt-2">{blogEntry.data.snippet}</p>
 					</div>
 				</div>
 			</a>
@@ -120,20 +106,20 @@ const blogEntry =
 		<!--
 			Div with rainbow coloured border and "Follow us on social media!" header
 		-->
-		<div class="border-2 border-rainbow p-10 mt-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-			<h2 class="text-3xl font-bold text-center text-white">Follow us on social media!</h2>
+		<div class="p-10 mt-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-[#eff2f5]">
+			<h2 class="text-3xl font-bold text-center">Follow us on social media!</h2>
 			<div class="grid grid-cols-1 xs:grid-cols-3 gap-4 mt-4 w-full lg:w-3/5 mx-auto">
 				<a href="https://www.facebook.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
-					<Icon name="mdi:facebook" class="w-12 h-12 text-white" />
-					<p class="text-white mt-2 fredoka">@hwachonghsc</p>
+					<Icon name="mdi:facebook" class="w-12 h-12" />
+					<p class="mt-2 fredoka">@hwachonghsc</p>
 				</a>
 				<a href="https://www.instagram.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
-					<Icon name="mdi:instagram" class="w-12 h-12 text-white" />
-					<p class="text-white mt-2 fredoka">@hwachonghsc</p>
+					<Icon name="mdi:instagram" class="w-12 h-12" />
+					<p class="mt-2 fredoka">@hwachonghsc</p>
 				</a>
 				<a href="https://www.youtube.com/@41HighSchoolCouncil" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
-					<Icon name="mdi:youtube" class="w-12 h-12 text-white" />
-					<p class="text-white mt-2 fredoka">@41HighSchoolCouncil</p>
+					<Icon name="mdi:youtube" class="w-12 h-12" />
+					<p class="mt-2 fredoka">@41HighSchoolCouncil</p>
 				</a>
 			</div>
 		</div>

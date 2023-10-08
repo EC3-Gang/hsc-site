@@ -6,7 +6,7 @@ snippet: >-
   fostering friendships, instilling school spirit, and emphasizing the limitless
   potential for their future success.
 image:
-  src: /soo23-banner.png
+  src: /soo23-banner-removebg.png
   alt: SOO '23 Banner
 publishDate: 2023-07-04T23:00:00.000Z
 category: past events

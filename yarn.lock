@@ -8945,6 +8945,7 @@ __metadata:
     jsdom: ^22.1.0
     konami-code-js: ^0.8.1
     mime: ^3.0.0
+    nightwind: ^1.1.13
     overlayscrollbars: ^2.3.2
     path-to-regexp: ^6.2.1
     react: ^18.2.0
@@ -11591,6 +11592,15 @@ __metadata:
   version: 3.0.2
   resolution: "ngraminator@npm:3.0.2"
   checksum: 0ee6560d2daa709ee6743ffd8c2bfc51b4e7623be2955ad4df4d4c85e10d3cd941e485d9b646c970fc25e96e5c0c6582b44ac6b4daa03cde2cb4d6849e4906ad
+  languageName: node
+  linkType: hard
+
+"nightwind@npm:^1.1.13":
+  version: 1.1.13
+  resolution: "nightwind@npm:1.1.13"
+  peerDependencies:
+    tailwindcss: ^2.0.0 || ^3.0.0
+  checksum: a6cea092594be942fce65fc9c52df5087e737a247d64536b764d044c6b13db1640defe3472db8b3d2f6c31e7454d5cf18ea77f31a2e5cb28c4c85234e317ea2f
   languageName: node
   linkType: hard
 
