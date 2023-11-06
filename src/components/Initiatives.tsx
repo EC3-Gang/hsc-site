@@ -9,10 +9,10 @@ export default function Initiatives({ events }: { events: CollectionEntry<'initi
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
 			{events.map((event) => (
-				<div className='rounded-lg bg-slate-50 shadow-xl overflow-hidden' key={event.id}>
+				<div className='rounded-lg bg-gray-200 shadow-xl overflow-hidden' key={event.id}>
 					<img className='w-full h-48 object-cover' src={event.data.image.src} alt={event.data.image.alt} />
 					<div className='p-4'>
-						<div className='text-lg font-semibold text-gray-500'>{event.data.title}</div>
+						<div className='text-lg font-semibold text-gray-700'>{event.data.title}</div>
 						{event.data.date && <div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
 							<Icon icon='mdi:calendar' className="w-4 h-4 inline-block" />
 							<span>{dayjs(event.data.date).format('D MMM YYYY hh:mm a')}</span>
