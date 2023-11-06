@@ -1,19 +1,22 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
 import dayjs from 'dayjs';
+import { Picture } from 'astro:assets';
+import { contentfulClient } from '@lib/contentful';
+import type { BlogPost } from '@lib/contentful';
 
-// Filter blog entries with 'draft: false' & date before current date
-const publishedBlogEntries = await getCollection('blog', ({ data }) => {
-	return !data.draft && data.publishDate < new Date();
+const page = Astro.url.searchParams.get('page') || 1;
+
+
+const { items: blogEntries } = await contentfulClient.getEntries<BlogPost>({
+	content_type: 'blogPost',
+	order: '-sys.createdAt',
+	skip: (page - 1) * 10,
+	limit: 10,
 });
 
-// Sort content entries by publication date
-publishedBlogEntries.sort(function(a, b) {
-	return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-});
 ---
 
 <Layout title="Blog">
@@ -27,41 +30,42 @@ publishedBlogEntries.sort(function(a, b) {
 		<main class="mt-16">
 			<ul class="grid gap-16 max-w-4xl mx-auto">
 				{
-					publishedBlogEntries.map((blogPostEntry, index) => (
-						<li>
-							<a href={`/blog/${blogPostEntry.slug}`}>
-								<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-									<picture class="w-full rounded-md" transition:name={blogPostEntry.data.image.src}>
-										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=200`} width="200" />
-										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=400`} width="400" />
-										<source media="(max-width: 800px)" srcset={`${blogPostEntry.data.image.src}?w=800`} width="800" />
-										<img class="w-full" src={`${blogPostEntry.data.image.src}`} alt={blogPostEntry.data.image.alt} loading={index <= 2 ? 'eager' : 'lazy'} decoding={index <= 2 ? 'sync' : 'async'} width="800" />
-									</picture>
-									<div>
-										<span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-											{blogPostEntry.data.category}
-										</span>
-
-										<h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 text-gray-600">
-											{blogPostEntry.data.title}
-										</h2>
-
-										<div class="flex gap-2 mt-3">
-											<span class="text-gray-400">
-												{blogPostEntry.data.author}
+					blogEntries.length > 0 ?
+						blogEntries.map((entry, index) => (
+							<li>
+								<a href={`/blog/${entry.fields.slug}`}>
+									<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+										<Picture transition:name={`${entry.fields.slug}.banner`} src={entry.fields.banner!.fields.file.url} formats={['avif', 'png', 'webp']} alt={entry.fields.banner!.fields.title} width={428} height={285} />
+										<div>
+											<span transition:name={`${entry.fields.slug}.cat`} class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+												{entry.fields.category}
 											</span>
-											<span class="text-gray-400">• </span>
-											<time
-												class="text-gray-400"
-												datetime={blogPostEntry.data.publishDate.toISOString()}>
-												{dayjs(blogPostEntry.data.publishDate).format('MMMM D, YYYY')}
-											</time>
+
+											<h2 transition:name={`${entry.fields.slug}.title`} class="text-3xl font-semibold leading-snug tracking-tight mt-1 text-gray-600">
+												{entry.fields.title}
+											</h2>
+
+											<div class="flex gap-2 mt-3" transition:name={`${entry.fields.slug}.authordate`}>
+												<span class="text-gray-400">
+													{entry.fields.author}
+												</span>
+												<span class="text-gray-400">• </span>
+												<time
+													class="text-gray-400"
+													datetime={new Date(entry.sys.createdAt).toISOString()}>
+													{dayjs(entry.sys.createdAt).format('MMMM D, YYYY')}
+												</time>
+											</div>
 										</div>
 									</div>
-								</div>
-							</a>
+								</a>
+							</li>
+						)) :
+						<li>
+							<div class="text-center text-gray-500 text-lg -mt-4">
+								No posts found
+							</div>
 						</li>
-					))
 				}
 			</ul>
 		</main>

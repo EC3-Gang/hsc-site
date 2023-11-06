@@ -6,9 +6,8 @@ import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
 import icon from 'astro-icon';
-
+import partytown from '@astrojs/partytown';
 const platform = process.env.PLATFORM || 'NODE';
-
 let adapterConfig = {};
 
 // https://astro.build/reference/configuration
@@ -33,17 +32,17 @@ else {
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://hcihsc.pages.dev',
+	image: {
+		domains: ['images.ctfassets.net'],
+	},
 	integrations: [react(), tailwind(), mdx(), sitemap(), icon({
 		include: {
-			mdi: [
-				'calendar',
-				'location',
-				'facebook',
-				'instagram',
-				'youtube',
-				'arrow-right',
-			],
+			mdi: ['calendar', 'location', 'facebook', 'instagram', 'youtube', 'arrow-right'],
 			uil: ['envelope', 'instagram'],
+		},
+	}), partytown({
+		config: {
+			forward: ['dataLayer.push'],
 		},
 	})],
 	output: 'server',

@@ -186,8 +186,9 @@ const makeTitle = title
 			import '@components/scripts/cookies';
 		</script>
 
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5QM9L98PR"></script>
-		<script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-G5QM9L98PR" type="text/partytown"></script>
+		<script type="text/partytown">
+			/* global dataLayer */
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {dataLayer.push(arguments);}
 			gtag('js', new Date());

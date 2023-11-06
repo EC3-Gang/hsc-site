@@ -7,6 +7,8 @@ import dayjs from 'dayjs';
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { contentfulClient } from '@lib/contentful';
+import type { BlogPost } from '@lib/contentful';
 
 // get a random initiative, event and blog post
 const initiatives = await getCollection('initiatives', ({ data }) => {
@@ -17,6 +19,12 @@ const events = await getCollection('events', ({ data }) => {
 });
 const publishedBlogEntries = await getCollection('blog', ({ data }) => {
 	return !data.draft && data.publishDate < new Date();
+});
+
+const { items: blogEntries } = await contentfulClient.getEntries<BlogPost>({
+	limit: 1,
+	content_type: 'blogPost',
+	order: '-sys.createdAt',
 });
 
 const initiative = initiatives[Math.floor(Math.random() * initiatives.length)];
@@ -49,8 +57,8 @@ const event = events.reduce((prev, current) => {
 	}
 	return current;
 });
-const blogEntry =
-	publishedBlogEntries[Math.floor(Math.random() * publishedBlogEntries.length)];
+
+const blogEntry = blogEntries[0].fields;
 ---
 
 <Layout title="Home">
@@ -85,12 +93,12 @@ const blogEntry =
 			</a>
 
 			<a href={`/blog/${blogEntry.slug}`}>
-				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" transition:name={blogEntry.data.image.src} style={`background-image: url(${blogEntry.data.image.src})`}>
+				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" transition:name={`${blogEntry.slug}.banner`} style={`background-image: url(${blogEntry.banner!.fields!.file.url})`}>
 					<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
 						<h2 class="text-[#f3f4f6] text-2xl font-bold">
-							{blogEntry.data.title}
+							{blogEntry.title}
 						</h2>
-						<p class="text-[#f3f4f6] text-sm mt-2">{blogEntry.data.snippet}</p>
+						<p class="text-[#f3f4f6] text-sm mt-2">{blogEntry.snippet}</p>
 					</div>
 				</div>
 			</a>
