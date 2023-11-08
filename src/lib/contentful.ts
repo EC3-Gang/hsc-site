@@ -14,6 +14,19 @@ export interface BlogPost {
 	}
 }
 
+export interface Event {
+	contentTypeId: 'events';
+	fields: {
+		title: EntryFieldTypes.Text;
+		slug: EntryFieldTypes.Text;
+		description: EntryFieldTypes.Text;
+		banner: EntryFieldTypes.Object;
+		date: EntryFieldTypes.Date;
+		location: EntryFieldTypes.Text;
+		link?: EntryFieldTypes.Text;
+	}
+}
+
 export const contentfulClient = contentful.createClient({
 	space: import.meta.env.CONTENTFUL_SPACE_ID,
 	accessToken: import.meta.env.DEV

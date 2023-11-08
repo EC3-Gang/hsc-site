@@ -8,17 +8,17 @@ import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { contentfulClient } from '@lib/contentful';
-import type { BlogPost } from '@lib/contentful';
+import type { BlogPost, Event } from '@lib/contentful';
 
 // get a random initiative, event and blog post
 const initiatives = await getCollection('initiatives', ({ data }) => {
 	return !data.draft;
 });
-const events = await getCollection('events', ({ data }) => {
-	return !data.draft && dayjs(data.date).isAfter(dayjs());
-});
-const publishedBlogEntries = await getCollection('blog', ({ data }) => {
-	return !data.draft && data.publishDate < new Date();
+
+
+const { items: events } = await contentfulClient.getEntries<Event>({
+	content_type: 'events',
+	'fields.date[gt]': dayjs().toISOString(),
 });
 
 const { items: blogEntries } = await contentfulClient.getEntries<BlogPost>({
@@ -33,21 +33,25 @@ const initiative = initiatives[Math.floor(Math.random() * initiatives.length)];
 // if no events, display "No upcoming events"
 if (events.length === 0) {
 	events.push({
-		data: {
+		fields: {
+			date: dayjs().add(1, 'day').toISOString(),
 			title: 'No upcoming events',
 			description: 'Check back soon!',
-			image: {
-				src: '/noevents.png',
-				alt: 'No upcoming events',
+			banner: {
+				fields: {
+					file: {
+						url: '/noevents.png',
+					},
+				},
 			},
 		},
-	} as CollectionEntry<'events'>);
+	});
 }
 
 // get the event closest to the start date
 const event = events.reduce((prev, current) => {
-	const prevDate = dayjs(prev.data.date);
-	const currentDate = dayjs(current.data.date);
+	const prevDate = dayjs(prev.fields.date);
+	const currentDate = dayjs(current.fields.date);
 	const now = dayjs();
 	if (prevDate.isBefore(now) && currentDate.isAfter(now)) {
 		return current;
@@ -82,12 +86,12 @@ const blogEntry = blogEntries[0].fields;
 			</a>
 
 			<a href='/events'>
-				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.data.image.src})`}>
+				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.fields.banner!.fields.file.url})`}>
 					<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
 						<h2 class="text-[#f3f4f6] text-2xl font-bold">
-							{event.data.title}
+							{event.fields.title}
 						</h2>
-						<p class="text-[#f3f4f6] text-sm mt-2">{event.data.description}</p>
+						<p class="text-[#f3f4f6] text-sm mt-2">{event.fields.description}</p>
 					</div>
 				</div>
 			</a>
