@@ -32,3 +32,8 @@ node_modules
 functions
 
 .dev.vars
+
+# Edgio generated build directory
+.edgio
+
+.wrangler

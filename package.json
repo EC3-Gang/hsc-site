@@ -1,20 +1,22 @@
 {
-  "name": "hsc-site",
-  "type": "module",
-  "version": "0.8.10-beta.1",
-  "private": true,
   "scripts": {
+    "edgio:dev": "edgio dev",
+    "edgio:build": "edgio build",
+    "edgio:deploy": "edgio deploy",
     "prebuild": "node scripts/prebuild.js",
     "dev": "yarn prebuild && astro dev",
     "start": "astro dev",
     "build": "yarn prebuild && astro build && yarn postbuild",
     "postbuild": "echo 'hi'",
-    "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx .",
-    "cf-preview": "wrangler pages dev dist",
+    "preview": "wrangler pages dev dist",
     "browsers": "echo \"export default $(browserslist-useragent-regexp --allowHigherVersions);\" > src/components/scripts/detectua.ts"
   },
+  "name": "hsc-site",
+  "type": "module",
+  "version": "0.8.10-beta.1",
+  "private": true,
   "dependencies": {
     "@astrojs/cloudflare": "^7.6.4",
     "@astrojs/mdx": "^1.0.0",
@@ -59,6 +61,11 @@
     "ua-parser-js": "^1.0.36"
   },
   "devDependencies": {
+    "@edgio/astro": "latest",
+    "@edgio/cli": "latest",
+    "@edgio/core": "latest",
+    "@edgio/devtools": "latest",
+    "@edgio/prefetch": "latest",
     "@iconify-json/mdi": "^1.1.53",
     "@iconify-json/uil": "^1.1.4",
     "@tailwindcss/typography": "^0.5.9",
@@ -72,7 +79,7 @@
     "eslint-config-berry": "^0.15.5",
     "eslint-plugin-astro": "^0.29.1",
     "sharp": "^0.31.3",
-    "wrangler": "^3.5.0"
+    "wrangler": "^3.15.0"
   },
   "stableVersion": "0.8.6"
 }
