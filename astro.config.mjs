@@ -4,30 +4,9 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
-import node from '@astrojs/node';
 import icon from 'astro-icon';
 import partytown from '@astrojs/partytown';
 import sentry from '@sentry/astro';
-const platform = process.env.PLATFORM || 'NODE';
-let adapterConfig = {};
-
-// https://astro.build/reference/configuration
-if (platform === 'CLOUDFLARE') {
-	console.log('Cloudflare Functions');
-	adapterConfig = {
-		...cloudflare({
-			mode: 'directory',
-		}),
-	};
-}
-else {
-	console.log('Node.js (default)');
-	adapterConfig = {
-		...node({
-			mode: 'standalone',
-		}),
-	};
-}
 
 
 // https://astro.build/config
@@ -53,5 +32,9 @@ export default defineConfig({
 		},
 	})],
 	output: 'server',
-	adapter: adapterConfig,
+	adapter: cloudflare({
+		runtime: {
+			mode: 'local',
+		},
+	}),
 });

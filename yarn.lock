@@ -65,17 +65,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/compiler@npm:^1.0.0":
-  version: 1.8.2
-  resolution: "@astrojs/compiler@npm:1.8.2"
-  checksum: 1d55879f8f7aadcad02f19353c085d4e74d5f9cd0d873c600e31ad58928e80d6ab7d6e80b997e2fecabd697f69b0ae166acac58178b833d2d8051a2e35800dc2
-  languageName: node
-  linkType: hard
-
-"@astrojs/compiler@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@astrojs/compiler@npm:2.1.0"
-  checksum: af366d359c509f283a90f6577d73b3edabb249a4656caf665d4adbfc551837e6428da786c6a11e93d65bb0c168499eec76110704b125c2c167fd31fd3161c5f7
+"@astrojs/compiler@npm:^2.0.0, @astrojs/compiler@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@astrojs/compiler@npm:2.3.0"
+  checksum: 897ac8d682d99587a1fc2cb48d146cebc0e51e0a2b19b9b13c38fb73c98a51e3af59fe5c6f02583a88f43a31b74cab14ce8887fd12a75492cbf5c5072b627fcb
   languageName: node
   linkType: hard
 
@@ -116,9 +109,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-remark@npm:3.3.0":
-  version: 3.3.0
-  resolution: "@astrojs/markdown-remark@npm:3.3.0"
+"@astrojs/markdown-remark@npm:3.4.0":
+  version: 3.4.0
+  resolution: "@astrojs/markdown-remark@npm:3.4.0"
   dependencies:
     "@astrojs/prism": ^3.0.0
     github-slugger: ^2.0.0
@@ -135,8 +128,8 @@ __metadata:
     unist-util-visit: ^4.1.2
     vfile: ^5.3.7
   peerDependencies:
-    astro: ^3.3.0
-  checksum: 37b3a8a8313f66e14f26f13bb76fa1f03eb4e2c87610dfeed230c5568700bc2be159ef8f47154b856ac0345d81a11951b76bc7b85de1889c334b02659ff5a126
+    astro: ^3.0.0
+  checksum: 5be66448d8929132c5bf2545767200404258d7ffe754488e0913acd3a1ce3865fe41e8a51172c7a07847f4e0cceabce3e59fa6bfe51b26dd6e4a55027a6a919f
   languageName: node
   linkType: hard
 
@@ -1322,20 +1315,20 @@ __metadata:
   linkType: hard
 
 "@iconify/tools@npm:^3.0.1":
-  version: 3.0.5
-  resolution: "@iconify/tools@npm:3.0.5"
+  version: 3.0.6
+  resolution: "@iconify/tools@npm:3.0.6"
   dependencies:
     "@iconify/types": ^2.0.0
-    "@iconify/utils": ^2.1.7
-    "@types/cheerio": ^0.22.31
-    "@types/tar": ^6.1.5
+    "@iconify/utils": ^2.1.10
+    "@types/cheerio": ^0.22.32
+    "@types/tar": ^6.1.6
     cheerio: ^1.0.0-rc.12
     extract-zip: ^2.0.1
     local-pkg: ^0.4.3
     pathe: ^1.1.1
     svgo: ^3.0.2
-    tar: ^6.1.15
-  checksum: b129d9d791cfc1b1adafd061d8aed554c78685febb4fe3734b47e14e252bc8a2cb030efb5e5ec8ef060f984d1d35de9116da664fe60889de781ba8d287703811
+    tar: ^6.2.0
+  checksum: 47df9dd3082d38b21c01fb46369cd3a87386ddf9dfd78d2e3f90ee616f34a00999ea44249e9385dbf6bd4d3e24094384b7ccb85f6065a3537039c06bd7fc2d1a
   languageName: node
   linkType: hard
 
@@ -1346,9 +1339,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/utils@npm:^2.1.5, @iconify/utils@npm:^2.1.7":
-  version: 2.1.9
-  resolution: "@iconify/utils@npm:2.1.9"
+"@iconify/utils@npm:^2.1.10, @iconify/utils@npm:^2.1.5":
+  version: 2.1.11
+  resolution: "@iconify/utils@npm:2.1.11"
   dependencies:
     "@antfu/install-pkg": ^0.1.1
     "@antfu/utils": ^0.7.5
@@ -1356,7 +1349,7 @@ __metadata:
     debug: ^4.3.4
     kolorist: ^1.8.0
     local-pkg: ^0.4.3
-  checksum: bda17d5777cb9b10104a3993ed549106414b206618f86e749e76edea6dde111c99c85a4a403f268033ff5e75a7e7d9ced080ad87a3070c807b29ccad81570d3c
+  checksum: 229e886ba4f335f21d106cb3973728c8aecbd84ecce9d4ddd9bc10a9415ae9c419fe10bf9e7cfd6019e2acba9dde24023dd56ef943f1aa2115fedbc566b023f2
   languageName: node
   linkType: hard
 
@@ -1735,12 +1728,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cheerio@npm:^0.22.31":
-  version: 0.22.31
-  resolution: "@types/cheerio@npm:0.22.31"
+"@types/cheerio@npm:^0.22.32":
+  version: 0.22.34
+  resolution: "@types/cheerio@npm:0.22.34"
   dependencies:
     "@types/node": "*"
-  checksum: 8d73d22fdd384c290514dad6f9f4a436f5a90bc836bbe9b46fe4f557041a03484f0547291d0347185a806149f465355fc225dc87477b8cf5af5be307bb75e6a4
+  checksum: 8795f4ddc68f394d140513817a996dbe148872a7e30218f32cea90e7fb36802726450c7174c0b7cd27bd8bf179f20d2c0a43a9064547df3c51b8960711582a13
   languageName: node
   linkType: hard
 
@@ -1903,13 +1896,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/tar@npm:^6.1.5":
-  version: 6.1.5
-  resolution: "@types/tar@npm:6.1.5"
+"@types/tar@npm:^6.1.6":
+  version: 6.1.9
+  resolution: "@types/tar@npm:6.1.9"
   dependencies:
     "@types/node": "*"
     minipass: ^4.0.0
-  checksum: 1efa71c8d72f2b02d16ffecb65c4a96be9dacce000c4207532a686477386524dd99b6e26904319354be3ac9ac4d41296a0cb9cf87d05f8f21ae31c68fe446348
+  checksum: d3765d47ab1d4ae35e40a1fd5f460e3413eea960e960443ed3de257425a62ba4d900dbe9ee5a2a740f4c68aa310597f56f74d274de070a06f45b8a913178a325
   languageName: node
   linkType: hard
 
@@ -1942,11 +1935,11 @@ __metadata:
   linkType: hard
 
 "@types/yauzl@npm:^2.9.1":
-  version: 2.10.0
-  resolution: "@types/yauzl@npm:2.10.0"
+  version: 2.10.3
+  resolution: "@types/yauzl@npm:2.10.3"
   dependencies:
     "@types/node": "*"
-  checksum: 55d27ae5d346ea260e40121675c24e112ef0247649073848e5d4e03182713ae4ec8142b98f61a1c6cbe7d3b72fa99bbadb65d8b01873e5e605cdc30f1ff70ef2
+  checksum: 5ee966ea7bd6b2802f31ad4281c92c4c0b6dfa593c378a2582c58541fa113bec3d70eb0696b34ad95e8e6861a884cba6c3e351285816693ed176222f840a8c08
   languageName: node
   linkType: hard
 
@@ -1967,7 +1960,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.62.0, @typescript-eslint/scope-manager@npm:^5.48.2":
+"@typescript-eslint/scope-manager@npm:5.62.0, @typescript-eslint/scope-manager@npm:^5.0.0":
   version: 5.62.0
   resolution: "@typescript-eslint/scope-manager@npm:5.62.0"
   dependencies:
@@ -1977,7 +1970,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.62.0, @typescript-eslint/types@npm:^5.25.0":
+"@typescript-eslint/types@npm:5.62.0, @typescript-eslint/types@npm:^5.0.0, @typescript-eslint/types@npm:^5.25.0":
   version: 5.62.0
   resolution: "@typescript-eslint/types@npm:5.62.0"
   checksum: 48c87117383d1864766486f24de34086155532b070f6264e09d0e6139449270f8a9559cfef3c56d16e3bcfb52d83d42105d61b36743626399c7c2b5e0ac3b670
@@ -2279,19 +2272,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-eslint-parser@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "astro-eslint-parser@npm:0.14.0"
+"astro-eslint-parser@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "astro-eslint-parser@npm:0.16.0"
   dependencies:
-    "@astrojs/compiler": ^1.0.0
-    "@typescript-eslint/scope-manager": ^5.48.2
-    "@typescript-eslint/types": ^5.25.0
+    "@astrojs/compiler": ^2.0.0
+    "@typescript-eslint/scope-manager": ^5.0.0
+    "@typescript-eslint/types": ^5.0.0
     astrojs-compiler-sync: ^0.3.0
     debug: ^4.3.4
     eslint-visitor-keys: ^3.0.0
     espree: ^9.0.0
     semver: ^7.3.8
-  checksum: 04f07255801d812c5b2605c937e27eb71bb78b105403dff65c31d499d9c640f80f5032f65f9459d24b47db9461e31ba695d275ba6b3f118f6c5b7a3821a29f70
+  checksum: 1ce6250240d5400151b62f66d0239c2571ce11316d80aa1259bc04f78f73a2866c5017439a41d058a2fe43db6982b8eae8e151f806cdb8757045c16a94ed468c
   languageName: node
   linkType: hard
 
@@ -2313,27 +2306,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-navbar@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "astro-navbar@npm:2.1.0"
-  checksum: 08f38a2394fd8726ca15c6cf7abb1ad64653ccfb89ec837a88b65a97f9ecdff38d7754eb3d61bc529c244cce84055d5e1fbdcf4c8a4ae4c5e3cd24aacca88b07
+"astro-navbar@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "astro-navbar@npm:2.3.0"
+  checksum: 9b7deff550c53ad6d54758ed8b285fcdf95ea9b1a2d141a579e0e90fc0ea9211a4a2bffcafa23fdefc46adf9ebd1406b41c68697215990cb432f3dd39cc16b9e
   languageName: node
   linkType: hard
 
-"astro-seo@npm:^0.7.5":
-  version: 0.7.6
-  resolution: "astro-seo@npm:0.7.6"
-  checksum: c507fd3476fc247557fec2e5866de39d5c36d2230878efbe8c870e480e6c535c6828e9f975dc915b10bd78a400774f36266f5dc3a5b85e5ee118848277e6a82e
+"astro-seo@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "astro-seo@npm:0.8.0"
+  checksum: ed79c09293e620f323afa17a3e86913143cd3e3955dce5cc1b8e9890e1f00abff9eefeac6c0ae7f5c4848b57158b67c67db262c018aa7e94070418773cf993d2
   languageName: node
   linkType: hard
 
-"astro@npm:^3.4.3":
-  version: 3.4.3
-  resolution: "astro@npm:3.4.3"
+"astro@npm:^3.5.3":
+  version: 3.5.3
+  resolution: "astro@npm:3.5.3"
   dependencies:
-    "@astrojs/compiler": ^2.1.0
+    "@astrojs/compiler": ^2.3.0
     "@astrojs/internal-helpers": 0.2.1
-    "@astrojs/markdown-remark": 3.3.0
+    "@astrojs/markdown-remark": 3.4.0
     "@astrojs/telemetry": 3.0.4
     "@babel/core": ^7.22.10
     "@babel/generator": ^7.22.10
@@ -2395,7 +2388,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: a3c957373a8058ab9c1e70152e2654dfcb388d2371b9edc70dca3fdbcca44a9750a3b7d5732b6d6e11aa8bed6e4a4ba6cf3e9e1845f263ff476ab01be53ebb12
+  checksum: 065e72c6c18d4dc2c315ca872d9ff9ebbf9e059521d350026bf2571116cb36856b41bcb7f16df7ff94e24513d740d33ab10944d36c70276e73d0862af88fce0d
   languageName: node
   linkType: hard
 
@@ -3175,7 +3168,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csso@npm:^5.0.5":
+"csso@npm:5.0.5":
   version: 5.0.5
   resolution: "csso@npm:5.0.5"
   dependencies:
@@ -3888,19 +3881,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-astro@npm:^0.28.0":
-  version: 0.28.0
-  resolution: "eslint-plugin-astro@npm:0.28.0"
+"eslint-plugin-astro@npm:^0.29.1":
+  version: 0.29.1
+  resolution: "eslint-plugin-astro@npm:0.29.1"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@jridgewell/sourcemap-codec": ^1.4.14
     "@typescript-eslint/types": ^5.25.0
-    astro-eslint-parser: ^0.14.0
+    astro-eslint-parser: ^0.16.0
     postcss: ^8.4.14
     postcss-selector-parser: ^6.0.10
   peerDependencies:
     eslint: ">=7.0.0"
-  checksum: b3464fd516f12e2a66dc1501bb01e8fa458c98b73c5265f9d63ec173f1aa805052d8704fc6963991b1be88ce94d5cd22066feba9329d8e54639a1824a2634827
+  checksum: 16314fe63866f7e764214545626f80b2a645b20d87b5d05565da33d6576c8f8153725bb3d568c906e7475645c64630c5731f9790ace608df39a3e2611c4a62ca
   languageName: node
   linkType: hard
 
@@ -4979,11 +4972,11 @@ __metadata:
     "@types/ua-parser-js": ^0.7.37
     "@typescript-eslint/parser": ^5.60.1
     animate.css: ^4.1.1
-    astro: ^3.4.3
+    astro: ^3.5.3
     astro-feather-icons: ^1.0.2
     astro-icon: next
-    astro-navbar: ^2.1.0
-    astro-seo: ^0.7.5
+    astro-navbar: ^2.3.0
+    astro-seo: ^0.8.0
     browserlist: ^1.0.1
     browserslist-useragent-regexp: ^4.1.0
     canvas-confetti: ^1.6.0
@@ -4992,7 +4985,7 @@ __metadata:
     dayjs: ^1.11.9
     eslint: ^8.44.0
     eslint-config-berry: ^0.15.5
-    eslint-plugin-astro: ^0.28.0
+    eslint-plugin-astro: ^0.29.1
     fuse.js: ^6.6.2
     jsdom: ^22.1.0
     konami-code-js: ^0.8.1
@@ -8775,18 +8768,18 @@ __metadata:
   linkType: hard
 
 "svgo@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "svgo@npm:3.0.2"
+  version: 3.0.3
+  resolution: "svgo@npm:3.0.3"
   dependencies:
     "@trysound/sax": 0.2.0
     commander: ^7.2.0
     css-select: ^5.1.0
     css-tree: ^2.2.1
-    csso: ^5.0.5
+    csso: 5.0.5
     picocolors: ^1.0.0
   bin:
-    svgo: bin/svgo
-  checksum: 381ba14aa782e71ab7033227634a3041c11fa3e2769aeaf0df43a08a615de61925108e34f55af6e7c5146f4a3109e78deabb4fa9d687e36d45d1f848b4e23d17
+    svgo: ./bin/svgo
+  checksum: 0e34c70b9ff429e6c6773a0607063c2893fa655fffe3d0c2ea236764e54f77c6eb0cfc510a05ae11f589e343b59aef5ad210022aa49cd81eb6ad16446e2e0388
   languageName: node
   linkType: hard
 
@@ -8894,7 +8887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar@npm:^6.1.11, tar@npm:^6.1.15, tar@npm:^6.1.2":
+"tar@npm:^6.1.11, tar@npm:^6.1.2":
   version: 6.1.15
   resolution: "tar@npm:6.1.15"
   dependencies:
@@ -8905,6 +8898,20 @@ __metadata:
     mkdirp: ^1.0.3
     yallist: ^4.0.0
   checksum: f23832fceeba7578bf31907aac744ae21e74a66f4a17a9e94507acf460e48f6db598c7023882db33bab75b80e027c21f276d405e4a0322d58f51c7088d428268
+  languageName: node
+  linkType: hard
+
+"tar@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "tar@npm:6.2.0"
+  dependencies:
+    chownr: ^2.0.0
+    fs-minipass: ^2.0.0
+    minipass: ^5.0.0
+    minizlib: ^2.1.1
+    mkdirp: ^1.0.3
+    yallist: ^4.0.0
+  checksum: db4d9fe74a2082c3a5016630092c54c8375ff3b280186938cfd104f2e089c4fd9bad58688ef6be9cf186a889671bf355c7cda38f09bbf60604b281715ca57f5c
   languageName: node
   linkType: hard
 
