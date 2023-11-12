@@ -9,6 +9,8 @@ import partytown from '@astrojs/partytown';
 import sentry from '@sentry/astro';
 import node from '@astrojs/node';
 
+import vercel from '@astrojs/vercel/serverless';
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://hcihsc.pages.dev',
@@ -32,7 +34,6 @@ export default defineConfig({
 		},
 	})],
 	output: 'server',
-	adapter: node({
-		mode: 'standalone',
-	}), // kys cloudflare
+	// adapter: node({ mode: 'standalone' }),
+	adapter: vercel(), // kys cloudflare
 });
