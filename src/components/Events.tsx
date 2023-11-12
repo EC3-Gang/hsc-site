@@ -6,16 +6,17 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import { useState, Fragment } from 'react';
 import type React from 'react';
 import Fuse from 'fuse.js';
+import type { Events as EventsType } from '@lib/contentful';
 
-export default function aEvents({ events }: { events: CollectionEntry<'events'>[] }) {
+export default function Events({ events }: { events: EventsType[] }) {
 	const options = [
 		{
 			name: 'Upcoming',
-			filter: (event: CollectionEntry<'events'>) => dayjs(event.data.date).isAfter(dayjs()),
+			filter: (event: EventsType) => dayjs(event.fields.date).isAfter(dayjs()),
 		},
 		{
 			name: 'Past',
-			filter: (event: CollectionEntry<'events'>) => dayjs(event.data.date).isBefore(dayjs()),
+			filter: (event: EventsType) => dayjs(event.fields.date).isBefore(dayjs()),
 		},
 		{
 			name: 'All',
@@ -36,7 +37,7 @@ export default function aEvents({ events }: { events: CollectionEntry<'events'>[
 	};
 
 	const fuse = new Fuse(events, {
-		keys: ['data.title', 'data.description'],
+		keys: ['fields.title', 'fields.description'],
 	});
 
 
@@ -99,22 +100,22 @@ export default function aEvents({ events }: { events: CollectionEntry<'events'>[
 				{results.filter(filter.filter).length > 0 ? results
 					.filter(filter.filter)
 					.map((event) => (
-						<div className='bg-gray-200 rounded-lg shadow-lg overflow-hidden' key={event.id}>
-							<img className='w-full h-48 object-cover' src={event.data.image.src} alt={event.data.image.alt} />
+						<div className='bg-gray-200 rounded-lg shadow-lg overflow-hidden' key={event.fields.slug}>
+							<img className='w-full h-48 object-cover' src={event.fields.banner.fields.file.url} alt={event.fields.banner.fields.file.title} />
 							<div className='p-4'>
-								<div className='text-lg font-semibold text-gray-700'>{event.data.title}</div>
+								<div className='text-lg font-semibold text-gray-700'>{event.fields.title as unknown as string}</div>
 								<div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
 									<Icon icon='mdi:calendar' className="w-4 h-4 inline-block" />
-									<span>{dayjs(event.data.date).format('D MMM YYYY hh:mm a')}</span>
+									<span>{dayjs(event.fields.date as unknown as string).format('D MMM YYYY hh:mm a')}</span>
 								</div>
-								{event.data.location && <div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
+								{event.fields.location && <div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
 									<Icon icon='mdi:location' className="w-4 h-4 inline-block" />
-									<span>{event.data.location}</span>
+									<span>{event.fields.location as unknown as string}</span>
 								</div>}
-								<div className='mt-2 text-sm text-gray-500 line-clamp-2'>{event.data.description}</div>
-								<div className='mt-2 text-sm text-gray-500'>
-									<a href={event.data.link} target='_blank' rel='noopener noreferrer'>{event.data.link}</a>
-								</div>
+								<div className='mt-2 text-sm text-gray-500 line-clamp-2'>{event.fields.description as unknown as string}</div>
+								{event.fields.link && (<div className='mt-2 text-sm text-gray-500'>
+									<a href={event.fields.link as unknown as string} target='_blank' rel='noopener noreferrer'>{event.fields.link as unknown as string}</a>
+								</div>)}
 							</div>
 						</div>
 					)) : (

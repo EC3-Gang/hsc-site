@@ -8,7 +8,7 @@ import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { contentfulClient } from '@lib/contentful';
-import type { BlogPost, Event } from '@lib/contentful';
+import type { BlogPost, Events } from '@lib/contentful';
 
 // get a random initiative, event and blog post
 const initiatives = await getCollection('initiatives', ({ data }) => {
@@ -16,7 +16,7 @@ const initiatives = await getCollection('initiatives', ({ data }) => {
 });
 
 
-const { items: events } = await contentfulClient.getEntries<Event>({
+const { items: events } = await contentfulClient.getEntries<Events>({
 	content_type: 'events',
 	'fields.date[gt]': dayjs().toISOString(),
 });

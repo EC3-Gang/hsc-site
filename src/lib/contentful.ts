@@ -14,7 +14,7 @@ export interface BlogPost {
 	}
 }
 
-export interface Event {
+export interface Events {
 	contentTypeId: 'events';
 	fields: {
 		title: EntryFieldTypes.Text;

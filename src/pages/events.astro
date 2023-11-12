@@ -4,10 +4,12 @@ import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
 import EventsComponent from '@components/Events';
+import { contentfulClient } from '@lib/contentful';
+import type { Events } from '@lib/contentful';
 
 
-const events = await getCollection('events', ({ data }) => {
-	return !data.draft;
+const { items: events } = await contentfulClient.getEntries<Events>({
+	content_type: 'events',
 });
 ---
 

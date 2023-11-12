@@ -7,7 +7,7 @@ import { Picture } from 'astro:assets';
 import { contentfulClient } from '@lib/contentful';
 import type { BlogPost } from '@lib/contentful';
 
-const page = Astro.url.searchParams.get('page') || 1;
+const page = +Astro.url.searchParams.get('page') || 1;
 
 
 const { items: blogEntries } = await contentfulClient.getEntries<BlogPost>({

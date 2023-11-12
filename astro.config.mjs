@@ -7,6 +7,7 @@ import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
 import icon from 'astro-icon';
 import partytown from '@astrojs/partytown';
+import sentry from '@sentry/astro';
 const platform = process.env.PLATFORM || 'NODE';
 let adapterConfig = {};
 
@@ -43,6 +44,12 @@ export default defineConfig({
 	}), partytown({
 		config: {
 			forward: ['dataLayer.push'],
+		},
+	}), sentry({
+		dsn: 'https://7fe022e75fa6bbf1ba04f227f37431c9@o975437.ingest.sentry.io/4506211627565056',
+		sourceMapsUploadOptions: {
+			project: 'hci-hsc',
+			authToken: process.env.SENTRY_AUTH_TOKEN,
 		},
 	})],
 	output: 'server',
