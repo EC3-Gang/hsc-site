@@ -16,6 +16,11 @@ const { items: response } = await contentfulClient.getEntries<BlogPost>({
 const entry = response[0];
 
 const publishedDate = entry.sys.createdAt;
+
+// append protocol to entry.fields.banner!.fields.file.url if it doesn't exist
+if (!entry.fields.banner!.fields.file.url.startsWith('http')) {
+	entry.fields.banner!.fields.file.url = `https:${entry.fields.banner!.fields.file.url}`;
+}
 ---
 
 <Layout title={entry.fields.title}>

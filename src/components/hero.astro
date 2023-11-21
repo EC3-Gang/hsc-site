@@ -1,11 +1,18 @@
 ---
 import Link from '@components/ui/link.astro';
 import { Icon } from 'astro-icon/components';
+import background from '@assets/homebg.jpg';
+import { getImage } from 'astro:assets';
+
+const optimizedBackground = await getImage({
+	src: background,
+	format: 'avif',
+});
 ---
 
 <main
 	class="h-[36rem]"
-	style="background-image: url('/homebg.jpg'); background-size: cover; background-position: center;">
+	style=`background-image: url('${optimizedBackground.src}'); background-size: cover; background-position: center;`>
 	<div class="flex justify-center items-center flex-col h-full w-full bg-opacity-50 bg-[#000]">
 		<h1
 			class="text-4xl lg:text-5xl lg:tracking-tight xl:tracking-tighter italic text-[rgb(147,163,184)] raleway">

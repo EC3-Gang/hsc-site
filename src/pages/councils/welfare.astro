@@ -33,12 +33,8 @@ const publishedTeamMembers = await getCollection('council', ({ data }) => {
 				publishedTeamMembers.map((teamMemberEntry) => (
 					<div class="group">
 						<div class="w-full aspect-square">
-							<picture>
-								<source media="(max-width: 800px)" srcset={teamMemberEntry.data.avatar.src} />
-								<img src={teamMemberEntry.data.avatar.src} alt={teamMemberEntry.data.name} class="w-full rounded-md transition group-hover:-translate-y-1 group-hover:shadow-xl aspect-[4/5] object-cover" />
-							</picture>
+							<img src={teamMemberEntry.data.avatar.src} alt={teamMemberEntry.data.name} class="w-full rounded-md transition group-hover:-translate-y-1 group-hover:shadow-xl aspect-[4/5] object-cover" />
 						</div>
-
 
 						<div class="mt-4 text-center">
 							<h2 class="text-lg text-gray-800">

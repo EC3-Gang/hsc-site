@@ -31,36 +31,42 @@ const { items: blogEntries } = await contentfulClient.getEntries<BlogPost>({
 			<ul class="grid gap-16 max-w-4xl mx-auto">
 				{
 					blogEntries.length > 0 ?
-						blogEntries.map((entry, index) => (
-							<li>
-								<a href={`/blog/${entry.fields.slug}`}>
-									<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-										<Picture transition:name={`${entry.fields.slug}.banner`} src={entry.fields.banner!.fields.file.url} formats={['avif', 'png', 'webp']} alt={entry.fields.banner!.fields.title} width={428} height={285} />
-										<div>
-											<span transition:name={`${entry.fields.slug}.cat`} class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-												{entry.fields.category}
-											</span>
-
-											<h2 transition:name={`${entry.fields.slug}.title`} class="text-3xl font-semibold leading-snug tracking-tight mt-1 text-gray-600">
-												{entry.fields.title}
-											</h2>
-
-											<div class="flex gap-2 mt-3" transition:name={`${entry.fields.slug}.authordate`}>
-												<span class="text-gray-400">
-													{entry.fields.author}
+						blogEntries.map((entry, index) => {
+							// append protocol to entry.fields.banner!.fields.file.url
+							if (entry.fields.banner!.fields.file.url.startsWith('//')) {
+								entry.fields.banner!.fields.file.url = `https:${entry.fields.banner!.fields.file.url}`;
+							}
+							return (
+								<li>
+									<a href={`/blog/${entry.fields.slug}`}>
+										<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+											<Picture transition:name={`${entry.fields.slug}.banner`} src={entry.fields.banner!.fields.file.url} formats={['avif', 'png', 'webp']} alt={entry.fields.banner!.fields.title} width={428} height={285} />
+											<div>
+												<span transition:name={`${entry.fields.slug}.cat`} class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+													{entry.fields.category}
 												</span>
-												<span class="text-gray-400">• </span>
-												<time
-													class="text-gray-400"
-													datetime={new Date(entry.sys.createdAt).toISOString()}>
-													{dayjs(entry.sys.createdAt).format('MMMM D, YYYY')}
-												</time>
+
+												<h2 transition:name={`${entry.fields.slug}.title`} class="text-3xl font-semibold leading-snug tracking-tight mt-1 text-gray-600">
+													{entry.fields.title}
+												</h2>
+
+												<div class="flex gap-2 mt-3" transition:name={`${entry.fields.slug}.authordate`}>
+													<span class="text-gray-400">
+														{entry.fields.author}
+													</span>
+													<span class="text-gray-400">• </span>
+													<time
+														class="text-gray-400"
+														datetime={new Date(entry.sys.createdAt).toISOString()}>
+														{dayjs(entry.sys.createdAt).format('MMMM D, YYYY')}
+													</time>
+												</div>
 											</div>
 										</div>
-									</div>
-								</a>
-							</li>
-						)) :
+									</a>
+								</li>
+							);
+						}) :
 						<li>
 							<div class="text-center text-gray-500 text-lg -mt-4">
 								No posts found

@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import Container from '@components/container.astro';
 import Footer from '@components/footer.astro';
 import Hero from '@components/hero.astro';
@@ -9,6 +10,7 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { contentfulClient } from '@lib/contentful';
 import type { BlogPost, Events } from '@lib/contentful';
+import { getImage } from 'astro:assets';
 
 // get a random initiative, event and blog post
 const initiatives = await getCollection('initiatives', ({ data }) => {
