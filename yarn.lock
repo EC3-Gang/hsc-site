@@ -1666,6 +1666,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:20.5.0":
+  version: 20.5.0
+  resolution: "@types/node@npm:20.5.0"
+  checksum: 659bc5fc93b5c02bd88ca4bfae4f6b9dc307d45884d1dd9d69df85819a9943cdc00cd3c87eec3048866df6a67f52297f74d170e47a44f61edb3e8f770d94e85e
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^17.0.5":
   version: 17.0.45
   resolution: "@types/node@npm:17.0.45"
@@ -2136,6 +2143,16 @@ __metadata:
   bin:
     astring: bin/astring
   checksum: 6f034d2acef1dac8bb231e7cc26c573d3c14e1975ea6e04f20312b43d4f462f963209bc64187d25d477a182dc3c33277959a0156ab7a3617aa79b1eac4d88e1f
+  languageName: node
+  linkType: hard
+
+"astro-critters@npm:^2.0.11":
+  version: 2.0.11
+  resolution: "astro-critters@npm:2.0.11"
+  dependencies:
+    critters: 0.0.20
+    files-pipe: 2.0.16
+  checksum: 74a16daac0af09fc46fc17a1914d7a5109f437862d752b52b4f75d210b75ece2d883881c4769a85d9086b3de2b5657dd967ceebda2fac33ac1d7652fb3025919
   languageName: node
   linkType: hard
 
@@ -2622,7 +2639,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0":
+"chalk@npm:^4.0.0, chalk@npm:^4.1.0":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -2955,6 +2972,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"critters@npm:0.0.20":
+  version: 0.0.20
+  resolution: "critters@npm:0.0.20"
+  dependencies:
+    chalk: ^4.1.0
+    css-select: ^5.1.0
+    dom-serializer: ^2.0.0
+    domhandler: ^5.0.2
+    htmlparser2: ^8.0.2
+    postcss: ^8.4.23
+    pretty-bytes: ^5.3.0
+  checksum: 402b9a2cf69a31d255925f062eefb2a1743eb6ce0d8e55beb5006ef61d1c9ea56f2f59e8f441e639fd8ea06a81cd982d7371de28828de488f94511269849df5c
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -3131,6 +3163,13 @@ __metadata:
   version: 0.1.4
   resolution: "deep-is@npm:0.1.4"
   checksum: edb65dd0d7d1b9c40b2f50219aef30e116cedd6fc79290e740972c132c09106d2e80aa0bc8826673dd5a00222d4179c84b36a790eef63a4c4bca75a37ef90804
+  languageName: node
+  linkType: hard
+
+"deepmerge-ts@npm:5.1.0":
+  version: 5.1.0
+  resolution: "deepmerge-ts@npm:5.1.0"
+  checksum: 6b57db93c2985e4a35f24b2451db31715050d143988b7d6346f4049c9aec21a6c289514b88d3ee3d6e0697e72ef5d96ff0bbb7cb75422d56fee55ee85c7168e7
   languageName: node
   linkType: hard
 
@@ -3988,7 +4027,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1":
+"fast-glob@npm:3.3.1, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0, fast-glob@npm:^3.3.1":
   version: 3.3.1
   resolution: "fast-glob@npm:3.3.1"
   dependencies:
@@ -4055,6 +4094,17 @@ __metadata:
   version: 1.0.0
   resolution: "file-uri-to-path@npm:1.0.0"
   checksum: b648580bdd893a008c92c7ecc96c3ee57a5e7b6c4c18a9a09b44fb5d36d79146f8e442578bc0e173dc027adf3987e254ba1dfd6e3ec998b7c282873010502144
+  languageName: node
+  linkType: hard
+
+"files-pipe@npm:2.0.16":
+  version: 2.0.16
+  resolution: "files-pipe@npm:2.0.16"
+  dependencies:
+    "@types/node": 20.5.0
+    deepmerge-ts: 5.1.0
+    fast-glob: 3.3.1
+  checksum: a2682dd1b565a773cdcd6848b766b9913a3e93d5eb0a6e4ce089ef8a9a68ad18c9a4f8def0d93369daaa3d853cfd03b9e9663527c227fa4adc696e6f78e20b1f
   languageName: node
   linkType: hard
 
@@ -4761,6 +4811,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.60.1
     animate.css: ^4.1.1
     astro: ^3.5.3
+    astro-critters: ^2.0.11
     astro-feather-icons: ^1.0.2
     astro-icon: next
     astro-navbar: ^2.3.0
@@ -4824,7 +4875,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"htmlparser2@npm:^8.0.1":
+"htmlparser2@npm:^8.0.1, htmlparser2@npm:^8.0.2":
   version: 8.0.2
   resolution: "htmlparser2@npm:8.0.2"
   dependencies:
@@ -7445,6 +7496,13 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: cd192ec0d0a8e4c6da3bb80e4f62afe336df3f76271ac6deb0e6a36187133b6073a19e9727a1ff108cd8b9982e4768850d413baa71214dd80c7979617dca827a
+  languageName: node
+  linkType: hard
+
+"pretty-bytes@npm:^5.3.0":
+  version: 5.6.0
+  resolution: "pretty-bytes@npm:5.6.0"
+  checksum: 9c082500d1e93434b5b291bd651662936b8bd6204ec9fa17d563116a192d6d86b98f6d328526b4e8d783c07d5499e2614a807520249692da9ec81564b2f439cd
   languageName: node
   linkType: hard
 
