@@ -17,6 +17,6 @@ const inits = await getCollection('initiatives', ({ data }) => {
 			<Fragment slot='title'>Initiatives</Fragment>
 			<Fragment slot='desc'>View initiatives by the HSC here</Fragment>
 		</Sectionhead>
-		<InitiativesComponent events={inits} client:load />
+		<InitiativesComponent initiatives={inits} client:load />
 	</Container>
 </Layout>
