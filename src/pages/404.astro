@@ -1,6 +1,5 @@
 ---
 export const prerender = true;
-import { Icon } from 'astro-icon/components';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 ---
@@ -9,9 +8,24 @@ import Container from '@components/container.astro';
 	<Container>
 		<div class="min-h-[calc(100vh-16rem)] flex items-center justify-center">
 			<div class="mt-16 text-center">
-				<h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">404</h1>
-				<p class="text-lg mt-4 text-slate-600">Page not found.</p>
+				<h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-slate-500">404</h1>
+				<p class="text-lg mt-4 text-slate-600" id="404-text">
+
+				</p>
 			</div>
 		</div>
 	</Container>
 </Layout>
+
+<script>
+	const quotes = [
+		'Oops! Looks like you\'ve stumbled upon a cosmic void.',
+		'404: Page not found. But don\'t worry, the universe is full of other wonders.',
+		'Lost in space? Let\'s navigate back to reality together.',
+		'Error 404: The stars couldn\'t align for this page.',
+		'Sorry, this page is light years away.',
+	];
+	const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+	document.getElementById('404-text')!.innerHTML = randomQuote;
+</script>
