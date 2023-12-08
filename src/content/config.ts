@@ -56,7 +56,6 @@ const batch = defineCollection({
 //    This key should match your collection directory name in "src/content"
 export const collections = {
 	'council': teamCollection,
-	'events': eventCollection,
 	'initiatives': initiativeCollection,
 	'batch': batch,
 };
