@@ -15,7 +15,7 @@ const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://hcihsc.pages.dev',
+	site: 'https://hsc-site.vercel.app',
 	image: {
 		domains: ['images.ctfassets.net'],
 	},
