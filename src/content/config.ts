@@ -31,20 +31,6 @@ const eventCollection = defineCollection({
 	}),
 });
 
-const initiativeCollection = defineCollection({
-	schema: z.object({
-		draft: z.boolean(),
-		title: z.string(),
-		description: z.string(),
-		date: z.date().optional(),
-		image: z.object({
-			src: z.string(),
-			alt: z.string(),
-		}),
-		link: z.string().optional(),
-	}),
-});
-
 const batch = defineCollection({
 	schema: z.object({
 		name: z.string(),
@@ -56,6 +42,5 @@ const batch = defineCollection({
 //    This key should match your collection directory name in "src/content"
 export const collections = {
 	'council': teamCollection,
-	'initiatives': initiativeCollection,
 	'batch': batch,
 };

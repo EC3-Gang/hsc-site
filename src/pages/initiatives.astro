@@ -1,13 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
-import InitiativesComponent from '@components/Initiatives';
+import InitiativesComponent from '@components/Initiatives.tsx';
+import { contentfulClient } from '@lib/contentful';
+import type { Initiatives } from '@lib/contentful';
+import fs from 'fs/promises';
 
 
-const inits = await getCollection('initiatives', ({ data }) => {
-	return !data.draft;
+const { items: initiatives } = await contentfulClient.getEntries<Initiatives>({
+	content_type: 'initiatives',
 });
 ---
 
@@ -17,6 +19,6 @@ const inits = await getCollection('initiatives', ({ data }) => {
 			<Fragment slot='title'>Initiatives</Fragment>
 			<Fragment slot='desc'>View initiatives by the HSC here</Fragment>
 		</Sectionhead>
-		<InitiativesComponent initiatives={inits} client:load />
+		<InitiativesComponent initiatives={initiatives} client:load />
 	</Container>
 </Layout>

@@ -44,6 +44,16 @@ const makeTitle = title
 		<meta name="description" content="The official page for HCI's HSC" />
 		<ViewTransitions />
 		<script>
+			declare global {
+				interface Window {
+					nightwind: {
+						beforeTransition: () => void;
+						toggle: () => void;
+						enable: (dark: boolean) => void;
+					};
+				}
+			}
+
 			window.nightwind = {
 				beforeTransition: () => {
 					const doc = document.documentElement;
@@ -58,7 +68,7 @@ const makeTitle = title
 				},
 
 				toggle: () => {
-					nightwind.beforeTransition();
+					window.nightwind.beforeTransition();
 					if (!document.documentElement.classList.contains('dark')) {
 						document.documentElement.classList.add('dark');
 						window.localStorage.setItem('nightwind-mode', 'dark');
@@ -73,7 +83,7 @@ const makeTitle = title
 					const mode = dark ? 'dark' : 'light';
 					const opposite = dark ? 'light' : 'dark';
 
-					nightwind.beforeTransition();
+					window.nightwind.beforeTransition();
 
 					if (document.documentElement.classList.contains(opposite)) {
 						document.documentElement.classList.remove(opposite);

@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/container.astro';
 import Sectionhead from '@components/sectionhead.astro';
@@ -19,6 +18,6 @@ const { items: events } = await contentfulClient.getEntries<Events>({
 			<Fragment slot='title'>Events</Fragment>
 			<Fragment slot='desc'>View upcoming and past events here</Fragment>
 		</Sectionhead>
-		<EventsComponent events={events} client:load />
+		<EventsComponent events={events as unknown as Events[]} client:load />
 	</Container>
 </Layout>

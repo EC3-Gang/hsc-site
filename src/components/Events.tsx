@@ -94,7 +94,7 @@ export default function Events({ events }: { events: EventsType[] }) {
 						</Transition>
 					</div>
 				</Listbox>
-				<input type='text' placeholder='Search' className='sm:col-span-3 w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent bg-gray-200 text-gray-600' value={search} onChange={handleQuery} />
+				<input type='text' placeholder='Search for an event' className='sm:col-span-3 w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent bg-gray-200 text-gray-600' value={search} onChange={handleQuery} />
 			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
 				{results.filter(filter.filter).length > 0 ? results

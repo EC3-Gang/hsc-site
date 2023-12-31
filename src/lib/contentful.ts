@@ -27,6 +27,18 @@ export interface Events {
 	}
 }
 
+export interface Initiatives {
+	contentTypeId: 'initiatives';
+	fields: {
+		title: EntryFieldTypes.Text;
+		slug: EntryFieldTypes.Text;
+		description: EntryFieldTypes.Text;
+		banner: EntryFieldTypes.Object;
+		date: EntryFieldTypes.Date;
+		link?: EntryFieldTypes.Text;
+	}
+}
+
 export const contentfulClient = contentful.createClient({
 	space: import.meta.env.CONTENTFUL_SPACE_ID,
 	accessToken: import.meta.env.DEV
