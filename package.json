@@ -37,7 +37,7 @@
     "astro": "^3.5.3",
     "astro-critters": "^2.0.11",
     "astro-feather-icons": "^1.0.2",
-    "astro-icon": "next",
+    "astro-icon": "^1.0.1",
     "astro-navbar": "^2.3.0",
     "astro-seo": "^0.8.0",
     "canvas-confetti": "^1.6.0",
@@ -60,7 +60,7 @@
     "ua-parser-js": "^1.0.36"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.1.53",
+    "@iconify-json/mdi": "^1.1.63",
     "@iconify-json/uil": "^1.1.4",
     "@tailwindcss/typography": "^0.5.9",
     "@types/jsdom": "^21.1.3",

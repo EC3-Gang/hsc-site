@@ -1083,12 +1083,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/mdi@npm:^1.1.53":
-  version: 1.1.54
-  resolution: "@iconify-json/mdi@npm:1.1.54"
+"@iconify-json/mdi@npm:^1.1.63":
+  version: 1.1.63
+  resolution: "@iconify-json/mdi@npm:1.1.63"
   dependencies:
     "@iconify/types": "*"
-  checksum: e4e6dc65bdd93f80d5162e5cbe2133624baa575b605864cd8e3aebf050603de2e3faaebb83f5108e615b267ac216079c6762bfbc81a18dfe78d4e98033650e95
+  checksum: 03368377259251a4c94ab8992f619d736d2c6cfbad189451f36bbf158bd8ee3bf1bd0fa04f2488b9a0d72990e0ad85b7cd9754c43cb2195d41202b34db3cb879
   languageName: node
   linkType: hard
 
@@ -2179,14 +2179,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-icon@npm:next":
-  version: 1.0.0-next.2
-  resolution: "astro-icon@npm:1.0.0-next.2"
+"astro-icon@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "astro-icon@npm:1.0.1"
   dependencies:
     "@iconify/tools": ^3.0.1
     "@iconify/types": ^2.0.0
     "@iconify/utils": ^2.1.5
-  checksum: 137ff2a286abc8cbe17d8c2f30be49a5ee74d7c693b40b38894a55b10f2c75f112b9b567b10832cf30ee0b16440c91b30e44d7f72d275b067ee1bfa6d2fb502f
+  checksum: 788fd818bf76ba4a61370868d6c80d0f856a85b5edbccdd6066f12a8b430680af52d5e551479c0e0cc8c27f23f1c700c163325c69104f9583f643d0447ecdfb1
   languageName: node
   linkType: hard
 
@@ -4796,7 +4796,7 @@ __metadata:
     "@fontsource/inter": ^4.5.15
     "@headlessui/react": ^1.7.15
     "@heroicons/react": ^2.0.18
-    "@iconify-json/mdi": ^1.1.53
+    "@iconify-json/mdi": ^1.1.63
     "@iconify-json/uil": ^1.1.4
     "@iconify/react": ^4.1.1
     "@porscheofficial/cookie-consent-banner": ^3.1.5
@@ -4813,7 +4813,7 @@ __metadata:
     astro: ^3.5.3
     astro-critters: ^2.0.11
     astro-feather-icons: ^1.0.2
-    astro-icon: next
+    astro-icon: ^1.0.1
     astro-navbar: ^2.3.0
     astro-seo: ^0.8.0
     browserlist: ^1.0.1
