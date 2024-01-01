@@ -1,5 +1,4 @@
 // log git log -1 --format=%H%n%ci into src/git-info.json
-
 import { execSync } from 'child_process';
 import { writeFile } from 'fs/promises';
 import { dirname, join } from 'path';

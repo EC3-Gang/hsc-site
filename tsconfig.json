@@ -10,6 +10,7 @@
 		"allowSyntheticDefaultImports": true,
 		"moduleResolution": "Node",
     "baseUrl": "src",
+		"target": "ES2022",
 		"lib": [
 			"dom",
 			"dom.iterable",

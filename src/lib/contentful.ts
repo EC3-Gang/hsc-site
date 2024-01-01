@@ -1,4 +1,5 @@
-import contentful, { EntryFieldTypes } from 'contentful';
+import contentful from 'contentful';
+import type { EntryFieldTypes } from 'contentful';
 
 export interface BlogPost {
 	contentTypeId: 'blogPost';
@@ -6,7 +7,7 @@ export interface BlogPost {
 		title: EntryFieldTypes.Text;
 		slug: EntryFieldTypes.Text;
 		snippet: EntryFieldTypes.Text;
-		banner: EntryFieldTypes.Object;
+		banner: EntryFieldTypes.AssetLink;
 		author: EntryFieldTypes.Text;
 		category: EntryFieldTypes.Text;
 		tags: EntryFieldTypes.Text[];
