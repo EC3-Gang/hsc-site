@@ -1,5 +1,5 @@
 import contentful from 'contentful';
-import type { EntryFieldTypes } from 'contentful';
+import type { EntryFieldTypes, Asset } from 'contentful';
 
 export interface BlogPost {
 	contentTypeId: 'blogPost';
