@@ -11,12 +11,15 @@ const optimizedBackground = await getImage({
 ---
 
 <main
-	class="h-[36rem]"
-	style=`background-image: url('${optimizedBackground.src}'); background-size: cover; background-position: center;`>
-	<div class="flex justify-center items-center flex-col h-full w-full bg-opacity-50 bg-[#000]">
+	class="h-screen -mt-20 w-full bg-[#8B2A25] flex justify-center items-center relative overflow-hidden"
+	{/* style=`background-image: url('${optimizedBackground.src}'); background-size: cover; background-position: center;` */}
+>
+	{/* centred img with ${optimizedBackground.src} */}
+	<img src=`${optimizedBackground.src}` alt="Hwa Chong Institution" class="absolute inset-0 w-full h-full object-cover object-center z-[1] aspect-video" />
+	<div class="flex justify-center items-center flex-col h-full w-full bg-opacity-50 bg-[#000] z-10">
 		<h1
 			class="text-4xl lg:text-5xl lg:tracking-tight xl:tracking-tighter italic text-[rgb(147,163,184)] raleway">
-			<span class="text-red-500 font-bold">One</span><span class="font-light">HwaChong</span>
+			<span class="text-red-400 font-bold">One</span><span class="font-light">HwaChong</span>
 		</h1>
 		<p class="text-xl text-center mt-4 text-[rgb(147,163,184)] leading-relaxed mb-7 w-4/5 lg:w-3/5 xl:w-2/5 raleway">
       Showcasing events, online initiatives, and collecting student feedback. A hub for information, communication, and engagement.

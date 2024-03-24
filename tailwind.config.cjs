@@ -9,6 +9,8 @@ module.exports = {
 			colorClasses: [
 				'placeholder',
 			],
+			fixedClass: 'nightwind-prevent',
+			fixedBlockClass: 'nightwind-prevent-block',
 		},
 		extend: {
 			fontFamily: {

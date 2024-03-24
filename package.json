@@ -9,7 +9,7 @@
     "lint": "eslint --ext .astro,.js,.jsx,.ts,.tsx . --fix",
     "gen-ctf-types": "cf-content-types-generator -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_ACCESS_TOKEN -o src/lib/ctfTypes",
     "preview": "astro preview",
-		"test": "playwright test --project=\"chromium\""
+    "test": "playwright test --project=\"chromium\""
   },
   "name": "hsc-site",
   "type": "module",
@@ -79,5 +79,6 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.10"
   },
-  "stableVersion": "0.8.6"
+  "stableVersion": "0.8.6",
+  "packageManager": "yarn@4.1.0"
 }

@@ -68,10 +68,10 @@ const blogEntry = blogEntries[0].fields;
 ---
 
 <Layout title="Home">
+	<div transition:name='hero'>
+		<Hero />
+	</div>
 	<Container>
-		<div transition:name='hero'>
-			<Hero />
-		</div>
 		<!-- display the random posts and events in 3 columns with the image as the background -->
 		<h2 class="text-3xl font-bold mt-10 text-center text-slate-600">Latest Events, Initiatives and Posts</h2>
 
