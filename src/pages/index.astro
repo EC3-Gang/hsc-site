@@ -7,14 +7,13 @@ import Layout from '@layouts/Layout.astro';
 import dayjs from 'dayjs';
 import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
 import { contentfulClient } from '@lib/contentful';
-import type { BlogPost, Events } from '@lib/contentful';
+import type { BlogPost, Events, Initiatives } from '@lib/contentful';
 import { getImage } from 'astro:assets';
 
 // get a random initiative, event and blog post
-const initiatives = await getCollection('initiatives', ({ data }) => {
-	return !data.draft;
+const initiatives = await contentfulClient.getEntries<Initiatives>({
+	content_type: 'initiatives',
 });
 
 
@@ -29,7 +28,7 @@ const { items: blogEntries } = await contentfulClient.getEntries<BlogPost>({
 	order: '-sys.createdAt',
 });
 
-const initiative = initiatives[Math.floor(Math.random() * initiatives.length)];
+const initiative = initiatives.items[Math.floor(Math.random() * initiatives.items.length)];
 
 
 // if no events, display "No upcoming events"
@@ -77,12 +76,12 @@ const blogEntry = blogEntries[0].fields;
 
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
 			<a href='/initiatives'>
-				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${initiative.data.image.src})`}>
+				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.fields.banner!.fields.file.url})`}>
 					<div class="bg-[#000]/50 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
 						<h2 class="text-[#f3f4f6] text-2xl font-bold">
-							{initiative.data.title}
+							{initiative.fields.title}
 						</h2>
-						<p class="text-[#f3f4f6] text-sm mt-2">{initiative.data.description}</p>
+						<p class="text-[#f3f4f6] text-sm mt-2">{initiative.fields.description}</p>
 					</div>
 				</div>
 			</a>
