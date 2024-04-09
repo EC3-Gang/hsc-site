@@ -67,74 +67,76 @@ const blogEntry = blogEntries[0].fields;
 ---
 
 <Layout title="Home">
-	<div transition:name='hero'>
-		<Hero />
-	</div>
-	<Container>
-		<!-- display the random posts and events in 3 columns with the image as the background -->
-		<h2 class="text-3xl font-bold mt-10 text-center text-slate-600">Latest Events, Initiatives and Posts</h2>
-
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
-			<a href='/initiatives'>
-				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.fields.banner!.fields.file.url})`}>
-					<div class="bg-[#000]/50 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
-						<h2 class="text-[#f3f4f6] text-2xl font-bold">
-							{initiative.fields.title}
-						</h2>
-						<p class="text-[#f3f4f6] text-sm mt-2">{initiative.fields.description}</p>
-					</div>
-				</div>
-			</a>
-
-			<a href='/events'>
-				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.fields.banner!.fields.file.url})`}>
-					<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
-						<h2 class="text-[#f3f4f6] text-2xl font-bold">
-							{event.fields.title}
-						</h2>
-						<p class="text-[#f3f4f6] text-sm mt-2">{event.fields.description}</p>
-					</div>
-				</div>
-			</a>
-
-			<a href={`/blog/${blogEntry.slug}`}>
-				<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" transition:name={`${blogEntry.slug}.banner`} style={`background-image: url(${blogEntry.banner!.fields!.file.url})`}>
-					<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
-						<h2 class="text-[#f3f4f6] text-2xl font-bold">
-							{blogEntry.title}
-						</h2>
-						<p class="text-[#f3f4f6] text-sm mt-2">{blogEntry.snippet}</p>
-					</div>
-				</div>
-			</a>
+	<div>
+		<div transition:name='hero'>
+			<Hero />
 		</div>
+		<Container>
+			<!-- display the random posts and events in 3 columns with the image as the background -->
+			<h2 class="text-3xl font-bold mt-10 text-center text-slate-600">Latest Events, Initiatives and Posts</h2>
 
-		<!--
-			social media links with icons
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
+				<a href='/initiatives'>
+					<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.fields.banner!.fields.file.url})`}>
+						<div class="bg-[#000]/50 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
+							<h2 class="text-[#f3f4f6] text-2xl font-bold">
+								{initiative.fields.title}
+							</h2>
+							<p class="text-[#f3f4f6] text-sm mt-2">{initiative.fields.description}</p>
+						</div>
+					</div>
+				</a>
 
-			facebook: https://www.facebook.com/hwachonghsc/
-			instagram: https://www.instagram.com/hwachonghsc/
-			youtube: https://www.youtube.com/@41HighSchoolCouncil
-		-->
-		<!--
-			Div with rainbow coloured border and "Follow us on social media!" header
-		-->
-		<div class="p-10 mt-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-[#eff2f5]">
-			<h2 class="text-3xl font-bold text-center">Follow us on social media!</h2>
-			<div class="grid grid-cols-1 xs:grid-cols-3 gap-4 mt-4 w-full lg:w-3/5 mx-auto">
-				<a href="https://www.facebook.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
-					<Icon name="mdi:facebook" class="w-12 h-12" />
-					<p class="mt-2 fredoka">@hwachonghsc</p>
+				<a href='/events'>
+					<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${event.fields.banner!.fields.file.url})`}>
+						<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
+							<h2 class="text-[#f3f4f6] text-2xl font-bold">
+								{event.fields.title}
+							</h2>
+							<p class="text-[#f3f4f6] text-sm mt-2">{event.fields.description}</p>
+						</div>
+					</div>
 				</a>
-				<a href="https://www.instagram.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
-					<Icon name="mdi:instagram" class="w-12 h-12" />
-					<p class="mt-2 fredoka">@hwachonghsc</p>
-				</a>
-				<a href="https://www.youtube.com/@41HighSchoolCouncil" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
-					<Icon name="mdi:youtube" class="w-12 h-12" />
-					<p class="mt-2 fredoka">@41HighSchoolCouncil</p>
+
+				<a href={`/blog/${blogEntry.slug}`}>
+					<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" transition:name={`${blogEntry.slug}.banner`} style={`background-image: url(${blogEntry.banner!.fields!.file.url})`}>
+						<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
+							<h2 class="text-[#f3f4f6] text-2xl font-bold">
+								{blogEntry.title}
+							</h2>
+							<p class="text-[#f3f4f6] text-sm mt-2">{blogEntry.snippet}</p>
+						</div>
+					</div>
 				</a>
 			</div>
-		</div>
-	</Container>
+
+			<!--
+				social media links with icons
+
+				facebook: https://www.facebook.com/hwachonghsc/
+				instagram: https://www.instagram.com/hwachonghsc/
+				youtube: https://www.youtube.com/@41HighSchoolCouncil
+			-->
+			<!--
+				Div with rainbow coloured border and "Follow us on social media!" header
+			-->
+			<div class="p-10 mt-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-[#eff2f5]">
+				<h2 class="text-3xl font-bold text-center">Follow us on social media!</h2>
+				<div class="grid grid-cols-1 xs:grid-cols-3 gap-4 mt-4 w-full lg:w-3/5 mx-auto">
+					<a href="https://www.facebook.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
+						<Icon name="mdi:facebook" class="w-12 h-12" />
+						<p class="mt-2 fredoka">@hwachonghsc</p>
+					</a>
+					<a href="https://www.instagram.com/hwachonghsc/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
+						<Icon name="mdi:instagram" class="w-12 h-12" />
+						<p class="mt-2 fredoka">@hwachonghsc</p>
+					</a>
+					<a href="https://www.youtube.com/@41HighSchoolCouncil" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center transform hover:scale-110 transition duration-300">
+						<Icon name="mdi:youtube" class="w-12 h-12" />
+						<p class="mt-2 fredoka">@41HighSchoolCouncil</p>
+					</a>
+				</div>
+			</div>
+		</Container>
+	</div>
 </Layout>

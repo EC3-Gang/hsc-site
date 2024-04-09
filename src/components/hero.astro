@@ -10,18 +10,19 @@ const optimizedBackground = await getImage({
 });
 ---
 
+{/* style=`background-image: url('${optimizedBackground.src}'); background-size: cover; background-position: center;` */}
 <main
 	class="h-screen -mt-20 w-full bg-[#8B2A25] flex justify-center items-center relative overflow-hidden"
-	{/* style=`background-image: url('${optimizedBackground.src}'); background-size: cover; background-position: center;` */}
 >
-	{/* centred img with ${optimizedBackground.src} */}
 	<img src=`${optimizedBackground.src}` alt="Hwa Chong Institution" class="absolute inset-0 w-full h-full object-cover object-center z-[1] aspect-video" />
 	<div class="flex justify-center items-center flex-col h-full w-full bg-opacity-50 bg-[#000] z-10">
 		<h1
-			class="text-4xl lg:text-5xl lg:tracking-tight xl:tracking-tighter italic text-[rgb(147,163,184)] raleway">
-			<span class="text-red-400 font-bold">One</span><span class="font-light">HwaChong</span>
+			class="text-4xl lg:text-5xl lg:tracking-tight xl:tracking-tighter raleway text-center">
+			<span class="text-red-400 font-bold archivo-black text-[27rem] relative -left-8">One</span>
+			<br />
+			<span class="marck-script italic text-[rgb(147,163,184)] relative text-[7rem] -top-32 font-normal">HwaChong</span>
 		</h1>
-		<p class="text-xl text-center mt-4 text-[rgb(147,163,184)] leading-relaxed mb-7 w-4/5 lg:w-3/5 xl:w-2/5 raleway">
+		<p class="text-xl text-center text-[rgb(147,163,184)] leading-relaxed mb-7 raleway -mt-24 w-8/12 alata">
       Showcasing events, online initiatives, and collecting student feedback. A hub for information, communication, and engagement.
 		</p>
 		<Link href="/about" style='outline' class='bg-white bg-opacity-0 hover:bg-opacity-30 border-[rgb(139,139,139)] dark:border-[rgb(139,139,139)] text-[rgb(147,163,184)] hover:text-slate-700'>
@@ -29,3 +30,23 @@ const optimizedBackground = await getImage({
 		</Link>
 	</div>
 </main>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Marck+Script&family=Alata&family=Bakbak+One&family=Archivo+Black&display=swap');
+
+	.archivo-black {
+		font-family: 'Bakbak One', sans-serif;
+	}
+
+	.marck-script {
+		font-family: 'Marck Script', cursive;
+	}
+
+	.satisfy {
+		font-family: 'Satisfy', cursive;
+	}
+
+	.alata {
+		font-family: 'Alata', sans-serif;
+	}
+</style>
