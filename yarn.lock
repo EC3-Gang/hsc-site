@@ -803,6 +803,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:1.2.1":
+  version: 1.2.1
+  resolution: "@emotion/is-prop-valid@npm:1.2.1"
+  dependencies:
+    "@emotion/memoize": "npm:^0.8.1"
+  checksum: 10/fe231c472d38b3bbe519bcc9a5585cd41c45604147f3a065e333caf0f695d668aa21bc4229e657c1b6ea7398e096899e6ad54662548c73f11f6ba594aebd76a1
+  languageName: node
+  linkType: hard
+
+"@emotion/memoize@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "@emotion/memoize@npm:0.8.1"
+  checksum: 10/a19cc01a29fcc97514948eaab4dc34d8272e934466ed87c07f157887406bc318000c69ae6f813a9001c6a225364df04249842a50e692ef7a9873335fbcc141b0
+  languageName: node
+  linkType: hard
+
+"@emotion/unitless@npm:0.8.0":
+  version: 0.8.0
+  resolution: "@emotion/unitless@npm:0.8.0"
+  checksum: 10/176141117ed23c0eb6e53a054a69c63e17ae532ec4210907a20b2208f91771821835f1c63dd2ec63e30e22fcc984026d7f933773ee6526dd038e0850919fae7a
+  languageName: node
+  linkType: hard
+
 "@esbuild-plugins/node-globals-polyfill@npm:^0.2.3":
   version: 0.2.3
   resolution: "@esbuild-plugins/node-globals-polyfill@npm:0.2.3"
@@ -2413,6 +2436,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/stylis@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@types/stylis@npm:4.2.0"
+  checksum: 10/02a47584acd2fcb664f7d8270a69686c83752bdfb855f804015d33116a2b09c0b2ac535213a4a7b6d3a78b2915b22b4024cce067ae979beee0e4f8f5fdbc26a9
+  languageName: node
+  linkType: hard
+
 "@types/tar@npm:^6.1.6":
   version: 6.1.9
   resolution: "@types/tar@npm:6.1.9"
@@ -3510,6 +3540,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelize@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "camelize@npm:1.0.1"
+  checksum: 10/0e147b4299ac6363c50050716aadfae42831257ec56ce54773ffd2a94a88abb2e2540c5ccc38345e8a39963105b76d86cb24477165a36b78c9958fb304513db3
+  languageName: node
+  linkType: hard
+
 "caniuse-lite@npm:^1.0.30001517, caniuse-lite@npm:^1.0.30001520, caniuse-lite@npm:^1.0.30001565, caniuse-lite@npm:^1.0.30001587":
   version: 1.0.30001607
   resolution: "caniuse-lite@npm:1.0.30001607"
@@ -3723,6 +3760,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: 10/58eb394e8817021b153bb6e7d782cfb667e4ab390cb2e9dac2fc7c6b979d1cc2b2a733093955fc5c94aa79ef5c8c89f11ab77780894509be6afbb91dddd79d15
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -3930,6 +3974,13 @@ __metadata:
   version: 2.0.3
   resolution: "comma-separated-tokens@npm:2.0.3"
   checksum: 10/e3bf9e0332a5c45f49b90e79bcdb4a7a85f28d6a6f0876a94f1bb9b2bfbdbbb9292aac50e1e742d8c0db1e62a0229a106f57917e2d067fca951d81737651700d
+  languageName: node
+  linkType: hard
+
+"commander@npm:^2.20.3":
+  version: 2.20.3
+  resolution: "commander@npm:2.20.3"
+  checksum: 10/90c5b6898610cd075984c58c4f88418a4fb44af08c1b1415e9854c03171bec31b336b7f3e4cefe33de994b3f12b03c5e2d638da4316df83593b9e82554e7e95b
   languageName: node
   linkType: hard
 
@@ -4147,6 +4198,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-color-keywords@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "css-color-keywords@npm:1.0.0"
+  checksum: 10/8f125e3ad477bd03c77b533044bd9e8a6f7c0da52d49bbc0bbe38327b3829d6ba04d368ca49dd9ff3b667d2fc8f1698d891c198bbf8feade1a5501bf5a296408
+  languageName: node
+  linkType: hard
+
 "css-select@npm:^5.1.0":
   version: 5.1.0
   resolution: "css-select@npm:5.1.0"
@@ -4157,6 +4215,17 @@ __metadata:
     domutils: "npm:^3.0.1"
     nth-check: "npm:^2.0.1"
   checksum: 10/d486b1e7eb140468218a5ab5af53257e01f937d2173ac46981f6b7de9c5283d55427a36715dc8decfc0c079cf89259ac5b41ef58f6e1a422eee44ab8bfdc78da
+  languageName: node
+  linkType: hard
+
+"css-to-react-native@npm:3.2.0":
+  version: 3.2.0
+  resolution: "css-to-react-native@npm:3.2.0"
+  dependencies:
+    camelize: "npm:^1.0.0"
+    css-color-keywords: "npm:^1.0.0"
+    postcss-value-parser: "npm:^4.0.2"
+  checksum: 10/62ef744254e333abc696efdc945ecf13ad6ba7b726d0a39c0405b2fcb86542aa2f3fe7b7b6770f67ae9679d98b159b4d66353107bf7d6144a445eafcf5fa250a
   languageName: node
   linkType: hard
 
@@ -4196,6 +4265,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cssfilter@npm:0.0.10":
+  version: 0.0.10
+  resolution: "cssfilter@npm:0.0.10"
+  checksum: 10/1e45182f42de848f092f50a313113c28a88e4ac98333bf1603ee1c3b200384a3bc83c12e35cd61135e3b0f218295f600d51120ca1f926b7958b2d3262d711214
+  languageName: node
+  linkType: hard
+
 "csso@npm:5.0.5":
   version: 5.0.5
   resolution: "csso@npm:5.0.5"
@@ -4214,7 +4290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.2":
+"csstype@npm:3.1.2, csstype@npm:^3.0.2":
   version: 3.1.2
   resolution: "csstype@npm:3.1.2"
   checksum: 10/1f39c541e9acd9562996d88bc9fb62d1cb234786ef11ed275567d4b2bd82e1ceacde25debc8de3d3b4871ae02c2933fa02614004c97190711caebad6347debc2
@@ -4252,6 +4328,13 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.21.0"
   checksum: 10/70b3e8ea7aaaaeaa2cd80bd889622a4bcb5d8028b4de9162cbcda359db06e16ff6e9309e54eead5341e71031818497f19aaf9839c87d1aba1e27bb4796e758a9
+  languageName: node
+  linkType: hard
+
+"dayjs@npm:^1.11.10":
+  version: 1.11.10
+  resolution: "dayjs@npm:1.11.10"
+  checksum: 10/27e8f5bc01c0a76f36c656e62ab7f08c2e7b040b09e613cd4844abf03fb258e0350f0a83b02c887b84d771c1f11e092deda0beef8c6df2a1afbc3f6c1fade279
   languageName: node
   linkType: hard
 
@@ -5566,6 +5649,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"focus-visible@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "focus-visible@npm:5.2.0"
+  checksum: 10/11f686d68dbd4a0efb6714f037a4611411ffb8db4369784fcd6ba7f6cc386a42a5fa08211f6feb14ad3660719b451d0621f95058ea49963a59cf204ced38c4bc
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.15.0":
   version: 1.15.3
   resolution: "follow-redirects@npm:1.15.3"
@@ -6251,6 +6341,7 @@ __metadata:
     overlayscrollbars: "npm:^2.3.2"
     path-to-regexp: "npm:^6.2.1"
     react: "npm:^18.2.0"
+    react-chrono: "npm:^2.6.1"
     react-dom: "npm:^18.2.0"
     rss-parser: "npm:^3.13.0"
     sharp: "npm:^0.31.3"
@@ -9179,10 +9270,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:^4.0.0, postcss-value-parser@npm:^4.2.0":
+"postcss-value-parser@npm:^4.0.0, postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 10/e4e4486f33b3163a606a6ed94f9c196ab49a37a7a7163abfcd469e5f113210120d70b8dd5e33d64636f41ad52316a3725655421eb9a1094f1bcab1db2f555c62
+  languageName: node
+  linkType: hard
+
+"postcss@npm:8.4.31":
+  version: 8.4.31
+  resolution: "postcss@npm:8.4.31"
+  dependencies:
+    nanoid: "npm:^3.3.6"
+    picocolors: "npm:^1.0.0"
+    source-map-js: "npm:^1.0.2"
+  checksum: 10/1a6653e72105907377f9d4f2cd341d8d90e3fde823a5ddea1e2237aaa56933ea07853f0f2758c28892a1d70c53bbaca200eb8b80f8ed55f13093003dbec5afa0
   languageName: node
   linkType: hard
 
@@ -9403,6 +9505,23 @@ __metadata:
   bin:
     rc: ./cli.js
   checksum: 10/5c4d72ae7eec44357171585938c85ce066da8ca79146b5635baf3d55d74584c92575fa4e2c9eac03efbed3b46a0b2e7c30634c012b4b4fa40d654353d3c163eb
+  languageName: node
+  linkType: hard
+
+"react-chrono@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "react-chrono@npm:2.6.1"
+  dependencies:
+    classnames: "npm:^2.5.1"
+    dayjs: "npm:^1.11.10"
+    focus-visible: "npm:^5.2.0"
+    styled-components: "npm:^6.1.8"
+    use-debounce: "npm:^10.0.0"
+    xss: "npm:^1.0.15"
+  peerDependencies:
+    react: ^18.1.0
+    react-dom: ^18.1.0
+  checksum: 10/df26669f65beacf8098ecc61117dba5e733b03b3b833c687c0322920dba5e622e4d6f72b059c9407481df7ba5b4cf0d98a762f86c50d9d818dfdeaa6aaec76fb
   languageName: node
   linkType: hard
 
@@ -10104,6 +10223,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"shallowequal@npm:1.1.0":
+  version: 1.1.0
+  resolution: "shallowequal@npm:1.1.0"
+  checksum: 10/f4c1de0837f106d2dbbfd5d0720a5d059d1c66b42b580965c8f06bb1db684be8783538b684092648c981294bf817869f743a066538771dbecb293df78f765e00
+  languageName: node
+  linkType: hard
+
 "sharp@npm:^0.31.3":
   version: 0.31.3
   resolution: "sharp@npm:0.31.3"
@@ -10572,6 +10698,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"styled-components@npm:^6.1.8":
+  version: 6.1.8
+  resolution: "styled-components@npm:6.1.8"
+  dependencies:
+    "@emotion/is-prop-valid": "npm:1.2.1"
+    "@emotion/unitless": "npm:0.8.0"
+    "@types/stylis": "npm:4.2.0"
+    css-to-react-native: "npm:3.2.0"
+    csstype: "npm:3.1.2"
+    postcss: "npm:8.4.31"
+    shallowequal: "npm:1.1.0"
+    stylis: "npm:4.3.1"
+    tslib: "npm:2.5.0"
+  peerDependencies:
+    react: ">= 16.8.0"
+    react-dom: ">= 16.8.0"
+  checksum: 10/f8fd00556d15940c8276bf05f618fc28a593a2244bf97a2ceb7797325eac78cb8c00ec780811d8d1024edb011a21e9575796b6d7e638cd91c062ddd8d0c4f8a8
+  languageName: node
+  linkType: hard
+
+"stylis@npm:4.3.1":
+  version: 4.3.1
+  resolution: "stylis@npm:4.3.1"
+  checksum: 10/20b04044397c5c69e4b9f00b037159ba82b602c61d45f26d8def08577fd6ddc4b2853d86818548c1b404d29194a99b6495cca1733880afc845533ced843cb266
+  languageName: node
+  linkType: hard
+
 "sucrase@npm:^3.32.0":
   version: 3.34.0
   resolution: "sucrase@npm:3.34.0"
@@ -10992,6 +11145,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.5.0":
+  version: 2.5.0
+  resolution: "tslib@npm:2.5.0"
+  checksum: 10/ea556fbdf396fe15dbd45e242754e86e7c36e0dce8644404a7c8a81ae1e940744dc639569aeca1ae370a7f804d82872f3fd8564eb23be9adb7618201d0314dac
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -11396,6 +11556,15 @@ __metadata:
     querystringify: "npm:^2.1.1"
     requires-port: "npm:^1.0.0"
   checksum: 10/c9e96bc8c5b34e9f05ddfeffc12f6aadecbb0d971b3cc26015b58d5b44676a99f50d5aeb1e5c9e61fa4d49961ae3ab1ae997369ed44da51b2f5ac010d188e6ad
+  languageName: node
+  linkType: hard
+
+"use-debounce@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "use-debounce@npm:10.0.0"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 10/b0fd28112aa3d7b5333f64e845aa1a4b5223bae7f0800fcb496d4796816bc9490bc3bb050c8c104d32262f7cffa06c6145455cc6054add4fdd8dccf2be52f0c9
   languageName: node
   linkType: hard
 
@@ -11899,6 +12068,18 @@ __metadata:
   version: 2.2.0
   resolution: "xmlchars@npm:2.2.0"
   checksum: 10/4ad5924974efd004a47cce6acf5c0269aee0e62f9a805a426db3337af7bcbd331099df174b024ace4fb18971b8a56de386d2e73a1c4b020e3abd63a4a9b917f1
+  languageName: node
+  linkType: hard
+
+"xss@npm:^1.0.15":
+  version: 1.0.15
+  resolution: "xss@npm:1.0.15"
+  dependencies:
+    commander: "npm:^2.20.3"
+    cssfilter: "npm:0.0.10"
+  bin:
+    xss: bin/xss
+  checksum: 10/074ad54babac9dd5107466dbf30d3b871dbedae1f8e7b8f4e3b76d60da8b92bd0f66f18ccd26b8524545444ef784b78c526cee089a907aa904f83c8b8d7958f6
   languageName: node
   linkType: hard
 
