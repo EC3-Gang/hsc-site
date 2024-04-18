@@ -5,7 +5,7 @@ import Navbar from '@components/navbar/navbar.astro';
 import { hash, date } from '../git-info.json';
 import dayjs from 'dayjs';
 import '@sweetalert2/themes/material-ui/material-ui.css';
-import 'animate.css';
+import 'aos/dist/aos.css';
 
 const dateFormatted = dayjs(date).format('MMMM D, YYYY');
 
@@ -13,17 +13,9 @@ export interface Props {
   title: string;
 }
 
-// get latest commit hash and date of commit
+const { title, ...props } = Astro.props;
 
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-	'/opengraph.jpg',
-	Astro.site,
-).toString();
-
-const { title } = Astro.props;
+console.log(props);
 
 const makeTitle = title
 	? title + ' | ' + 'OneHwaChong'
@@ -40,11 +32,10 @@ const makeTitle = title
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Spectral&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Yrsa:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+		<!-- yrsa  -->
 		<title>{makeTitle}</title>
 		<meta name="description" content="The official page for HCI's HSC" />
 		<ViewTransitions />
@@ -133,47 +124,45 @@ const makeTitle = title
 				getInitialColorMode() == 'light' ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark');
 			});
 		</script>
+		<script>
+			import AOS from 'aos';
+
+			AOS.init();
+		</script>
+		<style is:global>
+			button.swal2-styled {
+				border-radius: 0.2rem !important;
+			}
+
+			.lato {
+				font-family: 'Lato', sans-serif;
+			}
+
+			.spectral {
+				font-family: 'Spectral', serif;
+			}
+
+			.raleway {
+				font-family: 'Raleway', sans-serif;
+			}
+
+			.lora {
+				font-family: 'Lora', serif;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: 'Lora', serif;
+			}
+		</style>
+		<slot name="head" />
 	</head>
-	<style is:global>
-		button.swal2-styled {
-			border-radius: 0.2rem !important;
-		}
 
-		.lato {
-			font-family: 'Lato', sans-serif;
-		}
-
-		.spectral {
-			font-family: 'Spectral', serif;
-		}
-
-		.yrsa {
-			font-family: 'Yrsa', serif;
-		}
-
-		.raleway {
-			font-family: 'Raleway', sans-serif;
-		}
-
-		.fredoka {
-			font-family: 'Fredoka', cursive;
-		}
-
-		.lora {
-			font-family: 'Lora', serif;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			font-family: 'Lora', serif;
-		}
-	</style>
-
-	<body class="lato bg-gray-100">
+	<body class="lato bg-zinc-50">
 		<Navbar />
 		<div transition:animate="fade">
 			<slot />

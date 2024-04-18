@@ -11,7 +11,9 @@ import node from '@astrojs/node';
 import { loadEnv } from 'vite';
 import vercel from '@astrojs/vercel/serverless';
 import critters from 'astro-critters';
+import compressor from 'astro-compressor';
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), '');
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,13 +34,17 @@ export default defineConfig({
 		config: {
 			forward: ['dataLayer.push'],
 		},
-	}), /* sentry({ sentry on vercel is kinda broken rn
-		dsn: 'https://7fe022e75fa6bbf1ba04f227f37431c9@o975437.ingest.sentry.io/4506211627565056',
-		sourceMapsUploadOptions: {
-			project: 'hci-hsc',
-			authToken: env.SENTRY_AUTH_TOKEN,
-		},
-	}), */ critters()],
+	}),
+	/* sentry({ sentry on vercel is kinda broken rn
+  dsn: 'https://7fe022e75fa6bbf1ba04f227f37431c9@o975437.ingest.sentry.io/4506211627565056',
+  sourceMapsUploadOptions: {
+  project: 'hci-hsc',
+  authToken: env.SENTRY_AUTH_TOKEN,
+  },
+  }), */
+	critters(), compressor({
+		fileExtensions: ['.css', '.js', '.html', '.xml', '.cjs', '.mjs', '.svg', '.txt', '.ttf', '.otf', '.jpg'],
+	})],
 	output: 'server',
 	// adapter: node({ mode: 'standalone' }),
 	adapter: vercel({

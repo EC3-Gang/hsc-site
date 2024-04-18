@@ -1,17 +1,17 @@
 ---
-const { style, imgSrc, imgAlt, ...props } = Astro.props;
+const { type, src, alt, class: className, imgClass, ...props } = Astro.props;
 
+console.log(props);
 ---
 
-{style === 1 &&
-	<div class="frame" {...props}>
-		<img src={imgSrc} alt={imgAlt} />
+{type === 1 &&
+	<div class="frame" {...props} class={className}>
+		<img src={src} alt={alt} class={imgClass} />
 	</div>
 }
 
-
 <style>
-	.frame img {
+	img {
 		border:solid 2px;
 		border-bottom-color:#ffe;
 		border-left-color:#eed;
@@ -32,9 +32,7 @@ const { style, imgSrc, imgAlt, ...props } = Astro.props;
 		box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
 		box-sizing:border-box;
 		display:inline-block;
-		margin:10vh 10vw;
-		height:100vh;
-		padding:8vmin;
+		height:auto;
 		position:relative;
 		text-align:center;
 		&:before {
