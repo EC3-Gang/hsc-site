@@ -32,6 +32,7 @@
     "@porscheofficial/cookie-consent-banner": "^3.1.5",
     "@sentry/astro": "^7.110.1",
     "@sweetalert2/themes": "^5.0.16",
+    "@types/aos": "^3.0.7",
     "@types/path-to-regexp": "^1.7.0",
     "@types/ua-parser-js": "^0.7.39",
     "animate.css": "^4.1.1",
