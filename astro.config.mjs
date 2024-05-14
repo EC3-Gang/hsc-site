@@ -25,7 +25,9 @@ export default defineConfig({
 		prefetchAll: true,
 		defaultStrategy: 'viewport',
 	},
-	integrations: [react(), tailwind(), mdx(), sitemap(), icon({
+	integrations: [react(), tailwind({
+		nesting: true,
+	}), mdx(), sitemap(), icon({
 		include: {
 			mdi: ['calendar', 'location', 'facebook', 'instagram', 'youtube', 'arrow-right'],
 			uil: ['envelope', 'instagram'],
