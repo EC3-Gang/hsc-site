@@ -130,6 +130,10 @@ const makeTitle = title
 			AOS.init({
 				duration: 750,
 			});
+
+			document.addEventListener('astro:after-swap', () => {
+				AOS.refresh();
+			});
 		</script>
 		<style is:global>
 			button.swal2-styled {
