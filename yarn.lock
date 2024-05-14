@@ -2271,6 +2271,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/aos@npm:^3.0.7":
+  version: 3.0.7
+  resolution: "@types/aos@npm:3.0.7"
+  checksum: 10/388954646768c9bb48fcf624808b3baa5b381925424e74f19579b31c742b16fa786757c350c6acda6402fc132a53be33d87d5ea556f62667334d1e5aabd33eda
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.20.4, @types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -6512,6 +6519,7 @@ __metadata:
     "@sentry/astro": "npm:^7.110.1"
     "@sweetalert2/themes": "npm:^5.0.16"
     "@tailwindcss/typography": "npm:^0.5.12"
+    "@types/aos": "npm:^3.0.7"
     "@types/jsdom": "npm:^21.1.6"
     "@types/node": "npm:^20.12.7"
     "@types/path-to-regexp": "npm:^1.7.0"
