@@ -132,7 +132,9 @@ const makeTitle = title
 			});
 
 			document.addEventListener('astro:after-swap', () => {
-				AOS.refresh();
+				AOS.init({
+					duration: 750,
+				});
 			});
 		</script>
 		<style is:global>
