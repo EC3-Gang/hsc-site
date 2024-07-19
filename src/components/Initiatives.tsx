@@ -23,8 +23,6 @@ export default function Initiatives({ initiatives }: { initiatives: InitiativesT
 		setFilteredInitiatives(filteredResults);
 	};
 
-	console.log('a');
-	console.log(initiatives);
 
 	return (
 		<>
