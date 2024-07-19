@@ -23,6 +23,9 @@ export default function Initiatives({ initiatives }: { initiatives: InitiativesT
 		setFilteredInitiatives(filteredResults);
 	};
 
+	console.log('a');
+	console.log(initiatives);
+
 	return (
 		<>
 			<div className='w-11/12 lg:w-3/4 m-auto mt-5'>
@@ -37,7 +40,7 @@ export default function Initiatives({ initiatives }: { initiatives: InitiativesT
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
 				{filteredInitiatives.map((initiative) => (
 					<div className='rounded-lg bg-gray-200 shadow-2xl overflow-hidden' key={initiative.fields.slug as unknown as string}>
-						<img className='w-full h-48 object-cover' src={initiative.fields.banner.fields.file.url} alt={initiative.fields.banner.fields.title} />
+						{initiative.fields.banner && <img className='w-full h-48 object-cover' src={initiative.fields.banner.fields.file.url} alt={initiative.fields.banner.fields.title}/>}
 						<div className='p-4'>
 							<div className='text-lg font-semibold text-gray-700'>{initiative.fields.title as unknown as string}</div>
 							{initiative.fields.date && (
