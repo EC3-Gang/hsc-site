@@ -6433,6 +6433,7 @@ __metadata:
     rss-parser: "npm:^3.13.0"
     sharp: "npm:^0.31.3"
     sweetalert2: "npm:^11.10.7"
+    swiper: "npm:^11.1.5"
     tailwindcss: "npm:^3.4.3"
     toastify-js: "npm:^1.12.0"
     typescript: "npm:^5.4.5"
@@ -10793,6 +10794,13 @@ __metadata:
   version: 11.10.7
   resolution: "sweetalert2@npm:11.10.7"
   checksum: 10/c133d1d66152ef841df37727e1cc5b5882573d24adb960ff8c9959accb46726dad8b39ec0b87ff3393fb45ba745dd830cf8437ab02b49ea73c19e22f2f3e9860
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^11.1.5":
+  version: 11.1.5
+  resolution: "swiper@npm:11.1.5"
+  checksum: 10/175251c0bda6f4d6b257d8199bf214426e62c29c3bef58173ccc816a194122cfcfd1e62da8f6b8b09ebcd9322fa01c6c380bf8cf721ffc2ca6a1d0f39364f05f
   languageName: node
   linkType: hard
 

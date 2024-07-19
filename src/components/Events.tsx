@@ -162,7 +162,9 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 					.map((event) => (
 						<>
 							<div className='bg-gray-200 rounded-lg shadow-2xl overflow-hidden' key={event.fields.slug}>
+
 								<img className='w-full h-48 object-cover' src={event.fields.banner.fields.file.url} alt={event.fields.banner.fields.file.title} />
+
 								<div className='p-4'>
 									<div className='text-lg font-semibold text-gray-700'>{event.fields.title as unknown as string}</div>
 									<div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>

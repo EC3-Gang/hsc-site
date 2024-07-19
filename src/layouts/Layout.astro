@@ -124,19 +124,7 @@ const makeTitle = title
 				getInitialColorMode() == 'light' ? document.documentElement.classList.remove('dark') : document.documentElement.classList.add('dark');
 			});
 		</script>
-		<script>
-			import AOS from 'aos';
 
-			AOS.init({
-				duration: 750,
-			});
-
-			document.addEventListener('astro:after-swap', () => {
-				AOS.init({
-					duration: 750,
-				});
-			});
-		</script>
 		<style is:global>
 			button.swal2-styled {
 				border-radius: 0.2rem !important;
@@ -167,6 +155,13 @@ const makeTitle = title
 				font-family: 'Lora', serif;
 			}
 		</style>
+		<style is:global>
+			/* Improve Page speed */
+			/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+			img {
+				content-visibility: auto;
+			}
+		</style>
 		<slot name="head" />
 	</head>
 
@@ -179,13 +174,28 @@ const makeTitle = title
 			hash,
 			date: dateFormatted,
 		}} />
-		<style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
-      }
-		</style>
+
+
+		<script>
+			import AOS from 'aos';
+			import { register } from 'swiper/element/bundle';
+
+			AOS.init({
+				duration: 750,
+			});
+
+			document.addEventListener('astro:after-swap', () => {
+				AOS.init({
+					duration: 750,
+				});
+			});
+
+			register();
+
+			document.addEventListener('astro:after-swap', () => {
+				register();
+			});
+		</script>
 
 		<!-- some easter eggs n' stuff -->
 		<script>
