@@ -159,30 +159,53 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
 				{results.filter(filter.filter).length > 0 ? results
 					.filter(filter.filter)
-					.map((event) => (
-						<>
-							<div className='bg-gray-200 rounded-lg shadow-2xl overflow-hidden' key={event.fields.slug}>
+					.map((event) => {
+						console.log(events.fields);
+						if (event.fields.extraImgs) console.log(event.fields.extraImgs);
+						return (
+							<>
+								<div className='bg-gray-200 rounded-lg shadow-2xl overflow-hidden' key={event.fields.slug}>
 
-								<img className='w-full h-48 object-cover' src={event.fields.banner.fields.file.url} alt={event.fields.banner.fields.file.title} />
+									<swiper-container navigation='true'>
+										<swiper-slide>
+											<img className='w-full h-48 object-cover'
+												src={event.fields.banner.fields.file.url}
+												alt={event.fields.banner.fields.file.title}/>
+										</swiper-slide>
+										{/* <swiper-slide>*/}
+										{/*	<img className='w-full h-48 object-cover'*/}
+										{/*		src={event.fields.banner.fields.file.url}*/}
+										{/*		alt={event.fields.banner.fields.file.title}/>*/}
+										{/* </swiper-slide>*/}
+										{event.fields.extraImgs && event.fields.extraImgs.map((img) => (
+											<swiper-slide>
+												<img className='w-full h-48 object-cover'
+													src={img.fields.file.url}
+													alt={img.fields.file.title}/>
+											</swiper-slide>
+										))}
+									</swiper-container>
 
-								<div className='p-4'>
-									<div className='text-lg font-semibold text-gray-700'>{event.fields.title as unknown as string}</div>
-									<div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
-										<Icon icon='mdi:calendar' className="w-4 h-4 inline-block" />
-										<span>{dayjs(event.fields.date as unknown as string).format('D MMM YYYY hh:mm a')}</span>
+									<div className='p-4'>
+										<div
+											className='text-lg font-semibold text-gray-700'>{event.fields.title as unknown as string}</div>
+										<div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
+											<Icon icon='mdi:calendar' className="w-4 h-4 inline-block" />
+											<span>{dayjs(event.fields.date as unknown as string).format('D MMM YYYY hh:mm a')}</span>
+										</div>
+										{event.fields.location && <div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
+											<Icon icon='mdi:location' className="w-4 h-4 inline-block" />
+											<span>{event.fields.location as unknown as string}</span>
+										</div>}
+										<div className='mt-2 text-sm text-gray-500 line-clamp-2'>{event.fields.description as unknown as string}</div>
+										{event.fields.link && (<div className='mt-2 text-sm text-gray-500'>
+											<a href={event.fields.link as unknown as string} target='_blank' rel='noopener noreferrer'>{event.fields.link as unknown as string}</a>
+										</div>)}
 									</div>
-									{event.fields.location && <div className='mt-2 text-sm text-gray-500 flex items-center space-x-1'>
-										<Icon icon='mdi:location' className="w-4 h-4 inline-block" />
-										<span>{event.fields.location as unknown as string}</span>
-									</div>}
-									<div className='mt-2 text-sm text-gray-500 line-clamp-2'>{event.fields.description as unknown as string}</div>
-									{event.fields.link && (<div className='mt-2 text-sm text-gray-500'>
-										<a href={event.fields.link as unknown as string} target='_blank' rel='noopener noreferrer'>{event.fields.link as unknown as string}</a>
-									</div>)}
 								</div>
-							</div>
-						</>
-					)) : (
+							</>
+						);
+					}) : (
 					<div className='flex flex-col items-center justify-center text-gray-500 col-span-full'>
 						<Icon icon='mdi:calendar' className='w-12 h-12' />
 						<p className='mt-2'>No events found</p>
