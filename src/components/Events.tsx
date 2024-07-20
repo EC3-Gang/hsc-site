@@ -202,7 +202,10 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 												<span>{event.fields.location as unknown as string}</span>
 											</div>}
 										<div
-											className='mt-2 text-sm text-gray-500 line-clamp-2'>{event.fields.description as unknown as string}</div>
+											className='mt-2 text-sm text-gray-500 line-clamp-2'
+										>
+											{event.fields.description as unknown as string}
+										</div>
 										{event.fields.link && (<div className='mt-2 text-sm text-gray-500'>
 											<a href={event.fields.link as unknown as string} target='_blank'
 												rel='noopener noreferrer'>{event.fields.link as unknown as string}</a>
