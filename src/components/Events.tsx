@@ -69,7 +69,7 @@ function Timeline({ events }: { events: EventsType[] }) {
 
 
 function EventsSearch({ events }: { events: EventsType[] }) {
-	const options = [
+	const options: EventsFilterOption[] = [
 		{
 			name: 'Upcoming',
 			filter: (event: EventsType) => dayjs(event.fields.date).isAfter(dayjs()),
@@ -85,7 +85,12 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 	];
 	const [filter, setFilter] = useState(options[0]);
 	const [search, setSearch] = useState('');
-	const [results, setResults] = useState(events);
+	const [results, setResults] = useState(events.filter(filter.filter));
+
+	const changeFilter = (value: EventsFilterOption) => {
+		setFilter(value);
+		setResults(events.filter(value.filter));
+	};
 
 	const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setSearch(e.target.value);
@@ -104,7 +109,7 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 	return (
 		<>
 			<div className='grid sm:grid-cols-4 grid-cols-2 gap-4 w-11/12 lg:w-3/4 m-auto mt-5'>
-				<Listbox value={filter} onChange={setFilter} className='w-full -mt-0'>
+				<Listbox value={filter} onChange={changeFilter} className='w-full -mt-0'>
 					<div className="relative mt-1 z-10 w-1/5">
 						<Listbox.Button className="relative w-full cursor-pointer rounded-lg py-2 pl-3 pr-10 text-gray-700 text-left border-gray-300 border-2 focus:ring-amber-600 focus:ring-2 bg-gray-200 sm:text-sm">
 							<span className="block truncate">{filter.name}</span>
@@ -154,18 +159,26 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 						</Transition>
 					</div>
 				</Listbox>
-				<input type='text' placeholder='Search for an event' className='sm:col-span-3 w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent bg-gray-200 text-gray-600' value={search} onChange={handleQuery} />
+				<input
+					type='text'
+					placeholder='Search for an event'
+					className='sm:col-span-3 w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent bg-gray-200 text-gray-600'
+					value={search}
+					onChange={handleQuery}
+				/>
 			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
-				{results.filter(filter.filter).length > 0 ? results
-					.filter(filter.filter)
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-8'>
+				{results.length > 0 ? results
+					// .filter(filter.filter)
 					.map((event) => {
 						console.log(events.fields);
 						if (event.fields.extraImgs) console.log(event.fields.extraImgs);
 						return (
 							<>
-								<div className='bg-gray-200 rounded-lg shadow-2xl overflow-hidden'
-									key={event.fields.slug}>
+								<div
+									className='bg-gray-200 rounded-lg shadow-2xl overflow-hidden'
+									key={event.fields.slug as unknown as string}
+								>
 
 									<swiper-container
 										navigation='true'
@@ -202,7 +215,10 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 												<span>{event.fields.location as unknown as string}</span>
 											</div>}
 										<div
-											className='mt-2 text-sm text-gray-500 line-clamp-2'>{event.fields.description as unknown as string}</div>
+											className='mt-2 text-sm text-gray-500 line-clamp-2'
+										>
+											{event.fields.description as unknown as string}
+										</div>
 										{event.fields.link && (<div className='mt-2 text-sm text-gray-500'>
 											<a href={event.fields.link as unknown as string} target='_blank'
 												rel='noopener noreferrer'>{event.fields.link as unknown as string}</a>
@@ -221,3 +237,9 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 		</>
 	);
 }
+
+
+type EventsFilterOption = {
+	name: string;
+	filter: (event: EventsType) => boolean;
+};

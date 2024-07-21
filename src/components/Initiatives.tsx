@@ -35,7 +35,7 @@ export default function Initiatives({ initiatives }: { initiatives: InitiativesT
 					onChange={handleQuery}
 				/>
 			</div>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8'>
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-8'>
 				{filteredInitiatives.map((initiative) => (
 					<div className='rounded-lg bg-gray-200 shadow-2xl overflow-hidden' key={initiative.fields.slug as unknown as string}>
 						{initiative.fields.banner &&
@@ -72,13 +72,14 @@ export default function Initiatives({ initiatives }: { initiatives: InitiativesT
 							)}
 							<div
 								className='mt-2 text-sm text-gray-500 line-clamp-2'>{initiative.fields.description as unknown as string}</div>
-							<div className='mt-2 text-sm text-gray-500 hover:text-gray-700'>
-								<Icon icon='ph:link-bold' className='w-4 h-4 mr-1 inline-block'/>
-								<a href={initiative.fields.link as unknown as string} target='_blank'
-								   rel='noopener noreferrer'>
-									{initiative.fields.link as unknown as string}
-								</a>
-							</div>
+							{initiative.fields.link &&
+								<div className='mt-2 text-sm text-gray-500 hover:text-gray-700'>
+									<Icon icon='ph:link-bold' className='w-4 h-4 mr-1 inline-block'/>
+									<a href={initiative.fields.link as unknown as string} target='_blank' rel='noopener noreferrer'>
+										{initiative.fields.link as unknown as string}
+									</a>
+								</div>
+							}
 						</div>
 					</div>
 				))}
