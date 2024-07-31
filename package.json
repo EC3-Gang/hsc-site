@@ -53,6 +53,7 @@
     "konami-code-js": "^0.8.1",
     "mime": "^3.0.0",
     "nightwind": "^1.1.13",
+    "nuka-carousel": "^8.0.1",
     "overlayscrollbars": "^2.7.2",
     "path-to-regexp": "^6.2.2",
     "react": "^18.2.0",

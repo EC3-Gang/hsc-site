@@ -7,7 +7,13 @@ import type React from 'react';
 import Fuse from 'fuse.js';
 import type { Events as EventsType } from '@lib/contentful';
 import { Chrono } from 'react-chrono';
+
+// import { Navigation } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+
+
 import './Events.css';
+import 'swiper/css';
 
 
 export default function Events({ events }: { events: EventsType[] }) {
@@ -182,6 +188,8 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 
 									<swiper-container
 										navigation='true'
+										pagination='true'
+										pagination-clickable='true'
 									>
 										<swiper-slide>
 											<img className='w-full h-48 object-cover'
