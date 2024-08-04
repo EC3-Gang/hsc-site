@@ -6425,6 +6425,7 @@ __metadata:
     konami-code-js: "npm:^0.8.1"
     mime: "npm:^3.0.0"
     nightwind: "npm:^1.1.13"
+    nuka-carousel: "npm:^8.0.1"
     overlayscrollbars: "npm:^2.7.2"
     path-to-regexp: "npm:^6.2.2"
     react: "npm:^18.2.0"
@@ -8771,6 +8772,16 @@ __metadata:
   dependencies:
     boolbase: "npm:^1.0.0"
   checksum: 10/5afc3dafcd1573b08877ca8e6148c52abd565f1d06b1eb08caf982e3fa289a82f2cae697ffb55b5021e146d60443f1590a5d6b944844e944714a5b549675bcd3
+  languageName: node
+  linkType: hard
+
+"nuka-carousel@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "nuka-carousel@npm:8.0.1"
+  peerDependencies:
+    react: ">=18.0.0"
+    react-dom: ">=18.0.0"
+  checksum: 10/bf779fc9a85902b1f8af38ab937e460e0e976da06c5b97295e4e234661e34336627c124e06f158cfe85825629fbb958d51a487636cb18476b1b4e5ddf028503a
   languageName: node
   linkType: hard
 

@@ -154,7 +154,7 @@ const aboutUsImg = await getImage({ src: aboutUsImgRaw, format: 'webp' });
 			<h2 class="text-3xl font-bold mt-10 text-center text-slate-600" data-aos="fade-up">Latest Events, Initiatives and Posts</h2>
 
 			<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10">
-				<a href='/initiatives' data-aos="fade-up-right">
+				<a href='/initiatives' data-aos="fade-up">
 					<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" style={`background-image: url(${initiative.fields.banner!.fields.file.url})`}>
 						<div class="bg-[#000]/50 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
 							<h2 class="text-[#f3f4f6] text-2xl font-bold">
@@ -176,7 +176,7 @@ const aboutUsImg = await getImage({ src: aboutUsImgRaw, format: 'webp' });
 					</div>
 				</a>
 
-				<a href={`/blog/${blogEntry.slug}`} data-aos="fade-up-left">
+				<a href={`/blog/${blogEntry.slug}`} data-aos="fade-up">
 					<div class="bg-cover bg-center bg-no-repeat h-64 lg:h-96 hover:scale-105 duration-200 hover:shadow-2xl" transition:name={`${blogEntry.slug}.banner`} style={`background-image: url(${blogEntry.banner!.fields!.file.url})`}>
 						<div class="bg-[#000] bg-opacity-60 h-full flex flex-col justify-end p-4 backdrop-blur-sm">
 							<h2 class="text-[#f3f4f6] text-2xl font-bold">

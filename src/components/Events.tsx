@@ -7,7 +7,13 @@ import type React from 'react';
 import Fuse from 'fuse.js';
 import type { Events as EventsType } from '@lib/contentful';
 import { Chrono } from 'react-chrono';
+
+// import { Navigation } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+
+
 import './Events.css';
+import 'swiper/css';
 
 
 export default function Events({ events }: { events: EventsType[] }) {
@@ -45,18 +51,20 @@ function Timeline({ events }: { events: EventsType[] }) {
 	return (
 		<div className='mx-auto mt-12'>
 			<Chrono
-				items={events.map((event) => ({
-					title: dayjs(event.fields.date as unknown as string).format('D MMM YYYY'),
-					cardTitle: event.fields.title as unknown as string,
-					cardSubtitle: event.fields.location as unknown as string,
-					cardDetailedText: event.fields.description as unknown as string,
-					media: {
-						type: 'IMAGE',
-						source: {
-							url: event.fields.banner.fields.file.url,
+				items={events
+					.sort((a, b) => dayjs(b.fields.date as unknown as string).diff(dayjs(a.fields.date as unknown as string)))
+					.map((event) => ({
+						title: dayjs(event.fields.date as unknown as string).format('D MMM YYYY'),
+						cardTitle: event.fields.title as unknown as string,
+						cardSubtitle: event.fields.location as unknown as string,
+						cardDetailedText: event.fields.description as unknown as string,
+						media: {
+							type: 'IMAGE',
+							source: {
+								url: event.fields.banner.fields.file.url,
+							},
 						},
-					},
-				}))}
+					}))}
 				mode='VERTICAL_ALTERNATING'
 				enableDarkToggle={true}
 				textOverlay
@@ -182,6 +190,8 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 
 									<swiper-container
 										navigation='true'
+										pagination='true'
+										pagination-clickable='true'
 									>
 										<swiper-slide>
 											<img className='w-full h-48 object-cover'

@@ -41,6 +41,8 @@ export default function Initiatives({ initiatives }: { initiatives: InitiativesT
 						{initiative.fields.banner &&
 							<swiper-container
 								navigation='true'
+								pagination='true'
+								pagination-clickable='true'
 							>
 								<swiper-slide>
 									<img className='w-full h-48 object-cover'
