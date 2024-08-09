@@ -91,7 +91,7 @@ function EventsSearch({ events }: { events: EventsType[] }) {
 			filter: () => true,
 		},
 	];
-	const [filter, setFilter] = useState(options[0]);
+	const [filter, setFilter] = useState(options[2]);
 	const [search, setSearch] = useState('');
 	const [results, setResults] = useState(events.filter(filter.filter));
 
